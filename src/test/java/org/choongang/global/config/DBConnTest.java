@@ -4,8 +4,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.org.choongang.global.config.DBConn;
-
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
 /**
