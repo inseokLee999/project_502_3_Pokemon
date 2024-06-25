@@ -9,7 +9,6 @@ import org.choongang.global.config.annotations.RequestMapping;
 public class MainController {
     @GetMapping
     public String index(){
-
         return "main/index";
     }
 }
