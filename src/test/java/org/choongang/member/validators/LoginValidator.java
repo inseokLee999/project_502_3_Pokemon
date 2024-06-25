@@ -1,9 +1,12 @@
 package org.choongang.member.validators;
 
+import org.choongang.global.validators.EmailValidator;
+import org.choongang.global.validators.RequiredValidator;
+import org.choongang.global.validators.Validator;
 import org.choongang.member.controllers.LoginRequest;
 import org.choongang.member.mapper.MemberMapper;
 
-public class LoginValidator implements Validator<LoginRequest>, RequiredValidator, EmailValidator{
+public class LoginValidator implements Validator<LoginRequest>, RequiredValidator, EmailValidator {
 
     private MemberMapper mapper;
 
@@ -12,5 +15,6 @@ public class LoginValidator implements Validator<LoginRequest>, RequiredValidato
     public void check(LoginRequest form) {
         String email = form.getEmail();
         String password = form.getPassword();
+
     }
 }
