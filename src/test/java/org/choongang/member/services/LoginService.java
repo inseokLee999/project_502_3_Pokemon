@@ -4,7 +4,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.choongang.member.entities.Member;
 import org.choongang.member.mapper.MemberMapper;
-import org.junit.jupiter.params.shadow.com.univocity.parsers.conversions.Validator;
+import org.choongang.member.validators.Validator;
 
 public class LoginService {
     private Validator<HttpServletRequest> validator;
