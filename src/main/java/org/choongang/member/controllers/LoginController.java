@@ -1,24 +1,29 @@
 package org.choongang.member.controllers;
 
-import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
+import org.choongang.global.config.annotations.Controller;
+import org.choongang.global.config.annotations.GetMapping;
+import org.choongang.global.config.annotations.PostMapping;
+import org.choongang.global.config.annotations.RequestMapping;
+import org.choongang.member.services.LoginService;
 
-import java.io.IOException;
+@Controller
+@RequestMapping("/member")
+@RequiredArgsConstructor
+public class LoginController {
 
-@WebServlet("/member/login")
-public class LoginController extends HttpServlet {
-    @Override
-    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/templates/member/login.jsp");
-        rd.forward(req, resp);
+    private final LoginService loginService;
+
+    @GetMapping("/login")
+    public String login() {
+
+        return "member/login";
     }
 
-    @Override
-    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    @PostMapping("/login")
+    public String loginPs(LoginRequest form) {
+        loginService.process(form);
 
+        return "member/login";
     }
 }
