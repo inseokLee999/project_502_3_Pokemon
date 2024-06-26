@@ -13,4 +13,7 @@ public class MypageController {
 
         return "mypage/index";
     }
+
+
+
 }

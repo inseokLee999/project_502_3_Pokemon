@@ -21,14 +21,17 @@ public class LoginValidator implements Validator<LoginRequest>, RequiredValidato
 
     @Override
     public void check(LoginRequest form) {
+        //필수 항목 검증
         String email = form.getEmail();
         String password = form.getPassword();
 
         int status = HttpServletResponse.SC_BAD_REQUEST;
 
+        // 필수 항목 유효성 검사
         checkRequired(email, new AlertException("이메일을 입력하세요.", status));
         checkRequired(password, new AlertException("비밀번호를 입력하세요.", status));
 
+        // 아이디, 비번 불일치 시 오류 메세지-> message
         String message = "이메일 또는 비밀번호가 일치하지 않습니다.";
         Member member = mapper.get(email);
         checkTrue(member != null, new AlertException(message, status));
