@@ -1,14 +1,14 @@
-package org.choongang.pokemon;
+package org.choongang.boards.controllers;
 
 import org.choongang.global.config.annotations.Controller;
 import org.choongang.global.config.annotations.GetMapping;
 import org.choongang.global.config.annotations.RequestMapping;
 
 @Controller
-@RequestMapping("/pokemon")
+@RequestMapping("/boards/pokemon")
 public class PokemonController {
-    @GetMapping("/board")
-    public String board(){
-        return "pokemon/board";
+    @GetMapping
+    public String index(){
+        return "boards/pokemon/index";
     }
 }
