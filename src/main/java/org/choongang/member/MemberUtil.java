@@ -15,7 +15,7 @@ public class MemberUtil {
         return getMember(request) != null;
     }
 
-    //관리자 여부
+    //관리자 여부.
     public boolean isAdmin(HttpServletRequest request) {
         if (isLogin(request)) {
             Member member = getMember(request);
