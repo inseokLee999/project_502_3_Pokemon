@@ -2,6 +2,7 @@ package org.choongang.member.tests;
 
 import com.github.javafaker.Faker;
 import org.choongang.member.controllers.RequestJoin;
+import org.choongang.member.entities.Member;
 import org.choongang.member.services.JoinService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -28,7 +29,7 @@ public class JoinServiceTest {
         Faker faker = new Faker(Locale.ENGLISH);
         
         RequestJoin form = RequestJoin.builder()
-                .id(System.currentTimeMillis() + faker.internet().emailAddress())
+                .email(System.currentTimeMillis() + faker.internet().emailAddress())
                 .password(faker.regexify("\\w{8}").toLowerCase())
                 .userName(faker.name().fullName())
                 .termsAgree(true)
@@ -45,6 +46,9 @@ public class JoinServiceTest {
             JoinService service = new JoinService();
             service.process(getData());
         });
+
+        //가입된 이메일로 회원이 조회되는 체크
+
     }
 
     @Test
