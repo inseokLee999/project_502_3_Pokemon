@@ -1,10 +1,8 @@
 package org.choongang.member.tests;
 
 import com.github.javafaker.Faker;
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.choongang.global.config.DBConn;
-import org.choongang.global.config.containers.BeanContainer;
 import org.choongang.global.exceptions.BadRequestException;
 import org.choongang.member.controllers.LoginRequest;
 import org.choongang.member.mapper.MemberMapper;
