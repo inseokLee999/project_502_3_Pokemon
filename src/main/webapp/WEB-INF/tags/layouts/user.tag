@@ -9,9 +9,6 @@
 <c:url var="jsUrl" value="/js/" />
 <c:url var="homeUrl" value="/"/>
 <c:url var="logoUrl" value="/images/logo.png"/>
-<c:url var="pokemonUrl" value="/pokemon/board"/>
-<c:url var="pokemonOffUrl" value="https://www.pokemonkorea.co.kr/"/>
-<c:url var="instagramUrl" value="/images/sns/instagram.jpeg"/>
 <layout:common title="${title}">
     <jsp:attribute name="header">
         <section class="site-top">
@@ -54,42 +51,34 @@
         <nav>
             <div class="layout-width inner">
                 <a href="#">메뉴 1</a>
-                <a href="${pokemonUrl}">포켓몬</a>
+                <a href="#">메뉴 2</a>
                 <a href="#">메뉴 3</a>
                 <a href="#">메뉴 4</a>
                 <a href="#">메뉴 5</a>
             </div>
         </nav>
+         <section class="logo-search2">
+                 <div class="right">
+                     <form class="search-box" method="GET" action="${searchUrl}" autocomplete="off">
+                         <input type="text" name="keyword" placeholder="<fmt:message key="검색어를_입력하세요."/> ">
+                         <button type="submit">
+                             <i class="xi-search"></i>
+                         </button>
+                     </form>
+                 </div>
+             </div>
+         </section>
+
+
+
     </jsp:attribute>
     <jsp:attribute name="footer">
-        <section class="site-bottom">
-            <div class="layout-width inner">
-                <div class="information">
-                    <div>
-                        <a href="${pokemonOffUrl}">
-                            pokemon korea, inc.
-                        </a>
-                    </div>
-                    <ul class="list-split">
-                        <li>
-                            <a href="#">회사소개</a>
-                        </li>
-                        <li>
-                            <a href="#">사업내용</a>
-                        </li>
-                        <li>
-                            <a href="#">제휴안내</a>
-                        </li>
-                        <li>
-                            <a href="#">이용약관</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        <section class="layout-width inner">
+            <h1>메인 레이아웃 하단 영역!</h1>
         </section>
     </jsp:attribute>
     <jsp:attribute name="commonCss">
-        <link rel="stylesheet" type="text/css" href="${cssUrl}main.css">
+        <link rel="stylesheet" type="text/css" href="${cssUrl}board/style.css">
     </jsp:attribute>
     <jsp:attribute name="commonJs">
         <script src="${jsUrl}main.js"></script>
