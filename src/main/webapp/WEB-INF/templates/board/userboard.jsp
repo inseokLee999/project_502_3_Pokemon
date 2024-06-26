@@ -5,6 +5,8 @@
 <fmt:setBundle basename="messages.commons" />
 <fmt:message var="userPageTitle" key="유저게시판"/>
 
-<layout:main title="${userPageTitle}">
-   <h1>유저 게시판</h1>
-</layout:main>
+<layout:user title="${userPageTitle}">
+
+
+
+</layout:user>

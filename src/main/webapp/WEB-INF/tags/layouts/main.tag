@@ -9,6 +9,7 @@
 <c:url var="jsUrl" value="/js/" />
 <c:url var="homeUrl" value="/"/>
 <c:url var="logoUrl" value="/images/logo.png"/>
+
 <c:url var="pokemonUrl" value="/pokemon/board"/>
 <c:url var="gameUrl" value="/game/play"/>
 <c:url var="mycardUrl" value="/mycard/privatecard"/>
