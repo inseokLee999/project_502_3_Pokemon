@@ -45,6 +45,7 @@ header .logo img{
 
 /* 회전 애니메이션 정의 */
 
+
 header .site-top a:hover{
     font-weight: bold;
 }
@@ -77,6 +78,7 @@ header .search-box button{
     border: 1px solid #ccc;
     border-radius: 3px;
     cursor: pointer;
+
 }
 header .search-box button i{
     color: #fff;
@@ -116,15 +118,13 @@ header {
      padding-top: 223px; /* 헤더 높이만큼 패딩 추가 */
  }
 
-    /*background: #d7a513;*/
-}
-
 
 
 /*사이트 푸터 영역 S*/
 footer{
     margin-top: 100px;
     min-height: 250px;
+
 
     background: #f8f8f8;
     border-top: 1px solid #ccc;
