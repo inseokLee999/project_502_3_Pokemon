@@ -23,8 +23,16 @@ public class LoginController {
 
     @PostMapping("/login")
     public String loginPs(LoginRequest form) {
+
         //loginService.process(form);
 
-        return "member/login";
+        String redirectUrl = form.getRedirectUrl();
+        redirectUrl = redirectUrl == null || redirectUrl.isBlank() ? "/" : redirectUrl;
+
+        String script = String.format("parent.location.replace('%s');", request.getContextPath() + redirectUrl);
+
+        request.setAttribute("script", script);
+
+        return "commons/execute_script";
     }
 }
