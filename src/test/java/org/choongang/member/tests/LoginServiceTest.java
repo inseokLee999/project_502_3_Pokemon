@@ -10,6 +10,7 @@ import org.choongang.member.controllers.LoginRequest;
 import org.choongang.member.mapper.MemberMapper;
 import org.choongang.member.services.LoginService;
 import org.choongang.member.validators.LoginValidator;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -66,6 +67,9 @@ public class LoginServiceTest {
             loginService.process(getData());
         });
 
+        // 로그인 처리 완료시 HttpSession - setAttribute 메서드가 호출 됨 -> 로그인 다 되면 구현
+        //then(session).should(only()).setAttribute(any(), any());
+
     }
 
     @Test
@@ -95,6 +99,40 @@ public class LoginServiceTest {
         assertTrue(msg.contains(message), name + ", 키워드:" + message);
     }
 
+
+    @Test
+    @DisplayName("이메일로 회원이 조회 되는지 검증, 검증 실패시 BadRequestException 발생")
+    void memberExistTest() {
+        LoginRequest form = new LoginRequest();
+        form.setEmail("***" + getData().getEmail());
+
+        BadRequestException thrown = assertThrows(BadRequestException.class, () -> {
+            loginService.process(form);
+        });
+
+        String message = thrown.getMessage();
+        assertTrue(message.contains("이메일 또는 비밀번호"));
+    }
+
+    @Test
+    @DisplayName("비밀번호 검증, 실패 시 BadRequestException 발생")
+    void passwordCheckTest() {
+        LoginRequest form = new LoginRequest();
+        form.setPassword("***" + getData().getPassword());
+
+        BadRequestException thrown = assertThrows(BadRequestException.class, () -> {
+            loginService.process(form);
+        });
+
+        String message = thrown.getMessage();
+        assertTrue(message.contains("이메일 또는 비밀번호"));
+    }
+
+    @AfterEach
+    void destroy() {
+        //dbSession.rollback();
+    }
 }
+
 
 
