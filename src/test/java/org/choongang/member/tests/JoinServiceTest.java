@@ -42,9 +42,12 @@ public class JoinServiceTest {
     @Test
     @DisplayName("회원가입 성공시 예외가 발생하지 않음")
     void successTest() {
+
         assertDoesNotThrow(() -> {
             JoinService service = new JoinService();
+
             service.process(getData());
+
         });
 
         //가입된 이메일로 회원이 조회되는 체크
