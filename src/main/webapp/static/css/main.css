@@ -119,12 +119,10 @@ header {
  }
 
 
-
 /*사이트 푸터 영역 S*/
 footer{
     margin-top: 100px;
     min-height: 250px;
-
 
     background: #f8f8f8;
     border-top: 1px solid #ccc;
