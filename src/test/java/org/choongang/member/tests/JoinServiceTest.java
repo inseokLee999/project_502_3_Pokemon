@@ -49,7 +49,7 @@ public class JoinServiceTest {
 
            service.process(getData());
 
-            JoinService service = new JoinService();
+         //   JoinService service = new JoinService();
 
            // service.process();
 
