@@ -23,7 +23,7 @@ header .site-top a{
     line-height: 1;
 }
 header .logo img{
-    height: 130px;
+    height: 120px;
 }
 header .site-top a:hover{
     font-weight: bold;
@@ -32,7 +32,7 @@ header .site-top .right a{
     margin-left: 10px;
 }
 header .logo-search{
-    padding: 30px 0;
+    padding: 10px 0;
 }
 header .logo-search > .inner{
     display: flex;
@@ -75,7 +75,7 @@ nav > .inner {
 }
 nav > .inner a{
     font-size: 1.5rem;
-    color: #8f8f8f;
+    color: #3564ad;
     padding: 0 25px;
     line-height: 45px;/*lineheight 를 맞추면 정렬 할수 있음!!*/
 }
@@ -92,5 +92,26 @@ footer{
     min-height: 250px;
     background: #f8f8f8;
     border-top: 1px solid #ccc;
+}
+footer .information a{
+    height: 145px;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+footer .information{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 45px;
+    padding-right: 20px;
+    background: #f8f8f8;
+}
+footer ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer ul li{
+    padding-right: 20px;
 }
 /*사이트 푸터 영역 E*/

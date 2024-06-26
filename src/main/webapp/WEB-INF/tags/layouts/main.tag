@@ -9,7 +9,6 @@
 <c:url var="jsUrl" value="/js/" />
 <c:url var="homeUrl" value="/"/>
 <c:url var="logoUrl" value="/images/logo.png"/>
-<c:url var="gameUrl" value="/game/play"/>
 <layout:common title="${title}">
     <jsp:attribute name="header">
         <section class="site-top">
@@ -53,7 +52,7 @@
             <div class="layout-width inner">
                 <a href="#">메뉴 1</a>
                 <a href="#">메뉴 2</a>
-                <a href="${gameUrl}">게임하기</a>
+                <a href="#">메뉴 3</a>
                 <a href="#">메뉴 4</a>
                 <a href="#">메뉴 5</a>
             </div>
