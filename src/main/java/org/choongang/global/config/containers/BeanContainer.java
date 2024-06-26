@@ -155,7 +155,6 @@ public class BeanContainer {
                 Object obj = beans.get(clazz.getName());
                 if (obj == null) {
                     Constructor _con = clazz.getDeclaredConstructors()[0];
-
                     if (_con.getParameterTypes().length == 0) {
                         obj = _con.newInstance();
                     } else {
