@@ -2,7 +2,6 @@ package org.choongang.pokemon.entities;
 
 import lombok.Builder;
 import lombok.Data;
-import org.choongang.pokemon.entities.api.Pokemon;
 
 @Data
 @Builder
