@@ -1,14 +1,18 @@
 package org.choongang.member.validators;
 
+import lombok.RequiredArgsConstructor;
+import org.choongang.global.config.annotations.Component;
 import org.choongang.global.validators.EmailValidator;
 import org.choongang.global.validators.RequiredValidator;
 import org.choongang.global.validators.Validator;
 import org.choongang.member.controllers.LoginRequest;
 import org.choongang.member.mapper.MemberMapper;
 
+@Component
+@RequiredArgsConstructor
 public class LoginValidator implements Validator<LoginRequest>, RequiredValidator, EmailValidator {
 
-    private MemberMapper mapper;
+    private final MemberMapper mapper;
 
 
     @Override
@@ -17,4 +21,6 @@ public class LoginValidator implements Validator<LoginRequest>, RequiredValidato
         String password = form.getPassword();
 
     }
+
+
 }
