@@ -1,8 +1,22 @@
 /*메인 레이아웃 공통*/
+@keyframes infinite-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
 .layout-width{
     min-width: 1100px;
     max-width: 1300px;
     margin: 0 auto;
+}
+i:hover{
+    animation: infinite-rotate 2s linear infinite;
+}
+a:hover{
+    animation: infinite-rotate 2s linear infinite;
 }
 /*사이트 헤더 영역 S*/
 header .site-top{
@@ -25,6 +39,9 @@ header .site-top a{
 header .logo img{
     height: 120px;
 }
+/* 회전 애니메이션 정의 */
+
+
 header .site-top a:hover{
     font-weight: bold;
 }
@@ -57,6 +74,7 @@ header .search-box button{
     border: 1px solid #ccc;
     border-radius: 3px;
     cursor: pointer;
+
 }
 header .search-box button i{
     color: #fff;
@@ -82,14 +100,24 @@ nav > .inner a{
 nav > .inner a:hover{
     font-weight: bold;
     color: #183bcc;
+
     /*background: #d7a513;*/
 }
-
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* 다른 요소보다 위에 위치하게 하기 위해 사용 */
+    background-color: #fff; /* 헤더의 배경색 설정 */
+}main {
+     padding-top: 223px; /* 헤더 높이만큼 패딩 추가 */
+ }
 
 /*사이트 푸터 영역 S*/
 footer{
     margin-top: 100px;
-    min-height: 250px;
+    min-height: 2500px;
+    max-height: 2500px;
     background: #f8f8f8;
     border-top: 1px solid #ccc;
 }
