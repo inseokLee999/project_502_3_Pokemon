@@ -9,7 +9,7 @@
 <c:url var="jsUrl" value="/js/" />
 <c:url var="homeUrl" value="/"/>
 <c:url var="logoUrl" value="/images/logo.png"/>
-<c:url var="pokemonUrl" value="/pokemon/board"/>
+<c:url var="pokemonUrl" value="/pokemon"/>
 <c:url var="pokemonOffUrl" value="https://www.pokemonkorea.co.kr/"/>
 <c:url var="instagramUrl" value="/images/sns/instagram.jpeg"/>
 <layout:common title="${title}">

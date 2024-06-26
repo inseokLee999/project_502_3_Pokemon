@@ -1,4 +1,5 @@
 /*메인 레이아웃 공통*/
+
 @keyframes infinite-rotate {
     from {
         transform: rotate(0deg);
@@ -7,11 +8,13 @@
         transform: rotate(360deg);
     }
 }
+
 .layout-width{
     min-width: 1100px;
     max-width: 1300px;
     margin: 0 auto;
 }
+
 i:hover{
     animation: infinite-rotate 2s linear infinite;
 }
@@ -39,6 +42,7 @@ header .site-top a{
 header .logo img{
     height: 120px;
 }
+
 /* 회전 애니메이션 정의 */
 
 
@@ -101,6 +105,7 @@ nav > .inner a:hover{
     font-weight: bold;
     color: #183bcc;
 
+
     /*background: #d7a513;*/
 }
 header {
@@ -113,11 +118,12 @@ header {
      padding-top: 223px; /* 헤더 높이만큼 패딩 추가 */
  }
 
+
 /*사이트 푸터 영역 S*/
 footer{
     margin-top: 100px;
-    min-height: 2500px;
-    max-height: 2500px;
+    min-height: 250px;
+
     background: #f8f8f8;
     border-top: 1px solid #ccc;
 }
