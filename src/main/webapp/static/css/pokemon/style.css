@@ -1,0 +1,11 @@
+img{
+    height: 120px;
+}
+ul{
+    max-width: 50%;
+    display: flex;
+}
+ul li{
+    position: relative;
+    padding: 0 15px;
+}
