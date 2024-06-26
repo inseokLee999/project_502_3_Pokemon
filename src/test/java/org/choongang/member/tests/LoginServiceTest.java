@@ -66,7 +66,7 @@ public class LoginServiceTest {
         });
 
         // 로그인 처리 완료시 HttpSession - setAttribute 메서드가 호출 됨 -> 로그인 다 되면 구현
-        //then(session).should(only()).setAttribute(any(), any());
+        // then(session).should(only()).setAttribute(any(), any());
 
     }
 
