@@ -7,4 +7,5 @@ public class LoginRequest {
     private String email;
     private String password;
     private boolean saveEmail;
+    private String redirectUrl;
 }
