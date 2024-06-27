@@ -2,14 +2,15 @@
 <%@ tag pageEncoding="UTF-8" trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
+<%@ taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <%@ attribute name="title" %>
 <fmt:setBundle basename="messages.commons"/>
 <c:url var="cssUrl" value="/css/" />
 <c:url var="jsUrl" value="/js/" />
 <c:url var="homeUrl" value="/"/>
+<c:url var="searchUrl" value="/board/search" />
 <c:url var="logoUrl" value="/images/logo.png"/>
-
 <c:url var="pokemonUrl" value="/pokemon/board"/>
 <c:url var="gameUrl" value="/game/play"/>
 <c:url var="mycardUrl" value="/mycard/privatecard"/>
@@ -31,7 +32,7 @@
                         <i class="xi-user-plus-o"></i>
                         <fmt:message key="회원가입"/>
                     </a>
-                    <a href="<c:url value="/member/login/"/> ">
+                    <a href="<c:url value="/member/login"/> ">
                         <i class="xi-log-in"></i>
                         <fmt:message key="로그인"/>
                     </a>

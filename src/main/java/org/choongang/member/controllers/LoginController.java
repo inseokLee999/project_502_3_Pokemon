@@ -15,13 +15,13 @@ public class LoginController {
 
     //private final LoginService loginService;
 
-    @GetMapping("/login")
+    @GetMapping("/login/")
     public String login() {
         request.setAttribute("addCss", new String[] {"member/style"});
         return "member/login";
     }
 
-    @PostMapping("/login")
+    @PostMapping("/login/")
     public String loginPs(LoginRequest form) {
 
         //loginService.process(form);
