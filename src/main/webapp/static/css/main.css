@@ -109,14 +109,17 @@ nav > .inner a:hover{
     /*background: #d7a513;*/
 }
 header {
+    /*
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000; /* 다른 요소보다 위에 위치하게 하기 위해 사용 */
     background-color: #fff; /* 헤더의 배경색 설정 */
-}main {
+}
+/*
+main {
      padding-top: 223px; /* 헤더 높이만큼 패딩 추가 */
- }
+ /*} */
 
 
 
