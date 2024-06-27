@@ -54,8 +54,8 @@ public class GameService {
     int seq = RandomMon.generate();
 
     // 포켓몬 파워 계산
-    int userPower = userPokemon.getPower();
-    int computerPower = computerPokemon.getPower();
+//    int userPower = userPokemon.getPower();
+//    int computerPower = computerPokemon.getPower();
 
             /* km 추가  E */
         }
