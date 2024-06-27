@@ -15,6 +15,7 @@
         </div>
         참고 주조 : <a href='https://pokeapi.co/api/v2/pokemon/${data.seq}' target="_blank">https://pokeapi.co/api/v2/pokemon/${data.seq}</a>
         <br><br><br>
+            ${data.pokemon}
     </section>
 
 </layout:main>
