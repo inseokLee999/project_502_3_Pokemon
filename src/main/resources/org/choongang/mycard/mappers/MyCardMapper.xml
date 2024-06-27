@@ -23,6 +23,17 @@
         SELECT 0 NUM, P.* FROM POKEMON P WHERE P.seq=#{seq}
     </select>
 
+    //경미 추가
+    <select id="getRandomPokemon" resultMap="mycardMap">
+        SELECT WEIGHT, HEIGHT, BASE_EXPERIENCE
+        FROM USER_POKEMON_VIEW
+        WHERE USER_NO = #{userNo} AND POKEMON_SEQ = #{seq};
+    </select>
+
+    <select id="getRandomPokemon" resultMap="mycardMap">
+        SELECT * FROM POKEMON WHERE SEQ = #{seq}
+    </select>
+
     <select id="getList" resultMap="mycardMap">
 
         SELECT * FROM (SELECT ROWNUM NUM, P.* FROM POKEMON P
