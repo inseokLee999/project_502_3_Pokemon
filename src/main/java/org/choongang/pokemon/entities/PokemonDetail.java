@@ -5,8 +5,9 @@ import lombok.Data;
 
 @Data
 @Builder
-public class PokemonDetail {
+public class PokemonDetail extends AbstractPokemonDetail {
     private long seq;
+    private long num;
     private String name;
     private int weight;
     private int height;
@@ -14,4 +15,6 @@ public class PokemonDetail {
     private String frontImage;
     private String backImage;
     private String rawData;
+    private String nameKr;
+    private String description;
 }
