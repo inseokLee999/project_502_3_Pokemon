@@ -35,7 +35,7 @@ public class JoinValidator implements Validator<JoinRequest>, RequiredValidator,
         checkTrue(checkEmail(email), new AlertException("이메일 형식이 아닙니다.", status));
 
         // 이메일 중복 여부 체크 - 이미 가입된 회원인지 여부
-        checkTrue(mapper.exist(email) == 0L, new AlertException("이미 가입된 이메일입니다.", status));
+        checkTrue(mapper.exists(email) == 0L, new AlertException("이미 가입된 이메일입니다.", status));
 
         // 비밀번호 자리수는 8자리 이상
         checkTrue(password.length() >= 8, new AlertException("비밀번호는 8자리 이상 입력하세요.", status));
