@@ -7,8 +7,5 @@ public class BeanContainerTest {
     void beanLoadTest() {
         BeanContainer bc = BeanContainer.getInstance();
         bc.loadBeans();
-
-
-
     }
 }
