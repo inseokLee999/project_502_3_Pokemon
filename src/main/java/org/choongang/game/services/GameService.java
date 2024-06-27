@@ -1,19 +1,15 @@
 //package org.choongang.game.services;
 //
-//import lombok.Data;
-//import org.choongang.global.config.annotations.RestController;
-//import org.choongang.global.config.annotations.Service;
+//import org.choongang.mycard.entities.MyCardDetail;
+//import org.choongang.mycard.mappers.MyCardMapper;
 //import org.apache.ibatis.session.SqlSession;
 //import org.apache.ibatis.session.SqlSessionFactory;
-//import org.choongang.mycard.entities.MyCardDetail;
 //import jakarta.inject.Inject;
-//import org.choongang.mycard.mappers.MyCardMapper;
+//import jakarta.inject.Singleton;
 //
-//@Data
-//@Service
-//@RestController
+//@Singleton
 //public class GameService {
-
+//
 //    private final SqlSessionFactory sqlSessionFactory;
 //
 //    @Inject
@@ -21,7 +17,6 @@
 //        this.sqlSessionFactory = sqlSessionFactory;
 //    }
 //
-//    // 유저의 포켓몬 파워 계산
 //    public int calculateUserPower(int userNo, int seq) {
 //        try (SqlSession session = sqlSessionFactory.openSession()) {
 //            MyCardMapper mapper = session.getMapper(MyCardMapper.class);
@@ -35,7 +30,6 @@
 //        }
 //    }
 //
-//    // 랜덤한 포켓몬을 가져오는 메소드 (예시로 작성)
 //    public MyCardDetail getRandomPokemon() {
 //        int randomSeq = (int) (Math.random() * 260) + 1;
 //        try (SqlSession session = sqlSessionFactory.openSession()) {
@@ -44,21 +38,6 @@
 //        }
 //    }
 //
-//    // 컴퓨터의 포켓몬 파워 계산
-//    public int calculateComputerPower(int userNo, int seq) {
-//        try (SqlSession session = sqlSessionFactory.openSession()) {
-//            MyCardMapper mapper = session.getMapper(MyCardMapper.class);
-//            MyCardDetail myCardDetail = mapper.get(userNo, seq);
-//
-//            if (myCardDetail != null) {
-//                return myCardDetail.getWeight() * myCardDetail.getHeight() * myCardDetail.getBaseExperience();
-//            } else {
-//                throw new RuntimeException("No Pokemon details found for the given user and sequence.");
-//            }
-//        }
-//    }
-//
-//    // 게임 진행
 //    public void startGame(int userNo, int userSeq) {
 //        MyCardDetail userPokemon = getUserPokemon(userNo, userSeq);
 //        MyCardDetail computerPokemon = getRandomPokemon();
@@ -78,7 +57,6 @@
 //        }
 //    }
 //
-//    // 유저의 포켓몬 정보 가져오기
 //    private MyCardDetail getUserPokemon(int userNo, int seq) {
 //        try (SqlSession session = sqlSessionFactory.openSession()) {
 //            MyCardMapper mapper = session.getMapper(MyCardMapper.class);
@@ -86,7 +64,6 @@
 //        }
 //    }
 //
-//    // 포켓몬 파워 계산
 //    private int calculatePower(MyCardDetail pokemon) {
 //        return pokemon.getWeight() * pokemon.getHeight() * pokemon.getBaseExperience();
 //    }

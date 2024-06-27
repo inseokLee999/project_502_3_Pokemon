@@ -12,13 +12,14 @@ import org.choongang.member.services.JoinService;
 @RequestMapping("/member")
 @RequiredArgsConstructor
 public class JoinController {
+    private final HttpServletRequest request;
 
     private final JoinService joinService;
 
     // 회원 가입 양식
     @GetMapping("/join")
     public String join() {
-
+        request.setAttribute("addCss", new String[] {"member/style"});
         return "member/join";
     }
 
