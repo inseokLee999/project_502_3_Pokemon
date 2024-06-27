@@ -34,14 +34,14 @@ public class PokemonController {
         request.setAttribute("pagination", pagination);
 
         return "pokemon/index";
-    }
+    }/*
     @GetMapping("/{seq}")
     public String view(@PathVariable("seq") long seq){
         commonProcess();
         PokemonDetail data = infoService.get(seq).orElseThrow(PokemonNotFoundException::new);
         request.setAttribute("data", data);
         return "pokemon/view";
-    }
+    }*/
     private void commonProcess() {
         request.setAttribute("addCss", new String[] {"pokemon/style"});
         request.setAttribute("addScript", List.of("pokemon/wishlist","pokemon/board"));
