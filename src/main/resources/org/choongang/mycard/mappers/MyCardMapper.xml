@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.choongang.board.mappers.BoardMapper">
+    <resultMap id="mycardMap" type="org.choongang.mycard.entities.MyCardDetail">
+        <result column="SEQ" property="seq" />
+        <result column="NUM" property="rowNum" />
+        <result column="NAME" property="name" />
+        <result column="WEIGHT" property="weight" />
+        <result column="HEIGHT" property="height" />
+        <result column="BASE_EXPERIENCE" property="baseExperience" />
+        <result column="FRONT_IMAGE" property="frontImage" />
+        <result column="BACK_IMAGE" property="backImage" />
+        <result column="RAW_DATA" property="rawData" />
+    </resultMap>
+
+    <insert id="register">
+        INSERT INTO POKEMON VALUES (#{seq}, #{name}, #{weight}, #{height}, #{baseExperience}, #{frontImage}, #{backImage}, #{rawData})
+    </insert>
+
+    <select id="get" resultMap="mycardMap">
+        SELECT 0 NUM, P.* FROM POKEMON P WHERE P.seq=#{seq}
+    </select>
+
+    //경미 추가
+    <select id="getRandomPokemon" resultMap="mycardMap">
+        SELECT WEIGHT, HEIGHT, BASE_EXPERIENCE
+        FROM USER_POKEMON_VIEW
+        WHERE USER_NO = #{userNo} AND POKEMON_SEQ = #{seq};
+    </select>
+
+    <select id="getRandomPokemon" resultMap="mycardMap">
+        SELECT * FROM POKEMON WHERE SEQ = #{seq}
+    </select>
+
+    <select id="getList" resultMap="mycardMap">
+
+        SELECT * FROM (SELECT ROWNUM NUM, P.* FROM POKEMON P
+        <where>
+            <if test="skey != null">
+                AND P.NAME LIKE #{skey}
+            </if>
+        </where>
+        ) P2
+        WHERE
+        <![CDATA[
+            P2.NUM >= #{offset} AND P2.NUM < #{endRows} ORDER BY P2.seq
+        ]]>
+    </select>
+</mapper>

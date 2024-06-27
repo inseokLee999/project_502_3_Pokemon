@@ -2,17 +2,19 @@
 <%@ tag pageEncoding="UTF-8" trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
+<%@ taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <%@ attribute name="title" %>
 <fmt:setBundle basename="messages.commons"/>
 <c:url var="cssUrl" value="/css/" />
 <c:url var="jsUrl" value="/js/" />
 <c:url var="homeUrl" value="/"/>
+<c:url var="searchUrl" value="/board/search" />
 <c:url var="logoUrl" value="/images/logo.png"/>
-
-<c:url var="pokemonUrl" value="/pokemon/board"/>
+<c:url var="pokemonUrl" value="/pokemon"/>
 <c:url var="gameUrl" value="/game/play"/>
 <c:url var="mycardUrl" value="/mycard/privatecard"/>
+<c:url var="adminUrl" value="/admin"/>
 <c:url var="pokemonOffUrl" value="https://www.pokemonkorea.co.kr/"/>
 <c:url var="instagramUrl" value="/images/sns/instagram.jpeg"/>
 
@@ -31,7 +33,7 @@
                         <i class="xi-user-plus-o"></i>
                         <fmt:message key="회원가입"/>
                     </a>
-                    <a href="<c:url value="/member/login/"/> ">
+                    <a href="<c:url value="/member/login"/> ">
                         <i class="xi-log-in"></i>
                         <fmt:message key="로그인"/>
                     </a>
@@ -58,12 +60,12 @@
         <nav>
             <div class="layout-width inner">
                 <a href="#">메뉴 1</a>
-                <a href="#">메뉴 2</a>
+                <a href="${pokemonUrl}">포켓몬 도감</a>
                 <a href="#">메뉴 3</a>
                 <a href="${mycardUrl}">내카드함</a>
                 <a href="${gameUrl}">게임하기</a>
                 <a href="#">메뉴 4</a>
-                <a href="#">메뉴 5</a>
+                <a href="${adminUrl}">게시판 관리</a>
             </div>
         </nav>
     </jsp:attribute>

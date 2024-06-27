@@ -1,5 +1,6 @@
 package org.choongang.admin.controllers;
 
+
 import org.choongang.global.config.annotations.Controller;
 import org.choongang.global.config.annotations.GetMapping;
 import org.choongang.global.config.annotations.RequestMapping;
@@ -13,3 +14,4 @@ public class AdminController {
         return "admin/index";
     }
 }
+
