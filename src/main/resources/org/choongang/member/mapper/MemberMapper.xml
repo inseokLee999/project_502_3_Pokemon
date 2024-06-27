@@ -13,7 +13,7 @@
         <result column="MOD_DT" property="modDt" />
     </resultMap>
 
-    <select id="exist" resultType="long">
+    <select id="exists" resultType="long">
         SELECT COUNT(*) FROM MEMBER WHERE EMAIL=#{email}
     </select>
 
