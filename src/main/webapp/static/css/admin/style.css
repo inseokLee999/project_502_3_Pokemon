@@ -5,7 +5,10 @@ header {
     height: 75px;
     background: #fff;
     align-items: center;
-    padding: 10px 30px;
+    padding: 100px 30px;
+}
+header img{
+    height:150px;
 }
 
 /* 내용 배치 */
