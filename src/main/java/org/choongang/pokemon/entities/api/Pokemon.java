@@ -7,7 +7,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-@JsonIgnoreProperties(ignoreUnknown=true)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Pokemon {
     private List<Ability> abilities;
     private int base_experience;
@@ -30,4 +30,8 @@ public class Pokemon {
 
     @JsonIgnore
     private String rawData;
+    @JsonIgnore
+    private String nameKr;
+    @JsonIgnore
+    private String description;
 }
