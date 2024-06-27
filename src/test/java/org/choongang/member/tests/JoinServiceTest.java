@@ -46,17 +46,7 @@ public class JoinServiceTest {
     void successTest() {
 
         assertDoesNotThrow(() -> {
-
            service.process(getData());
-
-            JoinService service = new JoinService();
-
-           // service.process();
-
-
-            service.process(getData());
-
-
         });
     }
 
