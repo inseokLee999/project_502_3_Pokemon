@@ -35,7 +35,7 @@ public class GameService {
 
     /* km 추가  S */
 
-    Member member = gameMapper.get(form.getUserId());
+//    Member member = gameMapper.get(form.getUserId());
 
 
 
@@ -46,8 +46,6 @@ public class GameService {
 
             /* km 추가  E */
         }
-    }
-}
 
 
 

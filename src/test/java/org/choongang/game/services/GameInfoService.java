@@ -2,6 +2,7 @@ package org.choongang.game.services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
 import org.choongang.global.services.ApiRequestService;
 import org.choongang.global.services.ObjectMapperService;
 import org.choongang.pokemon.entities.api.Pokemon;
@@ -9,7 +10,7 @@ import org.choongang.pokemon.services.PokemonSaveService;
 
 import java.net.http.HttpResponse;
 import java.util.Optional;
-
+@RequiredArgsConstructor
 public class GameInfoService {
 
     private final ApiRequestService service;
@@ -24,8 +25,7 @@ public class GameInfoService {
      * @return
      */
     public Optional<Pokemon> update(long seq) {
-
-        String url = apiUrl + "/pokemon/" + seq;
+/*        String url = apiUrl + "/pokemon/" + seq;
 
         Pokemon pokemon = null;
         HttpResponse<String> response = service.request(url);
@@ -40,5 +40,7 @@ public class GameInfoService {
             } catch (JsonProcessingException e) {
                 e.printStackTrace();
             }
-        }
+        }*/
+        return null;
+    }
 }

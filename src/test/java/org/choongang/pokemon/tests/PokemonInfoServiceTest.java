@@ -45,7 +45,7 @@ public class PokemonInfoServiceTest {
         assertDoesNotThrow(() -> {
             PokemonSearch search = new PokemonSearch();
             search.setPage(1);
-            search.setLimit(20);
+            search.setLimit(1);
             List<Item> items = service.getApiList(search);
             System.out.println(items);
         });
