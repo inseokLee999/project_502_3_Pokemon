@@ -1,0 +1,108 @@
+/* 사이트 헤더 */
+header {
+    display: flex;
+    justify-content: space-between;
+    height: 75px;
+    background: #fff;
+    align-items: center;
+    padding: 100px 30px;
+}
+
+header img{
+    height:150px;
+}
+
+/* 내용 배치 */
+main {
+    display: flex;
+    min-height: 750px;
+}
+
+/* 사이드 주 메뉴 S */
+main > .side-menu {
+    width: 210px;
+    background: #222;
+}
+
+main > .side-menu a {
+    display: block;
+    height: 65px;
+    font-size: 1.35rem;
+    color: #fff;
+    padding: 0 30px;
+    line-height: 62px;
+    text-align: center;
+}
+
+main > .side-menu a + a {
+    border-top: 3px solid #444;
+}
+
+main > .side-menu a:hover {
+    background: #333;
+}
+
+/* 사이드 주 메뉴 E */
+
+main > .main-content {
+    flex-grow: 1;
+    background: #f8f8f8;
+    padding: 30px;
+}
+main > .main-content h1{
+    line-height: 1;
+    font-size: 2rem;
+    margin: 0 0 30px;
+    padding: 0 10px 15px;
+    border-bottom: 3px solid #222;
+
+}
+nav.sub-menu {
+    background: #fff;
+    display: flex;
+    height: 50px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #333;
+    margin-bottom: 50px;
+}
+nav.sub-menu a {
+    line-height: 50px;
+    padding: 0 30px;
+    font-size: 1.35rem
+}
+nav.sub-menu a:hover {
+    background: #333;
+    color: #fff;
+}
+.table-cols {
+    border-spacing: 0;
+    padding: 0;
+    width: 100%;
+}
+.table-cols th {
+    background: #333;
+    color: #fff;
+}
+.table-cols td {
+    background: #fff;
+}
+.table-cols th,
+.table-cols td{
+    border-bottom: 1px solid #555;
+    padding: 10px;
+}
+.table-cols tr:first-of-type th,
+.table-cols tr:first-of-type td{
+    border-top: 1px solid #555;
+}
+
+.table-cols textarea {
+    width: 100%;
+}
+.message {
+    font-size: 0.95rem;
+    font-weight: bold;
+    padding: 7px 15px;
+    box-shadow: 2px 2px 5px #333;
+    border-radius: 3px;
+}
