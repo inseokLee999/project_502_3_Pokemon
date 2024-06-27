@@ -2,10 +2,8 @@ package org.choongang.member.tests;
 
 import com.github.javafaker.Faker;
 import jakarta.servlet.http.HttpSession;
-import org.apache.ibatis.session.SqlSession;
 import org.choongang.global.config.DBConn;
 import org.choongang.global.exceptions.AlertException;
-import org.choongang.global.exceptions.BadRequestException;
 import org.choongang.member.controllers.LoginRequest;
 import org.choongang.member.controllers.RequestJoin;
 import org.choongang.member.mapper.MemberMapper;
@@ -24,7 +22,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.Locale;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.BDDMockito.given;
 
 
 @ExtendWith(MockitoExtension.class)
