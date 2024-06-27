@@ -53,7 +53,9 @@ public class JoinServiceTest {
     void successTest() {
         RequestJoin form = getData();
         assertDoesNotThrow(() -> {
+
            service.process(form);
+
         });
 
         // 가입된 이메일로 회원이 조회 되는지 체크
