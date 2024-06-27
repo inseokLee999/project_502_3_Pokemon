@@ -9,6 +9,13 @@
 <c:url var="jsUrl" value="/js/" />
 <c:url var="homeUrl" value="/"/>
 <c:url var="logoUrl" value="/images/logo.png"/>
+
+<c:url var="pokemonUrl" value="/pokemon/board"/>
+<c:url var="gameUrl" value="/game/play"/>
+<c:url var="mycardUrl" value="/mycard/privatecard"/>
+<c:url var="pokemonOffUrl" value="https://www.pokemonkorea.co.kr/"/>
+<c:url var="instagramUrl" value="/images/sns/instagram.jpeg"/>
+
 <layout:common title="${title}">
     <jsp:attribute name="header">
         <section class="site-top">
@@ -53,6 +60,8 @@
                 <a href="#">메뉴 1</a>
                 <a href="#">메뉴 2</a>
                 <a href="#">메뉴 3</a>
+                <a href="${mycardUrl}">내카드함</a>
+                <a href="${gameUrl}">게임하기</a>
                 <a href="#">메뉴 4</a>
                 <a href="#">메뉴 5</a>
             </div>
