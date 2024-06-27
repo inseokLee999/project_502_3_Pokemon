@@ -2,8 +2,6 @@ package org.choongang.member.validators;
 
 import jakarta.servlet.http.HttpServletResponse;
 import org.choongang.global.exceptions.BadRequestException;
-import org.choongang.global.validators.EmailValidator;
-import org.choongang.global.validators.RequiredValidator;
 import org.choongang.global.validators.Validator;
 import org.choongang.member.controllers.RequestJoin;
 import org.choongang.member.exceptions.DuplicatedMemberException;
