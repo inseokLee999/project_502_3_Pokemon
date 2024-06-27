@@ -1,6 +1,8 @@
+/*
 package org.choongang.game.services;
 
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import org.choongang.global.config.annotations.RestController;
 import org.choongang.global.config.annotations.Service;
 import org.apache.ibatis.session.SqlSession;
@@ -90,4 +92,4 @@ public class GameService {
     private int calculatePower(MyCardDetail pokemon) {
         return pokemon.getWeight() * pokemon.getHeight() * pokemon.getBaseExperience();
     }
-}
+}*/
