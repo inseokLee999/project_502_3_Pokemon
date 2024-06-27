@@ -11,7 +11,7 @@
 <c:url var="homeUrl" value="/admin" />
 <c:url var="logoUrl" value="/images/logo.png" />
 
-<layout:main title="${title}">
+<layout:common title="${title}">
     <jsp:attribute name="header">
         <div class="left">
             <a href="${homeUrl}">
@@ -50,4 +50,4 @@
         </section>
     </jsp:body>
 
-</layout:main>
+</layout:common>
