@@ -11,7 +11,7 @@
 <c:url var="homeUrl" value="/"/>
 <c:url var="searchUrl" value="/board/search" />
 <c:url var="logoUrl" value="/images/logo.png"/>
-<c:url var="pokemonUrl" value="/pokemon/board"/>
+<c:url var="pokemonUrl" value="/pokemon"/>
 <c:url var="gameUrl" value="/game/play"/>
 <c:url var="mycardUrl" value="/mycard/privatecard"/>
 <c:url var="pokemonOffUrl" value="https://www.pokemonkorea.co.kr/"/>
@@ -59,7 +59,7 @@
         <nav>
             <div class="layout-width inner">
                 <a href="#">메뉴 1</a>
-                <a href="#">메뉴 2</a>
+                <a href="${pokemonUrl}">포켓몬 도감</a>
                 <a href="#">메뉴 3</a>
                 <a href="${mycardUrl}">내카드함</a>
                 <a href="${gameUrl}">게임하기</a>
