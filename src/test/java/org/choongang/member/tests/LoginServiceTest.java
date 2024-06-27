@@ -2,11 +2,16 @@ package org.choongang.member.tests;
 
 import com.github.javafaker.Faker;
 import jakarta.servlet.http.HttpSession;
+import org.apache.ibatis.session.SqlSession;
 import org.choongang.global.config.DBConn;
+import org.choongang.global.exceptions.AlertException;
 import org.choongang.global.exceptions.BadRequestException;
 import org.choongang.member.controllers.LoginRequest;
+import org.choongang.member.controllers.RequestJoin;
 import org.choongang.member.mapper.MemberMapper;
+import org.choongang.member.services.JoinService;
 import org.choongang.member.services.LoginService;
+import org.choongang.member.validators.JoinValidator;
 import org.choongang.member.validators.LoginValidator;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -28,31 +33,44 @@ public class LoginServiceTest {
 
     private LoginService loginService;
     private Faker faker;
+    private LoginRequest form;
+    private RequestJoin joinForm;
 
     @Mock
     private HttpSession session;
-
 
     //private HttpServletRequest request;
 
     @BeforeEach
     void init() {
-
+        faker = new Faker(Locale.ENGLISH);
 
         MemberMapper mapper = DBConn.getSession().getMapper(MemberMapper.class);
+        JoinValidator v = new JoinValidator(mapper);
+        JoinService joinService = new JoinService(v, mapper);
+        joinForm = RequestJoin.builder()
+                .email(System.currentTimeMillis() + faker.internet().emailAddress())
+                .password(faker.regexify("\\w{8,16}").toLowerCase())
+                .termsAgree(true)
+                .userName(faker.name().fullName())
+                .build();
+        joinForm.setConfirmPassword(joinForm.getPassword());
+
+        joinService.process(joinForm);
 
         LoginValidator validator = new LoginValidator(mapper);
         loginService = new LoginService(validator, mapper, session);
 
         faker = new Faker(Locale.ENGLISH);
 
+        form = getData();
 
     }
 
     LoginRequest getData() {
         LoginRequest form = new LoginRequest();
-        form.setEmail(System.currentTimeMillis() + faker.internet().emailAddress());
-        form.setPassword(faker.regexify("\\w{8}").toLowerCase());
+        form.setEmail(joinForm.getEmail());
+        form.setPassword(joinForm.getPassword());
 
         return form;
     }
@@ -74,18 +92,18 @@ public class LoginServiceTest {
     @DisplayName("필수 입력 항목(이메일, 비밀번호) 검증, 검증 실패 시 BadRequestException 발생")
     void requiredFieldTest() {
         assertAll(
-                ()-> requiredEachFieldTest("email", false, "이메일"),
-                ()-> requiredEachFieldTest("email", true, "이메일"),
-                ()-> requiredEachFieldTest("password", false, "비밀번호"),
-                ()-> requiredEachFieldTest("password", true, "비밀번호")
+                ()-> requiredEachFieldTest("email", false, "이메일을 입력"),
+                ()-> requiredEachFieldTest("email", true, "이메일을 입력"),
+                ()-> requiredEachFieldTest("password", false, "비밀번호를 입력"),
+                ()-> requiredEachFieldTest("password", true, "비밀번호를 입력")
         );
     }
 
     void requiredEachFieldTest(String name, boolean isNull, String message) {
-       LoginRequest form = getData();
 
-        BadRequestException thrown = assertThrows(BadRequestException.class, () -> {
-            if (name.equals("password")) {
+        form = getData();
+        AlertException thrown = assertThrows(AlertException.class, () -> {
+            if (!name.equals("password")) {
                form.setEmail(isNull ? null : "    ");
             } else { //이메일
                 form.setPassword(isNull ? null : "    ");
@@ -94,6 +112,9 @@ public class LoginServiceTest {
         }, name + " 테스트");
 
         String msg = thrown.getMessage();
+        System.out.println("msg:"+msg);
+        System.out.println("messsage:"+message);
+        System.out.println(msg.contains(message));
         assertTrue(msg.contains(message), name + ", 키워드:" + message);
     }
 
@@ -101,29 +122,28 @@ public class LoginServiceTest {
     @Test
     @DisplayName("이메일로 회원이 조회 되는지 검증, 검증 실패시 BadRequestException 발생")
     void memberExistTest() {
-        LoginRequest form = new LoginRequest();
         form.setEmail("***" + getData().getEmail());
 
-        BadRequestException thrown = assertThrows(BadRequestException.class, () -> {
+        AlertException thrown = assertThrows(AlertException.class, () -> {
             loginService.process(form);
         });
 
         String message = thrown.getMessage();
-        assertTrue(message.contains("이메일 또는 비밀번호"));
+        System.out.println(message);
+        assertTrue(message.contains("이메일 이슈"));
     }
 
     @Test
     @DisplayName("비밀번호 검증, 실패 시 BadRequestException 발생")
     void passwordCheckTest() {
-        LoginRequest form = new LoginRequest();
         form.setPassword("***" + getData().getPassword());
 
-        BadRequestException thrown = assertThrows(BadRequestException.class, () -> {
+        AlertException thrown = assertThrows(AlertException.class, () -> {
             loginService.process(form);
         });
 
         String message = thrown.getMessage();
-        assertTrue(message.contains("이메일 또는 비밀번호"));
+        assertTrue(message.contains("비밀번호 이슈"));
     }
 
     @AfterEach
