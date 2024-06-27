@@ -27,6 +27,7 @@ import java.util.regex.Pattern;
 
 /**
  * 포켓몬 API 목록 조회 및 상세 조회 서비스
+ *
  */
 @Service
 @RequiredArgsConstructor
@@ -49,8 +50,7 @@ public class PokemonInfoService {
         HttpResponse<String> res = service.request(apiUrl);
 
         try {
-            Map<String, String> data = om.readValue(res.body(), new TypeReference<>() {
-            });
+            Map<String, String> data = om.readValue(res.body(), new TypeReference<>() {});
 
             return data;
         } catch (JsonProcessingException e) {
@@ -68,7 +68,7 @@ public class PokemonInfoService {
     public List<Item> getApiList(PokemonSearch search) {
         int page = search.getPage() < 1 ? 1 : search.getPage();
         int limit = search.getLimit() < 1 ? 20 : search.getLimit();
-        int offset = (page - 1) * limit;
+        int offset = (page - 1) * limit + 1;
 
 
         List<Item> items = null;
@@ -79,8 +79,7 @@ public class PokemonInfoService {
         if (response.statusCode() == HttpServletResponse.SC_OK) {
 
             try {
-                ApiResult<Item> apiResult = om.readValue(response.body(), new TypeReference<>() {
-                });
+                ApiResult<Item> apiResult = om.readValue(response.body(), new TypeReference<>() {});
 
                 items = apiResult.getResults().stream().toList();
             } catch (JsonProcessingException e) {
@@ -109,6 +108,43 @@ public class PokemonInfoService {
                 pokemon = om.readValue(response.body(), Pokemon.class);
                 pokemon.setRawData(response.body());
 
+                /* 포켓몬 한글 이름, 한글 설명 추출 S */
+                HttpResponse<String> res = service.request("https://pokeapi.co/api/v2/pokemon-species/" + seq);
+                String body = res.body();
+
+                // 이름 추출 S
+                String text = body;
+                text = text.split("names")[1];
+                text = text.split("\"name\":\"ko\"")[1];
+                text = text.split("\"language\"")[0];
+                text = text.split("\"name\":")[1];
+
+
+                Pattern p = Pattern.compile("\"([^\"]+)\"");
+                Matcher matcher = p.matcher(text);
+                if (matcher.find()) {
+                    pokemon.setNameKr(matcher.group(1));
+                }
+                // 이름 추출 E
+
+                // 설명 추출 S
+                text = body;
+                text = text.split("flavor_text_entries")[1];
+                text = text.split("\"name\":\"ko\"")[0];
+                Pattern p2 = Pattern.compile("([ㄱ-ㅎ|ㅏ-ㅣ|가-힣]+)");
+                Matcher matcher2 = p2.matcher(text);
+                if (matcher2.find()) {
+                    String key = matcher2.group(1);
+                    text = text.split(key)[1];
+                    text = text.split("\",\"language\"")[0];
+                    String description = key + " " + text;
+                    pokemon.setDescription(description);
+                }
+                // 설명 추출 E
+
+                /* 포켓몬 한글 이름, 한글 설명 추출 E */
+
+
                 saveService.save(pokemon);
 
             } catch (JsonProcessingException e) {
@@ -123,9 +159,10 @@ public class PokemonInfoService {
     /**
      * 포켓몬 데이터 일괄 업데이트
      * 현재 총 등록된 포켓몬 목록은 1302개로 전체 일괄 업데이트 해도 문제 없을 듯
+     *
      */
     public void updateAll() {
-//        Thread th = new Thread(() -> {
+        //Thread th = new Thread(() -> {
         PokemonSearch search = new PokemonSearch();
         search.setPage(1);
         search.setLimit(2000);
@@ -144,24 +181,27 @@ public class PokemonInfoService {
             }
 
         });
-//        });
+        //});
 
-//        th.setDaemon(true);
-//        th.start();
+        //th.setDaemon(true);
+        //th.start();
     }
 
     public ListData<PokemonDetail> getList(PokemonSearch search) {
+
         int page = search.getPage();
         int limit = search.getLimit();
-        int offset = (page - 1) * limit;//레코드 검색 시작 위치
-        int endRows = offset + limit;//레코드 검색 종료 위치
+        int offset = (page - 1) * limit+1; // 레코드 검색 시작 위치
+        int endRows = offset + limit; // 레코드 검색 종료 위치
 
         search.setOffset(offset);
         search.setEndRows(endRows);
 
         List<PokemonDetail> items = mapper.getList(search);
 
+
         Pagination pagination = new Pagination();
+
 
         return new ListData<>(items, pagination);
     }
@@ -171,10 +211,11 @@ public class PokemonInfoService {
         if (data != null) {
             String rawData = data.getRawData();
             try {
-                Pokemon pokemon = om.readValue(rawData,Pokemon.class);
-//                data.setPokemon(pokemon);//원데이터 변환
+                Pokemon pokemon = om.readValue(rawData, Pokemon.class);
+                data.setPokemon(pokemon); // 원 데이터 변환
             } catch (JsonProcessingException e) {}
         }
+
         return Optional.ofNullable(data);
     }
 }

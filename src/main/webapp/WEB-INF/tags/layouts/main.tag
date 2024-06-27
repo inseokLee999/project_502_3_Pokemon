@@ -11,7 +11,7 @@
 <c:url var="homeUrl" value="/"/>
 <c:url var="searchUrl" value="/board/search" />
 <c:url var="logoUrl" value="/images/logo.png"/>
-<c:url var="pokemonUrl" value="/pokemon/board"/>
+<c:url var="pokemonUrl" value="/pokemon"/>
 <c:url var="gameUrl" value="/game/play"/>
 <c:url var="mycardUrl" value="/mycard/privatecard"/>
 <c:url var="adminUrl" value="/admin"/>
@@ -33,7 +33,7 @@
                         <i class="xi-user-plus-o"></i>
                         <fmt:message key="회원가입"/>
                     </a>
-                    <a href="<c:url value="/member/login/"/> ">
+                    <a href="<c:url value="/member/login"/> ">
                         <i class="xi-log-in"></i>
                         <fmt:message key="로그인"/>
                     </a>
@@ -60,7 +60,7 @@
         <nav>
             <div class="layout-width inner">
                 <a href="#">메뉴 1</a>
-                <a href="#">메뉴 2</a>
+                <a href="${pokemonUrl}">포켓몬 도감</a>
                 <a href="#">메뉴 3</a>
                 <a href="${mycardUrl}">내카드함</a>
                 <a href="${gameUrl}">게임하기</a>

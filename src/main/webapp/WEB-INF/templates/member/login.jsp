@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
-<fmt:setBundle basename="mesages.commons" />
+<fmt:setBundle basename="messages.commons" />
 <fmt:message var="pageTitle" key="로그인" />
 <c:url var="actionUrl" value="/member/login" />
 
