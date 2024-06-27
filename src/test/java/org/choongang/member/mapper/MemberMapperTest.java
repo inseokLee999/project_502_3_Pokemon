@@ -38,7 +38,9 @@ public class MemberMapperTest {
         int result = mapper.register(member); // 등록
         assertEquals(1, result);
 
+
         long cnt = mapper.exists(member.getEmail()); // 등록 회원 있는지 테스트
+
         assertEquals(1L, cnt);
 
         Member member2 = mapper.get(member.getEmail()); // 이메일로 조회되는 회원이 있는지 테스트
