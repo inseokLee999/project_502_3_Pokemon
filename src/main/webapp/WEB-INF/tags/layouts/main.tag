@@ -14,6 +14,7 @@
 <c:url var="pokemonUrl" value="/pokemon"/>
 <c:url var="gameUrl" value="/game/play"/>
 <c:url var="mycardUrl" value="/mycard/privatecard"/>
+<c:url var="adminUrl" value="/admin"/>
 <c:url var="pokemonOffUrl" value="https://www.pokemonkorea.co.kr/"/>
 <c:url var="instagramUrl" value="/images/sns/instagram.jpeg"/>
 
@@ -64,7 +65,7 @@
                 <a href="${mycardUrl}">내카드함</a>
                 <a href="${gameUrl}">게임하기</a>
                 <a href="#">메뉴 4</a>
-                <a href="#">메뉴 5</a>
+                <a href="${adminUrl}">게시판 관리</a>
             </div>
         </nav>
     </jsp:attribute>
