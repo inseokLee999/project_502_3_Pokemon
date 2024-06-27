@@ -7,10 +7,21 @@
     <form name="frmSave" method="post" action="${actionUrl}" target="ifrmProcess" autocomplete="off">
         <input type="hidden" name="mode" value="register">
         <jsp:include page="_form.jsp"/>
-        <div class="button-group">
-            <button type="reset">다시입력</button>
-            <button type="button">등록하기</button>
 
+        <div class="button-group">
+            <div class="button">
+                <p class="btnText">등록하기</p>
+                <div class="btnTwo">
+                    <p class="btnText2"> ✔ </p>
+                </div>
+            </div>
+
+            <div class="button">
+                <p class="btnText">다시입력</p>
+                <div class="btnTwo">
+                    <p class="btnText2"> ↺ </p>
+                </div>
+            </div>
         </div>
     </form>
 </layout:admin>
