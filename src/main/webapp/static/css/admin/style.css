@@ -7,8 +7,9 @@ header {
     align-items: center;
     padding: 100px 30px;
 }
-header.img{
-    height: 150px;
+
+header img{
+    height:150px;
 }
 
 /* 내용 배치 */
