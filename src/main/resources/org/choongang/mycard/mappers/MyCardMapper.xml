@@ -2,10 +2,10 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.choongang.pokemon.mappers.PokemonMapper">
-    <resultMap id="pokemonMap" type="org.choongang.pokemon.entities.PokemonDetail">
+<mapper namespace="org.choongang.board.mappers.BoardMapper">
+    <resultMap id="mycardMap" type="org.choongang.mycard.entities.MyCardDetail">
         <result column="SEQ" property="seq" />
-        <result column="NUM" property="num" />
+        <result column="NUM" property="rowNum" />
         <result column="NAME" property="name" />
         <result column="WEIGHT" property="weight" />
         <result column="HEIGHT" property="height" />
@@ -13,22 +13,19 @@
         <result column="FRONT_IMAGE" property="frontImage" />
         <result column="BACK_IMAGE" property="backImage" />
         <result column="RAW_DATA" property="rawData" />
-        <result column="NAME_KR" property="nameKr" />
-        <result column="DESCRIPTION" property="description" />
     </resultMap>
 
     <insert id="register">
-        INSERT INTO POKEMON
-        VALUES (#{seq}, #{name}, #{weight}, #{height}, #{baseExperience}, #{frontImage}, #{backImage}, #{rawData}, #{nameKr}, #{description})
+        INSERT INTO POKEMON VALUES (#{seq}, #{name}, #{weight}, #{height}, #{baseExperience}, #{frontImage}, #{backImage}, #{rawData})
     </insert>
 
-    <select id="get" resultMap="pokemonMap">
-        SELECT ROWNUM NUM, P.* FROM POKEMON P WHERE P.seq=#{seq}
+    <select id="get" resultMap="mycardMap">
+        SELECT 0 NUM, P.* FROM POKEMON P WHERE P.seq=#{seq}
     </select>
 
-    <select id="getList" resultMap="pokemonMap">
+    <select id="getList" resultMap="mycardMap">
 
-        SELECT ROWNUM NUM, P2.* FROM (SELECT  P.* FROM POKEMON P ORDER BY P.SEQ
+        SELECT * FROM (SELECT ROWNUM NUM, P.* FROM POKEMON P
         <where>
             <if test="skey != null">
                 AND P.NAME LIKE #{skey}
@@ -37,7 +34,7 @@
         ) P2
         WHERE
         <![CDATA[
-            P2.SEQ >= #{offset} AND P2.SEQ < #{endRows}
+            P2.NUM >= #{offset} AND P2.NUM < #{endRows} ORDER BY P2.seq
         ]]>
     </select>
 </mapper>
