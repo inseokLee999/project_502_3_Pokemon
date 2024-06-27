@@ -9,6 +9,7 @@
 <c:url var="jsUrl" value="/js/" />
 <c:url var="homeUrl" value="/"/>
 <c:url var="logoUrl" value="/images/logo.png"/>
+
 <layout:common title="${title}">
     <jsp:attribute name="header">
         <section class="site-top">
