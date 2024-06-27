@@ -4,14 +4,18 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
+import org.choongang.global.ListData;
+import org.choongang.global.Pagination;
 import org.choongang.global.config.AppConfig;
 import org.choongang.global.config.annotations.Service;
 import org.choongang.global.services.ApiRequestService;
 import org.choongang.global.services.ObjectMapperService;
 import org.choongang.pokemon.controllers.PokemonSearch;
+import org.choongang.pokemon.entities.PokemonDetail;
 import org.choongang.pokemon.entities.api.ApiResult;
 import org.choongang.pokemon.entities.api.Item;
 import org.choongang.pokemon.entities.api.Pokemon;
+import org.choongang.pokemon.mappers.PokemonMapper;
 
 import java.net.http.HttpResponse;
 import java.util.Collections;
@@ -23,7 +27,6 @@ import java.util.regex.Pattern;
 
 /**
  * 포켓몬 API 목록 조회 및 상세 조회 서비스
- *
  */
 @Service
 @RequiredArgsConstructor
@@ -31,6 +34,7 @@ public class PokemonInfoService {
     private final ApiRequestService service;
     private final ObjectMapperService om;
     private final PokemonSaveService saveService;
+    private final PokemonMapper mapper;
 
     // 포켓몬 API URL
     private String apiUrl = AppConfig.get("pokemon.api.url");
@@ -45,7 +49,8 @@ public class PokemonInfoService {
         HttpResponse<String> res = service.request(apiUrl);
 
         try {
-            Map<String, String> data = om.readValue(res.body(), new TypeReference<>() {});
+            Map<String, String> data = om.readValue(res.body(), new TypeReference<>() {
+            });
 
             return data;
         } catch (JsonProcessingException e) {
@@ -74,7 +79,8 @@ public class PokemonInfoService {
         if (response.statusCode() == HttpServletResponse.SC_OK) {
 
             try {
-                ApiResult<Item> apiResult = om.readValue(response.body(), new TypeReference<>() {});
+                ApiResult<Item> apiResult = om.readValue(response.body(), new TypeReference<>() {
+                });
 
                 items = apiResult.getResults().stream().toList();
             } catch (JsonProcessingException e) {
@@ -117,31 +123,58 @@ public class PokemonInfoService {
     /**
      * 포켓몬 데이터 일괄 업데이트
      * 현재 총 등록된 포켓몬 목록은 1302개로 전체 일괄 업데이트 해도 문제 없을 듯
-     *
      */
     public void updateAll() {
-        Thread th = new Thread(() -> {
-            PokemonSearch search = new PokemonSearch();
-            search.setPage(1);
-            search.setLimit(2000);
-            List<Item> items = getApiList(search);
-            items.forEach(item -> {
-                String url = item.getUrl();
-                Pattern p = Pattern.compile("/pokemon/(\\d*)/");
-                Matcher matcher = p.matcher(url);
-                if (matcher.find()) {
-                    long seq = Long.parseLong(matcher.group(1));
-                    try {
-                        update(seq);
-                    } catch (Exception e) {
-                        // 이미 추가된 포켓몬은 seq 번호 중복으로 무결성 제약조건 발생, 해당 건은 건너 뛴다.
-                    }
+//        Thread th = new Thread(() -> {
+        PokemonSearch search = new PokemonSearch();
+        search.setPage(1);
+        search.setLimit(2000);
+        List<Item> items = getApiList(search);
+        items.forEach(item -> {
+            String url = item.getUrl();
+            Pattern p = Pattern.compile("/pokemon/(\\d*)/");
+            Matcher matcher = p.matcher(url);
+            if (matcher.find()) {
+                long seq = Long.parseLong(matcher.group(1));
+                try {
+                    update(seq);
+                } catch (Exception e) {
+                    // 이미 추가된 포켓몬은 seq 번호 중복으로 무결성 제약조건 발생, 해당 건은 건너 뛴다.
                 }
+            }
 
-            });
         });
+//        });
 
-        th.setDaemon(true);
-        th.start();
+//        th.setDaemon(true);
+//        th.start();
+    }
+
+    public ListData<PokemonDetail> getList(PokemonSearch search) {
+        int page = search.getPage();
+        int limit = search.getLimit();
+        int offset = (page - 1) * limit;//레코드 검색 시작 위치
+        int endRows = offset + limit;//레코드 검색 종료 위치
+
+        search.setOffset(offset);
+        search.setEndRows(endRows);
+
+        List<PokemonDetail> items = mapper.getList(search);
+
+        Pagination pagination = new Pagination();
+
+        return new ListData<>(items, pagination);
+    }
+
+    public Optional<PokemonDetail> get(long seq) {
+        PokemonDetail data = mapper.get(seq);
+        if (data != null) {
+            String rawData = data.getRawData();
+            try {
+                Pokemon pokemon = om.readValue(rawData,Pokemon.class);
+//                data.setPokemon(pokemon);//원데이터 변환
+            } catch (JsonProcessingException e) {}
+        }
+        return Optional.ofNullable(data);
     }
 }

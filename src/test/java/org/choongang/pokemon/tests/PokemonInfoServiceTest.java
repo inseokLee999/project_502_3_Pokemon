@@ -4,6 +4,7 @@ import org.choongang.global.config.DBConn;
 import org.choongang.global.services.ApiRequestService;
 import org.choongang.global.services.ObjectMapperService;
 import org.choongang.pokemon.controllers.PokemonSearch;
+import org.choongang.pokemon.entities.PokemonDetail;
 import org.choongang.pokemon.entities.api.Item;
 import org.choongang.pokemon.mappers.PokemonMapper;
 import org.choongang.pokemon.services.PokemonInfoService;
@@ -26,7 +27,7 @@ public class PokemonInfoServiceTest {
     void init() {
         PokemonMapper mapper = DBConn.getSession().getMapper(PokemonMapper.class);
         PokemonSaveService saveService = new PokemonSaveService(mapper);
-        service = new PokemonInfoService(new ApiRequestService(), new ObjectMapperService(), saveService);
+        service = new PokemonInfoService(new ApiRequestService(), new ObjectMapperService(), saveService, mapper);
     }
 
     @Test
@@ -62,5 +63,21 @@ public class PokemonInfoServiceTest {
     @DisplayName("포켓몬 데이터 일괄 업데이트 테스트")
     void updateAllTest() {
         service.updateAll();
+    }
+
+    @Test
+    @DisplayName("getList 메서드 테스트")
+    void getListDbTest() {
+        PokemonSearch search = new PokemonSearch();
+        search.setPage(1);
+        search.setLimit(20);
+        service.getList(search);
+    }
+
+    @Test
+    @DisplayName("get 메서드 테스트")
+    void getDbTest(){
+        PokemonDetail data = service.get(1L).orElse(null);
+        System.out.println(data);
     }
 }
