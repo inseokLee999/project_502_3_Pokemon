@@ -18,5 +18,5 @@ public interface MyCardMapper {
 //    MyCardDetail getRandomPokemon(@Param("seq") int seq);
 
     MyCardDetail get(@Param("userNo") int userNo, @Param("seq") int seq);
-    MyCardDetail getRandomPokemon(int seq);
+    MyCardDetail getRandomPokemon(@Param("seq") int seq);
 }
