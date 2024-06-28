@@ -1,9 +1,9 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
-<fmt:message var="mycardTitle" key='내카드창' />
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <c:url var="searchUrl" value="/pokemon" />
 
-<layout:main title="${mycardTitle}">
+<layout:main>
     <section class="layout-width">
         <form name="frmSearch" method="get" action="${searchUrl}" autocomplete="off">
             포켓몬 검색 :
