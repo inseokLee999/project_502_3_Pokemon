@@ -1,0 +1,181 @@
+/*메인 레이아웃 공통*/
+
+@keyframes infinite-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.layout-width {
+    min-width: 1100px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+i:hover, button:hover, a:hover {
+    box-shadow: 0 4px 1px rgba(0, 0, 0, 0.3); /* 하단 그림자 설정 */
+}
+
+/*사이트 헤더 영역 S*/
+header .site-top {
+    background: #ffffff;
+    border-bottom: 1px solid #6b5e54;
+}
+
+header .site-top > .inner {
+    display: flex;
+    justify-content: space-between;
+    height: 35px;
+    align-items: center;
+}
+
+header .site-top i {
+    font-size: 1.3rem;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+}
+
+header .site-top a {
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+
+header .logo img {
+    padding: 0;
+    margin: 0;
+    height: 67px;
+}
+
+/* 회전 애니메이션 정의 */
+
+
+header .site-top a:hover {
+    font-weight: bold;
+}
+
+header .site-top .right a {
+    margin-left: 10px;
+}
+
+header .logo-search {
+    padding: 10px 0;
+}
+
+header .logo-search > .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .search-box {
+    display: flex;
+    width: 300px;
+    height: 45px;
+}
+
+header .search-box input[type='text'] {
+    flex-grow: 1;
+    height: 45px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+}
+
+header .search-box button {
+    width: 45px;
+    background: silver;
+    height: 45px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+
+}
+
+header .search-box button i {
+    color: #1B3467;
+}
+
+header .search-box button:hover {
+    background: #e7c533;
+}
+
+nav {
+    background: #1B3467;
+}
+
+nav > .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 45px;
+}
+
+nav > .inner a {
+    font-size: 1.5rem;
+    color: #ffffff;
+    padding: 0 25px;
+    line-height: 45px; /*lineheight 를 맞추면 정렬 할수 있음!!*/
+}
+
+nav > .inner a:hover {
+    font-weight: bold;
+    color: #ffca06;
+
+
+    /*background: #d7a513;*/
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* 다른 요소보다 위에 위치하게 하기 위해 사용 */
+    background-color: #fff; /* 헤더의 배경색 설정 */
+}
+
+main {
+    padding-top: 223px; /* 헤더 높이만큼 패딩 추가 */
+}
+
+
+/*사이트 푸터 영역 S*/
+footer {
+    margin-top: 100px;
+    min-height: 250px;
+
+
+    background: #f8f8f8;
+    border-top: 1px solid #ccc;
+}
+
+footer .information a {
+    height: 145px;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+footer .information {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 45px;
+    padding-right: 20px;
+    background: #f8f8f8;
+}
+
+footer ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer ul li {
+    padding-right: 20px;
+}
+
+/*사이트 푸터 영역 E*/

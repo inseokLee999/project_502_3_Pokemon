@@ -12,6 +12,10 @@
         <property name="prodUsername" value="PROJECT3" />
         <property name="prodPassword" value="oracle" />
     </properties>
+    <typeHandlers>
+        <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="org.choongang.member.constants.UserType" />
+        <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="org.choongang.board.constants.Authority" />
+    </typeHandlers>
     <environments default="dev">
         <environment id="dev">
             <transactionManager type="JDBC"/>
@@ -34,5 +38,7 @@
     </environments>
     <mappers>
         <mapper resource="org/choongang/member/mapper/MemberMapper.xml"/>
+        <mapper resource="org/choongang/board/mappers/BoardMapper.xml"/>
+        <mapper resource="org/choongang/pokemon/mappers/PokemonMapper.xml"/>
     </mappers>
 </configuration>

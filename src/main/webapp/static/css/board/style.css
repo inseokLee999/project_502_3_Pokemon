@@ -1,0 +1,196 @@
+/* 메인 레이아웃 공통 */
+.layout-width {
+    min-width: 1100px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* 사이트 헤더 영역 S */
+header .site-top {
+    background: #e7c533;
+    border-bottom: 1px solid #6b5e54;
+}
+header .site-top > .inner {
+    display: flex;
+    justify-content: space-between;
+    height: 35px;
+    align-items: center;
+}
+header .site-top i {
+    font-size: 1.3rem;
+    vertical-align: middle;
+}
+header .site-top a {
+    line-height: 1;
+}
+header .logo img {
+    height: 130px;
+}
+header .site-top a:hover {
+    font-weight: bold;
+}
+header .site-top .right a {
+    margin-left: 10px;
+}
+header .logo-search {
+    padding: 30px 0;
+}
+header .logo-search > .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo-search2 {
+    padding: 30px 0px 0px 8000px;
+}
+header .search-box {
+    display: flex;
+    width: 300px;
+    height: 45px;
+}
+header .search-box2 {
+    display: flex;
+    width: 300px;
+    height: 45px;
+}
+header .search-box input[type='text'] {
+    flex-grow: 1;
+    height: 45px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+}
+header .search-box button {
+    width: 45px;
+    background: silver;
+    height: 45px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+}
+header .search-box button i {
+    color: #fff;
+}
+header .search-box button:hover {
+    background: #e7c533;
+}
+nav {
+    background: #e7c533;
+}
+nav > .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 45px;
+}
+nav > .inner a {
+    font-size: 1.5rem;
+    color: #8f8f8f;
+    padding: 0 25px;
+    line-height: 45px; /* lineheight 를 맞추면 정렬 할수 있음!! */
+}
+nav > .inner a:hover {
+    font-weight: bold;
+    color: #183bcc;
+    /* background: #d7a513; */
+}
+.search {
+    position: relative;
+    width: 300px;
+}
+
+input {
+    width: 100%;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 14px;
+}
+
+.search .img {
+    position: absolute;
+    width: 17px;
+    top: 10px;
+    right: 12px;
+    margin: 0;
+}
+.board_search_box2 {
+    margin: 50px 0 30px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.visible {
+    visibility: visible !important;
+}
+.btn_right_box {
+    float: right;
+}
+.btn_right_box {
+    text-align: right;
+}
+.board_search_box2 select {
+    width: 80px;
+    height: 34px;
+    border: solid 1px #ddd;
+    margin-right: 5px;
+}
+option {
+    font-weight: normal;
+    display: block;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+    white-space: nowrap;
+}
+
+.board_search_box input {
+    width: 240px;
+    height: 34px;
+    margin-right: 5px;
+}
+.btn_board_search {
+    font-size: 13px;
+    height: 34px;
+    margin: 0 0 0 5px;
+    padding: 0 15px;
+    color: #fff;
+    border: 1px solid #3d3d3d;
+    background: #3d3d3d;
+    line-height: 34px;
+    min-width: 62px;
+}
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+select {
+    height: 30px;
+    border-color: #ddd;
+    color: #999;
+    vertical-align: top;
+    outline: none;
+}
+input[type="text"], input[type="password"] {
+    padding: 0 10px;
+    outline: none;
+    font-size: 13px;
+    color: #333333;
+    border: 1px solid #ddd;
+    line-height: 31px;
+}
+body, th, td, input, select, textarea, button {
+    font-family: "Pretendard", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #191919;
+    line-height: 1.5;
+}
+
+/* 사이트 푸터 영역 S */
+footer {
+    margin-top: 100px;
+    min-height: 250px;
+    background: #f8f8f8;
+    border-top: 1px solid #ccc;
+}
+/* 사이트 푸터 영역 E */
