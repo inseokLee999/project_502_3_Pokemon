@@ -19,7 +19,9 @@
 
     <insert id="register">
         INSERT INTO POKEMON
-        VALUES (#{seq}, #{name}, #{weight}, #{height}, #{baseExperience}, #{frontImage}, #{backImage}, #{rawData}, #{nameKr}, #{description})
+        (SEQ, NAME, NAME_KR, WEIGHT, HEIGHT, BASE_EXPERIENCE, FRONT_IMAGE, BACK_IMAGE, DESCRIPTION, RAW_DATA)
+        VALUES
+        (#{seq}, #{name}, #{nameKr}, #{weight}, #{height}, #{baseExperience}, #{frontImage}, #{backImage}, #{description}, #{rawData, jdbcType=CLOB} )
     </insert>
 
     <select id="get" resultMap="pokemonMap">
