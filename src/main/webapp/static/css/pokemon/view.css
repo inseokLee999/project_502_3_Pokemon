@@ -1,0 +1,15 @@
+.pokemon-view {
+    display: flex;
+}
+.pokemon-view  img{
+    border: solid 1px;
+    border-radius: 20%;
+    height: 300px;
+    margin: 5px;
+}
+.p-desc {
+    display: inline-block;
+}
+.p-desc div {
+    display: flex;
+}
