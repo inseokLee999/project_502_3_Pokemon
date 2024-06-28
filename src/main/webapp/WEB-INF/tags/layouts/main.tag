@@ -59,7 +59,7 @@
         </section>
         <section class="logo-search">
             <div class="layout-width inner">
-                <div class="left">
+                <div class="center">
                     <a href="${homeUrl}" class="logo">
                         <img src="${logoUrl}" alt="<fmt:message key="로고"/>">
                     </a>
@@ -88,7 +88,8 @@
     </jsp:attribute>
     <jsp:attribute name="footer">
         <section class="layout-width inner">
-            <h1>메인 레이아웃 하단 영역!</h1>
+            <h4> @All copyrights are in TEAM 4 </h4>
+            <h5> choongang 502 class </h5>
         </section>
     </jsp:attribute>
     <jsp:attribute name="commonCss">
