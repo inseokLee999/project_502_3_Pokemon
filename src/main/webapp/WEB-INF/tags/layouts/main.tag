@@ -15,6 +15,7 @@
 <c:url var="gameUrl" value="/game/play"/>
 <c:url var="mycardUrl" value="/mycard/privatecard"/>
 <c:url var="adminUrl" value="/admin"/>
+<c:url var="randomUrl" value="/random"/>
 <c:url var="pokemonOffUrl" value="https://www.pokemonkorea.co.kr/"/>
 <c:url var="instagramUrl" value="/images/sns/instagram.jpeg"/>
 
@@ -61,7 +62,7 @@
             <div class="layout-width inner">
                 <a href="#">메뉴 1</a>
                 <a href="${pokemonUrl}">포켓몬 도감</a>
-                <a href="#">메뉴 3</a>
+                <a href="${randomUrl}">포켓몬 뽑기</a>
                 <a href="${mycardUrl}">내카드함</a>
                 <a href="${gameUrl}">게임하기</a>
                 <a href="#">메뉴 4</a>
