@@ -109,7 +109,7 @@ header .search-box button i {
 }
 
 header .search-box button:hover {
-    background: #e7c533;
+    background: var(--secondary-color);
 }
 
 nav {
@@ -132,7 +132,7 @@ nav > .inner a {
 
 nav > .inner a:hover {
     font-weight: bold;
-    color: var(--background-color);
+    color: var(--secondary-color);
 
 
     /*background: #d7a513;*/
