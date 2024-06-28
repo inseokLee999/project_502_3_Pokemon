@@ -7,6 +7,7 @@
     }
     to {
         transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 
@@ -46,16 +47,16 @@ header .site-top a {
     margin: 0;
     padding: 0;
 }
-header .logo img{
+header .logo img {
     padding: 0;
-    margin: 0;
-    height: 67px;
-    display: flex;
-    justify-content: center; /* 자식 요소를 가로 중앙에 배치 */
-    transition: transform 0.3s; /* 부드러운 전환을 위해 transition 속성 추가 */
+    margin: 10px auto; /* 상하 10px, 좌우 자동으로 마진을 설정하여 가로 중앙에 배치 */
+    height: 80px;
+    display: block; /* 이미지를 블록 요소로 설정하여 가로 중앙 정렬을 용이하게 함 */
+    transition: transform 0.8s; /* 부드러운 전환을 위해 transition 속성 추가 */
 }
-header .logo img :hover {
-    transform: rotate(10deg); /* 마우스 호버 시 회전 효과 적용 */
+
+header .logo img:hover {
+    transform: rotate(360deg); /* 마우스 호버 시 회전 효과 적용 */
 }
 
 
@@ -73,25 +74,29 @@ header .site-top .right a {
 
 header .logo-search {
     padding: 10px 0;
+
 }
 
 header .logo-search > .inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 header .search-box {
     display: flex;
     width: 300px;
     height: 45px;
+    border: 2px solid var(--primary-color);
 }
 
 header .search-box input[type='text'] {
     flex-grow: 1;
     height: 45px;
-    border: 2px solid var(--background-color);
+    border: 2px solid var(--text-color);
     border-radius: 3px;
+
 }
 
 header .search-box button {
@@ -102,10 +107,12 @@ header .search-box button {
     border-radius: 3px;
     cursor: pointer;
 
+
 }
 
 header .search-box button i {
     color: var(--primary-color);
+
 }
 
 header .search-box button:hover {

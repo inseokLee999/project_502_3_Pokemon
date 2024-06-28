@@ -11,7 +11,6 @@
 <c:url var="homeUrl" value="/"/>
 <c:url var="searchUrl" value="/board/search" />
 <c:url var="logoUrl" value="/images/logo.png"/>
-<c:url var="logoUrl2" value="/images/main_logo.png"/>
 <c:url var="pokemonUrl" value="/pokemon"/>
 <c:url var="gameUrl" value="/game/play"/>
 <c:url var="mycardUrl" value="/mycard/privatecard"/>
@@ -48,11 +47,6 @@
                         <img src="${logoUrl}" alt="<fmt:message key="로고"/>">
                     </a>
                 </div>
-                <div class="center">
-                    <a href="${homeUrl}" class="logo">
-                        <img src="${logoUrl2}" alt="<fmt:message key="로고"/>">
-                    </a>
-                </div>
                 <div class="right">
                     <form class="search-box" method="GET" action="${searchUrl}" autocomplete="off">
                         <input type="text" name="keyword" placeholder="<fmt:message key="검색어를_입력하세요."/> ">
@@ -78,7 +72,7 @@
     <jsp:attribute name="footer">
         <section class="layout-width inner">
             <h4> @All copyrights are in TEAM 4 </h4>
-            <h6> choongang 502 class "</h6>
+            <h5> choongang 502 class </h5>
         </section>
     </jsp:attribute>
     <jsp:attribute name="commonCss">

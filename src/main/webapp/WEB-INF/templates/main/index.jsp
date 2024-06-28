@@ -14,7 +14,7 @@
         }
 
         body {
-            background: #eee;
+            background: #ffff;
             font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
             font-size: 14px;
             color: #000;
@@ -55,6 +55,8 @@
             justify-content: center;
             align-items: center;
             height: auto; /* 슬라이드 높이를 자동으로 조정 */
+            border-radius: 8px; /* 이미지를 라운드 처리 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 호버 시 그림자 효과 추가 */
         }
 
         .swiper-slide img {
@@ -62,7 +64,10 @@
             max-width: 100%;
             height: auto;
             object-fit: contain; /* 이미지가 슬라이드 안에 적절히 맞도록 조정 */
+
         }
+
+
 
         .footer {
             background-color: #333;
