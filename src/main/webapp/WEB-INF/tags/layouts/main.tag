@@ -30,14 +30,30 @@
                     </a>
                 </div>
                 <div class="right">
+                    <util:guestOnly>
                     <a href="<c:url value="/member/join" />">
                         <i class="xi-user-plus-o"></i>
                         <fmt:message key="회원가입"/>
                     </a>
-                    <a href="<c:url value="/member/login"/> ">
+                    <a href="<c:url value="/member/login" />">
                         <i class="xi-log-in"></i>
                         <fmt:message key="로그인"/>
                     </a>
+                    </util:guestOnly>
+                    <util:memberOnly>
+                        <fmt:message key="LOGIN_MSG">
+                            <fmt:param>${loggedMember.userName}</fmt:param>
+                            <fmt:param>${loggedMember.email}</fmt:param>
+                        </fmt:message>
+                        <a href="<c:url value="/mypage" />">
+                            <i class="xi-user-o"></i>
+                            <fmt:message key="마이페이지" />
+                        </a>
+                        <a href="<c:url value="/member/logout" />">
+                            <i class="xi-log-out"></i>
+                            <fmt:message key="로그아웃" />
+                        </a>
+                    </util:memberOnly>
                 </div>
             </div>
         </section>
