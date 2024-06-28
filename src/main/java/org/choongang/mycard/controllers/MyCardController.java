@@ -23,7 +23,7 @@ public class MyCardController {
     private final HttpServletRequest request;
 
    /* @GetMapping("/privatecard") 에서
-    ("/privatecard") 부분 지움*/
+    ("/privatecard") 부분 지움      */
     @GetMapping
     public String play(PokemonSearch search) {
         commonProcess();
