@@ -1,10 +1,12 @@
 /*메인 레이아웃 공통*/
+@import url('common.css');
 
 @keyframes infinite-rotate {
     from {
         transform: rotate(0deg);
     }
     to {
+        transform: rotate(360deg);
         transform: rotate(360deg);
     }
 }
@@ -16,14 +18,14 @@
     padding: 0;
 }
 
-i:hover, button:hover, a:hover {
+button:hover, a:hover {
     box-shadow: 0 4px 1px rgba(0, 0, 0, 0.3); /* 하단 그림자 설정 */
 }
 
 /*사이트 헤더 영역 S*/
 header .site-top {
-    background: #ffffff;
-    border-bottom: 1px solid #6b5e54;
+    background: var(--background-color);
+    border-bottom: 1px solid var(--background-color);
 }
 
 header .site-top > .inner {
@@ -45,12 +47,19 @@ header .site-top a {
     margin: 0;
     padding: 0;
 }
-
 header .logo img {
     padding: 0;
-    margin: 0;
-    height: 67px;
+    margin: 10px auto; /* 상하 10px, 좌우 자동으로 마진을 설정하여 가로 중앙에 배치 */
+    height: 80px;
+    display: block; /* 이미지를 블록 요소로 설정하여 가로 중앙 정렬을 용이하게 함 */
+    transition: transform 0.8s; /* 부드러운 전환을 위해 transition 속성 추가 */
 }
+
+header .logo img:hover {
+    transform: rotate(360deg); /* 마우스 호버 시 회전 효과 적용 */
+}
+
+
 
 /* 회전 애니메이션 정의 */
 
@@ -65,47 +74,53 @@ header .site-top .right a {
 
 header .logo-search {
     padding: 10px 0;
+
 }
 
 header .logo-search > .inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 header .search-box {
     display: flex;
     width: 300px;
     height: 45px;
+    border: 2px solid var(--primary-color);
 }
 
 header .search-box input[type='text'] {
     flex-grow: 1;
     height: 45px;
-    border: 2px solid #ccc;
+    border: 2px solid var(--text-color);
     border-radius: 3px;
+
 }
 
 header .search-box button {
     width: 45px;
     background: silver;
     height: 45px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--background-color);
     border-radius: 3px;
     cursor: pointer;
+
 
 }
 
 header .search-box button i {
-    color: #1B3467;
+    color: var(--primary-color);
+
 }
 
 header .search-box button:hover {
-    background: #e7c533;
+    background: var(--secondary-color);
 }
 
 nav {
-    background: #1B3467;
+    background: var(--primary-color);
 }
 
 nav > .inner {
@@ -117,14 +132,14 @@ nav > .inner {
 
 nav > .inner a {
     font-size: 1.5rem;
-    color: #ffffff;
+    color: var(--background-color);
     padding: 0 25px;
     line-height: 45px; /*lineheight 를 맞추면 정렬 할수 있음!!*/
 }
 
 nav > .inner a:hover {
     font-weight: bold;
-    color: #ffca06;
+    color: var(--secondary-color);
 
 
     /*background: #d7a513;*/
@@ -135,7 +150,7 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000; /* 다른 요소보다 위에 위치하게 하기 위해 사용 */
-    background-color: #fff; /* 헤더의 배경색 설정 */
+    background-color: transparent; /* 헤더의 배경색 설정 */
 }
 
 main {
@@ -145,16 +160,16 @@ main {
 
 /*사이트 푸터 영역 S*/
 footer {
-    margin-top: 100px;
-    min-height: 250px;
-
-
-    background: #f8f8f8;
-    border-top: 1px solid #ccc;
+    margin-top: 300px;
+    min-height: 100px;
+    width: 100%;
+    padding: 20px;
+    background: #f5f5f5;
+    border-top: 1px solid #f9f9f9;
 }
 
 footer .information a {
-    height: 145px;
+    height: 100px;
     font-size: 1.3rem;
     font-weight: bold;
 }
@@ -165,7 +180,7 @@ footer .information {
     align-items: center;
     height: 45px;
     padding-right: 20px;
-    background: #f8f8f8;
+    background: var(--background-color);
 }
 
 footer ul {
