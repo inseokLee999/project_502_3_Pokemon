@@ -83,12 +83,12 @@ form dd input[type="password"] {
 }
 
 button[type="reset"] {
-    background-color: #ffcb05;
-    color: #3c5aa6;
+    background-color: var(--secondary-color);
+    color: #fff;
 }
 
 button[type="submit"] {
-    background-color: #3c5aa6;
+    background-color: var(--primary-color);
     color: #fff;
 }
 
