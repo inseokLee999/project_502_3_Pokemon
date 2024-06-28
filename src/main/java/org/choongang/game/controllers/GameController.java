@@ -1,3 +1,4 @@
+/*
 package org.choongang.game.controllers;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -37,4 +38,4 @@ public class GameController {
 
         return "game/play";
     }
-}
+}*/
