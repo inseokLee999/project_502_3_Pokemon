@@ -21,5 +21,5 @@
         <br><br><br>
 <%--            ${data.pokemon}--%>
     </section>
-    <script src="../js/pokemon/view.js"></script>
+    <script src="../../js/pokemon/view.js"></script>
 </layout:main>
