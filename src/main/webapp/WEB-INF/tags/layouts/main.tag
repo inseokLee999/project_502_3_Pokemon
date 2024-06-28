@@ -15,6 +15,7 @@
 <c:url var="gameUrl" value="/game/play"/>
 <c:url var="mycardUrl" value="/mycard/privatecard"/>
 <c:url var="adminUrl" value="/admin"/>
+<c:url var="randomUrl" value="/random"/>
 <c:url var="pokemonOffUrl" value="https://www.pokemonkorea.co.kr/"/>
 <c:url var="instagramUrl" value="/images/sns/instagram.jpeg"/>
 
@@ -29,14 +30,30 @@
                     </a>
                 </div>
                 <div class="right">
+                    <util:guestOnly>
                     <a href="<c:url value="/member/join" />">
                         <i class="xi-user-plus-o"></i>
                         <fmt:message key="회원가입"/>
                     </a>
-                    <a href="<c:url value="/member/login"/> ">
+                    <a href="<c:url value="/member/login" />">
                         <i class="xi-log-in"></i>
                         <fmt:message key="로그인"/>
                     </a>
+                    </util:guestOnly>
+                    <util:memberOnly>
+                        <fmt:message key="LOGIN_MSG">
+                            <fmt:param>${loggedMember.userName}</fmt:param>
+                            <fmt:param>${loggedMember.email}</fmt:param>
+                        </fmt:message>
+                        <a href="<c:url value="/mypage" />">
+                            <i class="xi-user-o"></i>
+                            <fmt:message key="마이페이지" />
+                        </a>
+                        <a href="<c:url value="/member/logout" />">
+                            <i class="xi-log-out"></i>
+                            <fmt:message key="로그아웃" />
+                        </a>
+                    </util:memberOnly>
                 </div>
             </div>
         </section>
@@ -61,7 +78,7 @@
             <div class="layout-width inner">
                 <a href="#">메뉴 1</a>
                 <a href="${pokemonUrl}">포켓몬 도감</a>
-                <a href="#">메뉴 3</a>
+                <a href="${randomUrl}">포켓몬 뽑기</a>
                 <a href="${mycardUrl}">내카드함</a>
                 <a href="${gameUrl}">게임하기</a>
                 <a href="#">메뉴 4</a>

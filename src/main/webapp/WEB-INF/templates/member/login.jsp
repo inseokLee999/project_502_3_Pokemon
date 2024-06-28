@@ -10,7 +10,7 @@
     <div class="content-box small">
         <h1>${pageTitle}</h1>
 
-        <form name="frmLogin" method="POST" action="${actionUrl}" target="ifrmProces" autocomplete="off">
+        <form name="frmLogin" method="POST" action="${actionUrl}" target="ifrmProcess" autocomplete="off">
             <c:if test="${! empty param.redirectUrl}">
                 <input type="hidden" name="redirectUrl" value="${param.redirectUrl}">
             </c:if>
