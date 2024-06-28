@@ -16,7 +16,7 @@
             </c:if>
             <c:if test="${items != null && !items.isEmpty()}">
                 <c:forEach var="item" items="${items}">
-                    <li>
+                    <li class="pokemon-data">
                         <a href="<c:url value='/pokemon/${item.seq}' />">
                             <img src="${item.frontImage}" alt="${item.nameKr}">
                             <div class="p-name">
@@ -26,12 +26,13 @@
                     </li>
                 </c:forEach>
             </c:if>
-            <li>
-                <c:forEach begin="1" end="10">
-                    
-                </c:forEach>
-            </li>
+        </ul>
+        <ul>
+            <a href="<c:url value="/pokemon?page=1"/>">
+                1
+            </a>
         </ul>
     </section>
 
+    <script src="js/pokemon/board.js"></script>
 </layout:main>
