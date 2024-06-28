@@ -24,7 +24,7 @@ public class MyCardController {
 
    /* @GetMapping("/privatecard") 에서
     ("/privatecard") 부분 지움*/
-    @GetMapping("/privatecard")
+    @GetMapping
     public String play(PokemonSearch search) {
         commonProcess();
         ListData<PokemonDetail> listData = infoService.getList(search);
