@@ -15,12 +15,10 @@
     margin: 0 auto;
 }
 
-i:hover{
+i:hover, button:hover,a:hover,img:hover{
     animation: infinite-rotate 2s linear infinite;
 }
-a:hover{
-    animation: infinite-rotate 2s linear infinite;
-}
+
 /*사이트 헤더 영역 S*/
 header .site-top{
     background: #e7c533;
