@@ -15,6 +15,7 @@
 <c:url var="gameUrl" value="/game/play"/>
 <c:url var="mycardUrl" value="/mycard/privatecard"/>
 <c:url var="adminUrl" value="/admin"/>
+<c:url var="randomUrl" value="/random"/>
 <c:url var="pokemonOffUrl" value="https://www.pokemonkorea.co.kr/"/>
 <c:url var="instagramUrl" value="/images/sns/instagram.jpeg"/>
 
@@ -58,7 +59,7 @@
         </section>
         <section class="logo-search">
             <div class="layout-width inner">
-                <div class="left">
+                <div class="center">
                     <a href="${homeUrl}" class="logo">
                         <img src="${logoUrl}" alt="<fmt:message key="로고"/>">
                     </a>
@@ -77,7 +78,7 @@
             <div class="layout-width inner">
                 <a href="#">메뉴 1</a>
                 <a href="${pokemonUrl}">포켓몬 도감</a>
-                <a href="#">메뉴 3</a>
+                <a href="${randomUrl}">포켓몬 뽑기</a>
                 <a href="${mycardUrl}">내카드함</a>
                 <a href="${gameUrl}">게임하기</a>
                 <a href="#">메뉴 4</a>
@@ -87,7 +88,8 @@
     </jsp:attribute>
     <jsp:attribute name="footer">
         <section class="layout-width inner">
-            <h1>메인 레이아웃 하단 영역!</h1>
+            <h4> @All copyrights are in TEAM 4 </h4>
+            <h5> choongang 502 class </h5>
         </section>
     </jsp:attribute>
     <jsp:attribute name="commonCss">
