@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.choongang.board.mappers.BoardMapper">
+<mapper namespace="org.choongang.mycard.mappers.MyCardMapper">
     <resultMap id="mycardMap" type="org.choongang.mycard.entities.MyCardDetail">
         <result column="SEQ" property="seq" />
         <result column="NUM" property="rowNum" />
@@ -23,14 +23,14 @@
         SELECT 0 NUM, P.* FROM POKEMON P WHERE P.seq=#{seq}
     </select>
 
-    //경미 추가
-    <select id="getRandomPokemon" resultMap="mycardMap">
-        SELECT WEIGHT, HEIGHT, BASE_EXPERIENCE
-        FROM USER_POKEMON_VIEW
-        WHERE USER_NO = #{userNo} AND POKEMON_SEQ = #{seq};
-    </select>
+<!--    //경미 추가-->
+<!--    <select id="mycardMap" resultMap="mycardMap">-->
+<!--        SELECT WEIGHT, HEIGHT, BASE_EXPERIENCE-->
+<!--        FROM USER_POKEMON_VIEW-->
+<!--        WHERE USER_NO = #{userNo} AND POKEMON_SEQ = #{seq};-->
+<!--    </select>-->
 
-    <select id="getRandomPokemon" resultMap="mycardMap">
+    <select id="mycardMap" resultMap="mycardMap">
         SELECT * FROM POKEMON WHERE SEQ = #{seq}
     </select>
 
