@@ -12,7 +12,7 @@ import java.util.List;
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/board")
-public class BoardController {
+public class BoardUserController {
     private final HttpServletRequest request;
     //유저게시판쪽
     @GetMapping("/userboard")
