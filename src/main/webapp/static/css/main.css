@@ -13,10 +13,11 @@
     min-width: 1100px;
     max-width: 1300px;
     margin: 0 auto;
+    padding: 0;
 }
 
-i:hover, button:hover, a:hover, img:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+i:hover, button:hover, a:hover {
+    box-shadow: 0 4px 1px rgba(0, 0, 0, 0.3); /* 하단 그림자 설정 */
 }
 
 /*사이트 헤더 영역 S*/
@@ -35,10 +36,14 @@ header .site-top > .inner {
 header .site-top i {
     font-size: 1.3rem;
     vertical-align: middle;
+    margin: 0;
+    padding: 0;
 }
 
 header .site-top a {
     line-height: 1;
+    margin: 0;
+    padding: 0;
 }
 
 header .logo img {
@@ -92,7 +97,7 @@ header .search-box button {
 }
 
 header .search-box button i {
-    color: #fff;
+    color: #1B3467;
 }
 
 header .search-box button:hover {
