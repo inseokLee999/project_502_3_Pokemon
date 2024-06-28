@@ -66,6 +66,7 @@
                         <img src="${logoUrl}" alt="<fmt:message key="로고"/>">
                     </a>
                 </div>
+                <div class="header-bottom-box"></div>
                 <div class="right">
                     <form class="search-box" method="GET" action="${searchUrl}" autocomplete="off">
                         <input type="text" name="keyword" placeholder="<fmt:message key="검색어를_입력하세요."/> ">

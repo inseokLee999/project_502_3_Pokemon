@@ -14,9 +14,12 @@
 .layout-width {
     min-width: 1100px;
     max-width: 1300px;
-    margin: 0 auto;
+    margin-left: 50px;
+    margin-right: auto;
     padding: 0;
 }
+
+
 
 button:hover, a:hover {
     box-shadow: 0 4px 1px rgba(0, 0, 0, 0.3); /* 하단 그림자 설정 */
@@ -25,10 +28,15 @@ button:hover, a:hover {
 /*사이트 헤더 영역 S*/
 header .site-top {
     background: var(--background-color);
-    border-bottom: 1px solid var(--background-color);
+    border-bottom: 1px solid #8f8f8f;
+    top: 0;
+    width: 100%;
+
 }
 
+
 header .site-top > .inner {
+    background: var(--background-color);
     display: flex;
     justify-content: space-between;
     height: 35px;
@@ -36,25 +44,41 @@ header .site-top > .inner {
 }
 
 header .site-top i {
+    background: var(--background-color);
     font-size: 1.3rem;
     vertical-align: middle;
     margin: 0;
     padding: 0;
 }
 
+
+
 header .site-top a {
+    background: var(--background-color);
     line-height: 1;
     margin: 0;
     padding: 0;
 }
 header .logo img {
+    position: relative; /* 추가: z-index가 적용되도록 position 설정 */
+    z-index: 9000;
     padding: 0;
     margin: 10px auto; /* 상하 10px, 좌우 자동으로 마진을 설정하여 가로 중앙에 배치 */
     height: 80px;
     display: block; /* 이미지를 블록 요소로 설정하여 가로 중앙 정렬을 용이하게 함 */
     transition: transform 0.8s; /* 부드러운 전환을 위해 transition 속성 추가 */
 }
-
+.header-bottom-box {
+    background-color: var(--background-color); /* 배경색을 흰색으로 설정 */
+    color: #000000; /* 글자색을 검은색으로 설정 */
+    height: 119px; /* 박스 높이 설정 */
+    width: 100%; /* 박스 너비를 100%로 설정 */
+    position: absolute; /* 절대 위치 설정 */
+    top: 37px; /* 로고와 서치 박스의 높이 + 여백 */
+    z-index:1000; /* 다른 요소보다 위에 위치하게 하기 위해 높은 z-index 설정 */
+    display: block; /* 박스를 보이게 설정 */
+    left: 0; /* 왼쪽에 고정 */
+}
 header .logo img:hover {
     transform: rotate(360deg); /* 마우스 호버 시 회전 효과 적용 */
 }
@@ -70,6 +94,7 @@ header .site-top a:hover {
 
 header .site-top .right a {
     margin-left: 10px;
+    background: var(--background-color);
 }
 
 header .logo-search {
@@ -85,23 +110,24 @@ header .logo-search > .inner {
 }
 
 header .search-box {
+    position: relative; /* 추가: z-index가 적용되도록 position 설정 */
+    z-index: 9000;
     display: flex;
     width: 300px;
     height: 45px;
-    border: 2px solid var(--primary-color);
 }
 
 header .search-box input[type='text'] {
     flex-grow: 1;
     height: 45px;
-    border: 2px solid var(--text-color);
     border-radius: 3px;
+    border: 2px solid #c2c2c2;
 
 }
 
 header .search-box button {
     width: 45px;
-    background: silver;
+    background: var(--text-color);
     height: 45px;
     border: 1px solid var(--background-color);
     border-radius: 3px;
@@ -111,12 +137,12 @@ header .search-box button {
 }
 
 header .search-box button i {
-    color: var(--primary-color);
+    color: var(--background-color);
 
 }
 
 header .search-box button:hover {
-    background: var(--secondary-color);
+    background: var(--primary-color);
 }
 
 nav {

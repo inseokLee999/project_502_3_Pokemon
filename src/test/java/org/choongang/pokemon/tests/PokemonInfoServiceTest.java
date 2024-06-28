@@ -120,6 +120,8 @@ public class PokemonInfoServiceTest {
             System.out.println(description);
         }
     }
+
+
     @Test
     @DisplayName("랜덤 조회 테스트")
     void getRandomTest() {
