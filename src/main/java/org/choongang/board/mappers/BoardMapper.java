@@ -9,5 +9,6 @@ public interface BoardMapper {
     int modify(Board board);
     int delete(String bId);
     Board get(String bId);
-    List<Board> getlist();
+    List<Board> getList();
+    int exists(String bId);
 }

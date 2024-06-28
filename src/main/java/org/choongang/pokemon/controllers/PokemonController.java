@@ -36,8 +36,18 @@ public class PokemonController {
         return "pokemon/index";
     }
     @GetMapping("/{seq}")
+    public String view(@PathVariable("seq") String seq){
+        commonProcess();
+
+        if ("admin".equals(seq)){
+            return "pokemon/admin";
+        }
+        return "pokemon/view"; //
+    }
+    @GetMapping("/{seq}")
     public String view(@PathVariable("seq") long seq){
         commonProcess();
+
         PokemonDetail data = infoService.get(seq).orElseThrow(PokemonNotFoundException::new);
         request.setAttribute("data", data);
         return "pokemon/view";
