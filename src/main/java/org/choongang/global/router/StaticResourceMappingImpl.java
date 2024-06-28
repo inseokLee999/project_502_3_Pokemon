@@ -30,7 +30,7 @@ public class StaticResourceMappingImpl implements StaticResourceMapping {
     public void route(HttpServletRequest request, HttpServletResponse response) throws IOException {
         // webapp/static 경로 및 파일 업로드 경로 조회
         File file = getStaticPath(request);
-        if (file.exists()) {
+        if (file.exists()&&file.isFile()) {
             Path source = file.toPath();
             String contentType = Files.probeContentType(source);
             response.setContentType(contentType);
