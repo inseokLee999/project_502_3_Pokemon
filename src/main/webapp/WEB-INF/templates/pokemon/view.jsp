@@ -4,8 +4,8 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <layout:main title="${data.nameKr}(${data.name})">
     <section class="pokemon-view">
-        <img src="${data.frontImage}" alt="프론트">
-        <img src="${data.backImage}" alt="백">
+        <img src="${data.frontImage}" alt="프론트" class="pokemon-view-img">
+        <img src="${data.backImage}" alt="백" class="pokemon-view-img">
         <div class="p-desc">
             <div class="p-name">
                 <h2>
@@ -21,4 +21,5 @@
         <br><br><br>
 <%--            ${data.pokemon}--%>
     </section>
+    <script src="../js/pokemon/view.js"></script>
 </layout:main>
