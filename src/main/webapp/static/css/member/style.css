@@ -123,7 +123,7 @@ form dd input[type="password"] {
 }
 
 .termsContent {
-    height: 80px;
+    height: 40px;
     overflow-y: auto;
     border: 1px solid #ccc;
     padding: 5px;
