@@ -53,12 +53,12 @@
     <!-- Swiper -->
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-            <div class="mianBanner/027401ys.png">"입새코 영산"</div>
-            <div class="000701yz.png">"꼬부기 유정"</div>
-            <div class="015001is.png">"뮤츠 인석"</div>
-            <div class="002601sj.png">"라이츄 성준"</div>
-            <div class="004801ms.png">"콘팡 민수"</div>
-            <div class="00181km.png">"피죤투 경미"</div>
+            <div class="swiper-slide"><img src="webapp/static/images/mianBanner/027401ys.png" alt="입새코 영산">"입새코 영산"</div>
+            <div class="swiper-slide"><img src="webapp/static/images/mianBanner/000701yz.png" alt="꼬부기 유정">"꼬부기 유정"</div>
+            <div class="swiper-slide"><img src="webapp/static/images/mianBanner/015001is.png" alt="뮤츠 인석">"뮤츠 인석"</div>
+            <div class="swiper-slide"><img src="webapp/static/images/mianBanner/002601sj.png" alt="라이츄 성준">"라이츄 성준"</div>
+            <div class="swiper-slide"><img src="webapp/static/images/mianBanner/004801ms.png" alt="콘팡 민수">"콘팡 민수"</div>
+            <div class="swiper-slide"><img src="webapp/static/images/mianBanner/00181km.png" alt="피죤투 경미">"피죤투 경미"</div>
         </div>
         <div class="swiper-pagination"></div>
     </div>
