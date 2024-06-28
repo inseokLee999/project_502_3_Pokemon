@@ -8,6 +8,8 @@ import org.choongang.global.config.annotations.PostMapping;
 import org.choongang.global.config.annotations.RequestMapping;
 import org.choongang.member.services.JoinService;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/member")
 @RequiredArgsConstructor
