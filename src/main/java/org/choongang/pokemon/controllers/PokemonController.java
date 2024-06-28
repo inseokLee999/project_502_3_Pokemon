@@ -35,15 +35,16 @@ public class PokemonController {
 
         return "pokemon/index";
     }
-    @GetMapping("/{seq}")
+    @GetMapping("/view/{seq}")
     public String view(@PathVariable("seq") long seq){
         commonProcess();
+        request.setAttribute("addCss",List.of("pokemon/view"));
         PokemonDetail data = infoService.get(seq).orElseThrow(PokemonNotFoundException::new);
         request.setAttribute("data", data);
         return "pokemon/view";
     }
     private void commonProcess() {
         request.setAttribute("addCss", new String[] {"pokemon/style"});
-        request.setAttribute("addScript", List.of("pokemon/wishlist","pokemon/board"));
+        request.setAttribute("addScript", List.of("pokemon/wishlist"));
     }
 }
