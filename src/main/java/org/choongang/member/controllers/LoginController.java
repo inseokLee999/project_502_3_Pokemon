@@ -19,7 +19,7 @@ public class LoginController {
 
     @GetMapping("/login")
     public String login() {
-        request.setAttribute("addCss", new String[] {"member/style"});
+        request.setAttribute("addCss", new String[] {"member/loginStyle"});
         return "member/login";
     }
 
