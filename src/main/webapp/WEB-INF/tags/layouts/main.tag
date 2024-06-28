@@ -14,8 +14,10 @@
 <c:url var="pokemonUrl" value="/pokemon"/>
 <c:url var="gameUrl" value="/game/play"/>
 <c:url var="mycardUrl" value="/mycard/privatecard"/>
+
 <c:url var="adminUrl" value="/admin"/>
 <c:url var="randomUrl" value="/random"/>
+
 <c:url var="pokemonOffUrl" value="https://www.pokemonkorea.co.kr/"/>
 <c:url var="instagramUrl" value="/images/sns/instagram.jpeg"/>
 

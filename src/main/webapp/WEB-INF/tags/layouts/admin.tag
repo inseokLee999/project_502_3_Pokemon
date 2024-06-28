@@ -8,7 +8,7 @@
 <fmt:setBundle basename="messages.commons" />
 <c:url var="cssUrl" value="/css/" />
 <c:url var="jsUrl" value="/js/" />
-<c:url var="homeUrl" value="/admin" />
+<c:url var="homeUrl" value="/admin/" />
 <c:url var="logoUrl" value="/images/logo.png" />
 
 <layout:common title="${title}">
