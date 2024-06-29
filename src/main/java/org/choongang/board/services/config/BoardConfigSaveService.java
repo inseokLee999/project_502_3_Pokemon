@@ -24,6 +24,7 @@ public class BoardConfigSaveService {
                 .bId(form.getBId())
                 .bName(form.getBName())
                 .active(form.isActive()?1:0)
+                .category(form.getCategory())
                 .activeCategory(form.isActiveCategory()?1:0)
                 .rowsPerPage(form.getRowsPerPage())
                 .authority(Authority.valueOf(form.getAuthority()))
