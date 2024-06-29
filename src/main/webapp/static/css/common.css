@@ -27,7 +27,7 @@
 }
 
 
-/* 공통 버튼 스타일 */
+/* 공통 버튼 스타일 1 */
 .button {
     display: inline-block;
     padding: var(--button-padding);
