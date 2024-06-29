@@ -19,5 +19,6 @@
         현재 포켓몬 : ${loggedMember.myPokemonSeq}
         <img src="${data.frontImage}">
         ${data.nameKr}
+        <button id="updatePokemonButton">포켓몬 업데이트</button>
     </util:memberOnly>
 </layout:main>
