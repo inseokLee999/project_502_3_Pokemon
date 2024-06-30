@@ -33,6 +33,6 @@
             </a>
         </ul>
     </section>
-
+    <util:pagination />
     <script src="js/pokemon/board.js"></script>
 </layout:main>
