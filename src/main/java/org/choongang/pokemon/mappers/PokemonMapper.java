@@ -10,4 +10,5 @@ public interface PokemonMapper {
     PokemonDetail get(long seq);
     List<PokemonDetail> getList(PokemonSearch search);
     PokemonDetail getRandom();
+    int getTotal(PokemonSearch search);
 }
