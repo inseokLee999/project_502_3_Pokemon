@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
+<%@taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
 <c:url var="searchUrl" value="/pokemon" />
 
 <layout:main>
@@ -26,11 +27,6 @@
                     </li>
                 </c:forEach>
             </c:if>
-        </ul>
-        <ul>
-            <a href="<c:url value="/pokemon?page=1"/>">
-                1
-            </a>
         </ul>
     </section>
     <util:pagination />
