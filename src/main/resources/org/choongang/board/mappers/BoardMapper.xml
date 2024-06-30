@@ -15,9 +15,8 @@
 
     <insert id="register">
         INSERT INTO BOARD
-        (BID, BNAME, ROWS_PER_PAGE, ACTIVE, ACTIVE_CATEGORY, CATEGORY ,AUTHORITY)
-        VALUES (#{bId}, #{bName}, #{rowsPerPage}, #{active}, #{activeCategory},#{category},
-        #{authority})
+        (BID, BNAME, ROWS_PER_PAGE, ACTIVE, ACTIVE_CATEGORY, CATEGORY, AUTHORITY)
+        VALUES (#{bId}, #{bName}, #{rowsPerPage}, #{active}, #{activeCategory}, #{category}, #{authority})
     </insert>
 
     <update id="modify">
@@ -37,6 +36,7 @@
             </if>
             ACTIVE=#{active},
             ACTIVE_CATEGORY=#{activeCategory}
+
         </set>
         WHERE BID=#{bId}
     </update>

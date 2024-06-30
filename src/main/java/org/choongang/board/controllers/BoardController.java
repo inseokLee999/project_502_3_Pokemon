@@ -39,10 +39,6 @@ public class BoardController {
     public String write(@PathVariable("bId") String bId) {
         commonProcess(bId, "write");
 
-        RequestBoardData data = new RequestBoardData();
-        data.setBId(bId);
-
-        request.setAttribute("data" , data);
 
         return "board/write";
     }

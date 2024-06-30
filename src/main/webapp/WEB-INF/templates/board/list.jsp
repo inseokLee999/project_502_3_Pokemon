@@ -3,6 +3,7 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <layout:main title="${board.BName}">
     <section class="layout-width">
+        <h1>${board.BName}</h1>
         <jsp:include page="_header.jsp" />
     </section>
-</layout:main>
+</layout:main>v
