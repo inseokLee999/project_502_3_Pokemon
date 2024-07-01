@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="efd91e17-9f13-4f5f-993c-08f914b4becc" name="변경" comment="gamecontroller, MypageController 오류 수정">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="project_502_3_poketmon" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="project_502_3_poketmon" type="f1a62948:ProjectNode" />
+                <item name="실행 구성" type="7b0102dc:RunConfigurationsNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Setting" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;inseokLee999&quot;
+  }
+}</component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="master" />
+      </list>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/inseokLee999/project_502_3_Pokemon.git&quot;,
+    &quot;accountId&quot;: &quot;a1915fee-f695-4d7d-8e5d-90d358bea2fa&quot;
+  },
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
+    },
+    &quot;owner&quot;: &quot;inseokLee999&quot;,
+    &quot;repository&quot;: &quot;project_502_3_Pokemon&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2iXnI3UmGmrgnfbal9ESU67Jkyc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Gradle.PokemonInfoServiceTest.executor": "Run",
+    "Gradle.project_502_3_Pokemon 빌드.executor": "Run",
+    "JUnit.PokemonInfoServiceTest.executor": "Run",
+    "JUnit.PokemonMemberTest.getRandPokemon.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Smart Tomcat.포켓몬 도감.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/inseoklee/project_502_3_Pokemon",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "kotlin-gradle-user-dirs": [
+      "/Users/inseoklee/.gradle"
+    ]
+  }
+}]]></component>
+  <component name="RunManager" selected="Smart Tomcat.포켓몬 도감">
+    <configuration name="PokemonInfoServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.choongang.pokemon.tests.PokemonInfoServiceTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="PokemonInfoServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project_502_3_poketmon.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.choongang.pokemon.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.choongang.pokemon.tests" />
+      <option name="MAIN_CLASS_NAME" value="org.choongang.pokemon.tests.PokemonInfoServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PokemonMemberTest.getRandPokemon" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project_502_3_poketmon.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.choongang.member.mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.choongang.member.mapper" />
+      <option name="MAIN_CLASS_NAME" value="org.choongang.member.mapper.PokemonMemberTest" />
+      <option name="METHOD_NAME" value="getRandPokemon" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="포켓몬 도감" type="com.poratu.idea.plugins.tomcat">
+      <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
+      <predefined_log_file enabled="true" id="Tomcat Access Log" />
+      <predefined_log_file id="Tomcat Catalina Log" />
+      <predefined_log_file id="Tomcat Manager Log" />
+      <predefined_log_file id="Tomcat Host Manager Log" />
+      <option name="catalinaBase" value="$PROJECT_DIR$/../.SmartTomcat/project_502_3_poketmon/project_502_3_poketmon.main" />
+      <option name="contextPath" value="/project_502_3_poketmon" />
+      <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
+      <option name="extraClassPath" value="" />
+      <option name="port" value="3000" />
+      <option name="tomcatInfo">
+        <TomcatInfo>
+          <option name="name" value="Apache Tomcat/10.1.24" />
+          <option name="path" value="$PROJECT_DIR$/../class502_13/apache-tomcat-10.1.24" />
+          <option name="version" value="10.1.24.0" />
+        </TomcatInfo>
+      </option>
+      <option name="vmOptions" value="" />
+      <module name="project_502_3_poketmon.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.PokemonMemberTest.getRandPokemon" />
+        <item itemvalue="JUnit.PokemonInfoServiceTest" />
+        <item itemvalue="Gradle.PokemonInfoServiceTest" />
+        <item itemvalue="JUnit.PokemonMemberTest.getRandPokemon" />
+        <item itemvalue="JUnit.PokemonInfoServiceTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17890.1" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17890.1" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="디폴트 작업">
+      <changelist id="efd91e17-9f13-4f5f-993c-08f914b4becc" name="변경" comment="" />
+      <created>1719645706562</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1719645706562</updated>
+      <workItem from="1719645707838" duration="533000" />
+      <workItem from="1719653613574" duration="10129000" />
+      <workItem from="1719831822456" duration="59000" />
+      <workItem from="1719831884997" duration="1175000" />
+      <workItem from="1719833067950" duration="355000" />
+      <workItem from="1719833427534" duration="238000" />
+      <workItem from="1719852367023" duration="1035000" />
+    </task>
+    <task id="LOCAL-00001" summary="README.md에 포켓몬, 멤버 테이블 추가">
+      <option name="closed" value="true" />
+      <created>1719656613190</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1719656613190</updated>
+    </task>
+    <task id="LOCAL-00002" summary="매퍼의 경우 final 키워드로 주입받을 경우 갱신이 새로 되지 않아 쿼리 결과가 캐싱되어 추가, 삭제, 수정해도 조회결과는 동일했던 문제 수정, Pagination 추가, README.md 파일에 멤버 테이블 수정">
+      <option name="closed" value="true" />
+      <created>1719764999478</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1719764999478</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Pagination 안나오던 문제 수정, css추가">
+      <option name="closed" value="true" />
+      <created>1719767866048</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1719767866048</updated>
+    </task>
+    <task id="LOCAL-00004" summary="MapperProvider 에 gameMapper추가, gameMapper interface추가">
+      <option name="closed" value="true" />
+      <created>1719832789456</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1719832789456</updated>
+    </task>
+    <task id="LOCAL-00005" summary="gamecontroller, MypageController 오류 수정">
+      <option name="closed" value="true" />
+      <created>1719833360164</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1719833360164</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="README.md에 포켓몬, 멤버 테이블 추가" />
+    <MESSAGE value="매퍼의 경우 final 키워드로 주입받을 경우 갱신이 새로 되지 않아 쿼리 결과가 캐싱되어 추가, 삭제, 수정해도 조회결과는 동일했던 문제 수정, Pagination 추가, README.md 파일에 멤버 테이블 수정" />
+    <MESSAGE value="Pagination 안나오던 문제 수정, css추가" />
+    <MESSAGE value="MapperProvider 에 gameMapper추가, gameMapper interface추가" />
+    <MESSAGE value="gamecontroller, MypageController 오류 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="gamecontroller, MypageController 오류 수정" />
+  </component>
+</project>
