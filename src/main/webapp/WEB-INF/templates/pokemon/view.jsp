@@ -2,7 +2,10 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
+
+
 <layout:main title="${data.nameKr}(${data.name})">
+
     <section class="pokemon-view">
         <img src="${data.frontImage}" alt="프론트" class="pokemon-view-img">
         <img src="${data.backImage}" alt="백" class="pokemon-view-img">
@@ -11,6 +14,12 @@
                 <h2>
                         ${data.nameKr}(${data.name})
                 </h2>
+            </div>
+            <div class="p-spec-km">
+            <div class="p-spec-item"> <h4>번호: ${data.seq}번째</h4></div>
+            <div class="p-spec-item"> <h4>무게: ${data.weight} *0.1= kg </h4></div>
+            <div class="p-spec-item"> <h4>키: ${data.height}  *0.1= m </h4></div>
+            <div class="p-spec-item"><h4>기본 경험치: ${data.baseExperience}</h4></div>
             </div>
             <div class="p-desc">
                 <h3>${fn:replace(data.description, '\\n', '<br>')}</h3>
