@@ -1,5 +1,6 @@
 package org.choongang.mypage.controllers;
 
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.choongang.global.config.annotations.Controller;
 import org.choongang.global.config.annotations.GetMapping;
@@ -11,6 +12,8 @@ import org.choongang.global.config.annotations.RequestMapping;
 @RequestMapping("/mypage")
 public class MypageController {
 
+    private final HttpServletRequest request;
+
     /**
      * 마이페이지 메인
      *
@@ -18,6 +21,7 @@ public class MypageController {
      */
     @GetMapping
     public String index() {
+        request.setAttribute("addCss", new String[] {"mypage/mypageStyle"});
 
         return "mypage/index";
     }
@@ -29,6 +33,9 @@ public class MypageController {
      */
     @GetMapping("/info")
     public String info() {
+
+        request.setAttribute("addCss", new String[] {"mypage/profileUpdateStyle"});
+
         return "mypage/info";
     }
 
@@ -40,5 +47,13 @@ public class MypageController {
     public String infoPs() {
 
         return "commons/execute_script";
+    }
+
+    @GetMapping("/alert")
+    public String alert() {
+
+        request.setAttribute("addCss", new String[] {"mypage/alertStyle"});
+
+        return "mypage/alert";
     }
 }
