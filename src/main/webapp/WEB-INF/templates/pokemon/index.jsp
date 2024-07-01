@@ -19,7 +19,7 @@
             <c:if test="${items != null && !items.isEmpty()}">
                 <c:forEach var="item" items="${items}">
                     <li class="pokemon-data">
-                        <a href="<c:url value='/pokemon/view/${item.seq}' />">
+                        <a href="<c:url value='/pokemon/${item.seq}' />">
                             <img src="${item.frontImage}" alt="${item.nameKr}">
                             <div class="p-name">
                                     ${item.nameKr}(${item.name})
