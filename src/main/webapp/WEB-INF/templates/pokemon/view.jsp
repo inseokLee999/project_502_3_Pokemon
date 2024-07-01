@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
-
+<c:url var="pokemonUrl" value="/pokemon" />
 
 <layout:main title="${data.nameKr}(${data.name})">
 
@@ -26,8 +26,11 @@
             </div>
             참고 주소 : <a href='https://pokeapi.co/api/v2/pokemon/${data.seq}' target="_blank">https://pokeapi.co/api/v2/pokemon/${data.seq}</a>
         </div>
-
         <br><br><br>
+        <div class="centered">
+            <a href="<c:url value="/..${pokemonUrl}"/>" class="button button-secondary">포켓몬도감</a>
+        </div>
+
             <%--            ${data.pokemon}--%>
     </section>
     <script src="../../js/pokemon/view.js"></script>
