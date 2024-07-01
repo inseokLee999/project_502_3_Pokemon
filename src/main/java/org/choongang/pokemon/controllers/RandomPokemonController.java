@@ -37,6 +37,7 @@ public class RandomPokemonController {
             if (seq > 0L) {
                 PokemonDetail data = infoService.get(seq).orElse(null);
                 if (data != null) {
+                    session.setAttribute("member", member);
                     request.setAttribute("data", data);
                 }
             }
