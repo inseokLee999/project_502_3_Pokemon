@@ -1,0 +1,77 @@
+
+form {
+    margin: auto;
+}
+
+
+dl {
+    margin-bottom: 10px;
+}
+
+
+dt {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+
+dd {
+    margin-bottom: 10px;
+}
+
+
+input[type="text"],
+input[type="password"] {
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-top: 3px;
+}
+
+
+
+button[type="submit"],
+#generate-profile-image {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+
+button[type="reset"] {
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+
+
+
+button[type="submit"]:hover,
+#generate-profile-image:hover {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+button[type="reset"]:hover {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+
+.button-group {
+    margin-top: 20px;
+}
+
+
+.button-group button {
+    margin-right: 10px;
+}
