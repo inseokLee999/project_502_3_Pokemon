@@ -13,7 +13,7 @@
         <h1>로그인이 필요한 페이지입니다.</h1>
 
             <div class="centered">
-                <a href="<c:url value="..${loginUrl}"/>" class="button button-secondary">로그인 하러가기</a>
+                <a href="<c:url value="..${loginUrl}?redirectUrl=/random"/>" class="button button-secondary">로그인 하러가기</a>
             </div>
 
         </div>
