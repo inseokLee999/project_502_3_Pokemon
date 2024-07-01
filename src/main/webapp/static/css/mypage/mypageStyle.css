@@ -1,0 +1,78 @@
+.content-box1 {
+    text-align: center;
+    min-width: 1000px;
+    max-width: 1400px;
+    padding: 20px 40px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px #414141;
+    margin: 80px auto;
+}
+
+.content-box2 {
+    text-align: center;
+    min-width: 1000px;
+    max-width: 1400px;
+    padding: 20px 40px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px #414141;
+    margin: 0 auto;
+    margin-bottom: 80px;
+}
+
+.content-box3 {
+    text-align: center;
+    margin: auto;
+    min-width: 1000px;
+    max-width: 1400px;
+    padding: 20px 40px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px #414141;
+}
+
+.h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    line-height: 1;
+    padding: 0 0 15px;
+}
+
+.form dl {
+    margin-bottom: 15px;
+}
+
+.form dt {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--primary-color);
+    border: 1px solid #ccc;
+}
+
+.form dd input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.button-group {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.button-group button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
