@@ -185,7 +185,8 @@ public class HandlerAdapterImpl implements HandlerAdapter {
         }
 
         //일반 컨트롤러인 경우 문자열이 redirect:로 시작하면 페이지 이동
-        String returnValue = (String)result;
+
+        String returnValue = String.valueOf(result);
         if (returnValue.startsWith("redirect:")) {
             String redirectUrl = returnValue.replace("redirect:", request.getContextPath());
             response.sendRedirect(redirectUrl);
