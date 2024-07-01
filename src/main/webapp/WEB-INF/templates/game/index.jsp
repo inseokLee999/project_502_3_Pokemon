@@ -33,7 +33,9 @@
 
         <h2>대결할 포켓몬 뽑기!!</h2>
 
-        <button id="updatePokemonButton" >포켓몬 다시 뽑기</button>
+        <a href="<c:url value='/random' />">
+            <button id="updatePokemonButton" >포켓몬 다시 뽑기</button>
+        </a>
 
 
 </util:memberOnly>

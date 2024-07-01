@@ -27,7 +27,8 @@
             현재 포켓몬 : ${loggedMember.myPokemonSeq}<br>
                 ${data.nameKr}
         </div>
-
-        <button id="updatePokemonButton" >포켓몬 다시 뽑기</button>
+        <a href="<c:url value='/random' />">
+            <button id="updatePokemonButton" >포켓몬 다시 뽑기</button>
+        </a>
     </util:memberOnly>
 </layout:main>
