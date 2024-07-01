@@ -6,6 +6,58 @@
 
 ---
 # 초기 설정
+
+## 테이블 설정
+
+### 포켓몬 테이블
+```sql
+CREATE TABLE POKEMON (
+     SEQ NUMBER(10) PRIMARY KEY,
+     NAME VARCHAR2(60) NOT NULL,
+     NAME_KR VARCHAR2(60),
+     WEIGHT NUMBER(7) DEFAULT 0,
+     HEIGHT NUMBER(7) DEFAULT 0,
+     BASE_EXPERIENCE NUMBER(10) DEFAULT 0,
+     FRONT_IMAGE VARCHAR2(150),
+     BACK_IMAGE VARCHAR2(150),
+     DESCRIPTION VARCHAR2(1000),
+     TYPE1 VARCHAR2(30),
+     TYPE2 VARCHAR2(30),
+     RAW_DATA CLOB
+);
+```
+
+### 멤버 테이블
+```sql
+CREATE TABLE MEMBER (
+	USER_NO NUMBER(10) PRIMARY KEY,
+	EMAIL VARCHAR2(60) NOT NULL UNIQUE,
+	PASSWORD VARCHAR2(65) NOT NULL,
+	USER_NAME VARCHAR2(30) NOT NULL,
+	USER_TYPE VARCHAR2(10) DEFAULT 'USER' CHECK(USER_TYPE IN ('USER', 'ADMIN')),
+	REG_DT DATE DEFAULT SYSDATE,
+	MOD_DT DATE,
+    MY_POKEMON_SEQ NUMBER(11) DEFAULT(0)
+);
+
+CREATE SEQUENCE SEQ_MEMBER;
+ALTER TABLE MEMBER MODIFY MY_POKEMON_SEQ NUMBER(11) DEFAULT 0;
+```
+### 멤버 테이블
+```sql
+CREATE TABLE MEMBER (
+	USER_NO NUMBER(10) PRIMARY KEY,
+	EMAIL VARCHAR2(60) NOT NULL UNIQUE,
+	PASSWORD VARCHAR2(65) NOT NULL,
+	USER_NAME VARCHAR2(30) NOT NULL,
+	USER_TYPE VARCHAR2(10) DEFAULT 'USER' CHECK(USER_TYPE IN ('USER', 'ADMIN')),
+	REG_DT DATE DEFAULT SYSDATE,
+	MOD_DT DATE,
+    MY_POKEMON_SEQ NUMBER(11)
+);
+
+CREATE SEQUENCE SEQ_MEMBER;
+```
 ## 의존성 추가 
 - servlet-api, servlet.jsp-api, jstl, lombok, ojdbc11, mybatis, slf4j-api, logback-classic, jbcrypt, jackson databind, mockito, javafaker 등
 
@@ -348,7 +400,8 @@ public @interface DateTimeFormat {
     String value();
 }
 ```
-
+##
+> 나는 장성준이다!
 
 ## 객체 컨테이너
 > @Controller, @RestController, @Component, @Service와 같은 애노테이션이 붙어 있는 클래스를 찾아서 객체를 싱글톤 패턴으로 생성하고 관리 합니다. 해당 클래스의 생성자 매개변수에 정의된 의존 객체가 있다면 재귀적으로 찾아서 모두 생성하고 주입해 줍니다. 

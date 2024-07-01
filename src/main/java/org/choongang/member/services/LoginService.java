@@ -18,7 +18,6 @@ public class LoginService {
     public void process(LoginRequest form) {
         //로그인 유효성 검사
         validator.check(form);
-        System.out.println(form);
         //로그인 처리 - 회원 정보 조회, 세션에 유지
         String email = form.getEmail();
         Member member = mapper.get(email);
