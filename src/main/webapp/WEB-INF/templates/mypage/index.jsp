@@ -7,8 +7,8 @@
 <c:url var="actionUrl" value="/mypage" />
 
 <layout:main title="${pageTitle}">
-    <section class="content-box">
-        <h1>개인 정보 수정</h1>
+    <section class="content-box1">
+        <h1>회원 정보 수정</h1>
         <form name="frmUpdateProfile" method="POST" action="${actionUrl}" autocomplete="off" target="ifrmProcess">
             <dl>
                 <dt><fmt:message key="이름" /></dt>
@@ -41,35 +41,34 @@
         </form>
     </section>
 
-    <section class="content-box">
-            <h1>서비스 알림 설정</h1>
-            <form name="frmManageSettings" method="POST" action="${actionUrl}" autocomplete="off" target="ifrmProcess">
-                <dl>
-                    <dt><fmt:message key="푸시_알림_설정" /></dt>
-                    <dd><input type="checkbox" name="pushNotification" /></dd>
-                </dl>
-                <dl>
-                    <dt><fmt:message key="이메일_알림_설정" /></dt>
-                    <dd><input type="checkbox" name="emailNotification" /></dd>
-                </dl>
-                <dl>
-                    <dt><fmt:message key="언어_설정" /></dt>
-                    <dd>
-                        <select name="language">
-                            <option value="ko"><fmt:message key="한국어" /></option>
-                            <option value="en"><fmt:message key="영어" /></option>
-                            <!-- 다른 언어 옵션 추가 -->
-                        </select>
-                    </dd>
-                </dl>
-                <div class="button-group">
-                    <button type="reset"><fmt:message key="다시입력" /></button>
-                    <button type="submit"><fmt:message key="저장" /></button>
-                </div>
-            </form>
+    <section class="content-box2">
+        <h1>서비스 알림 설정</h1>
+        <form name="frmManageSettings" method="POST" action="${actionUrl}" autocomplete="off" target="ifrmProcess">
+            <dl>
+                <dt><fmt:message key="푸시_알림_설정" /></dt>
+                <dd><input type="checkbox" name="pushNotification" /></dd>
+            </dl>
+            <dl>
+                <dt><fmt:message key="이메일_알림_설정" /></dt>
+                <dd><input type="checkbox" name="emailNotification" /></dd>
+            </dl>
+            <dl>
+                <dt><fmt:message key="언어_설정" /></dt>
+                <dd>
+                    <select name="language">
+                        <option value="ko"><fmt:message key="한국어" /></option>
+                        <option value="en"><fmt:message key="영어" /></option>
+                    </select>
+                </dd>
+            </dl>
+            <div class="button-group">
+                <button type="reset"><fmt:message key="다시입력" /></button>
+                <button type="submit"><fmt:message key="저장" /></button>
+            </div>
+        </form>
     </section>
 
-    <section class="content-box">
+    <section class="content-box3">
         <h1>회원 탈퇴하기</h1>
         <form name="frmDeleteAccount" method="POST" action="${actionUrl}" autocomplete="off" target="ifrmProcess">
             <dl>
@@ -84,7 +83,7 @@
                 </dd>
             </dl>
             <dl>
-                <dt><fmt:message key="추가적인_의견" /></dt>
+                <dt><fmt:message key="기타_의견" /></dt>
                 <dd><textarea name="additionalComments" rows="4" cols="50"></textarea></dd>
             </dl>
             <dl>
@@ -98,5 +97,4 @@
         </form>
     </section>
 </layout:main>
-
 
