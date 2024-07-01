@@ -14,7 +14,7 @@
 <c:url var="pokemonUrl" value="/pokemon"/>
 <c:url var="gameUrl" value="/game/play"/>
 <c:url var="mycardUrl" value="/mycard/privatecard"/>
-
+<c:url var="tempLogoUrl" value="/images/logo2.gif"/>
 <c:url var="adminUrl" value="/admin"/>
 <c:url var="randomUrl" value="/random"/>
 
@@ -66,7 +66,14 @@
                         <img src="${logoUrl}" alt="<fmt:message key="로고"/>">
                     </a>
                 </div>
-                <div class="header-bottom-box"></div>
+                <div class="main-center">
+                    <a href="${homeUrl}" class="center-logo">
+                        <img src="${tempLogoUrl}" alt="<fmt:message key="gif로고"/>">
+                    </a>
+                </div>
+<%--                <div class="header-bottom-box">
+                    dd
+                </div>--%>
                 <div class="right">
                     <form class="search-box" method="GET" action="${searchUrl}" autocomplete="off">
                         <input type="text" name="keyword" placeholder="<fmt:message key="검색어를_입력하세요."/> ">
