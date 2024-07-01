@@ -30,6 +30,7 @@ public class JoinService {
                 .password(hash)
                 .userName(form.getUserName())
                 .userType(UserType.USER)
+                .myPokemonSeq(0L)
                 .build();
 
         int result = mapper.register(member);

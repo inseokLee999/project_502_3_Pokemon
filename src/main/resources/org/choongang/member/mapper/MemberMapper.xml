@@ -7,10 +7,11 @@
         <result column="USER_NO" property="userNo" />
         <result column="EMAIL" property="email" />
         <result column="PASSWORD" property="password" />
-        <result column="USER_TYPE" property="userType"/>
         <result column="USER_NAME" property="userName" />
+        <result column="USER_TYPE" property="userType"/>
         <result column="REG_DT" property="regDt" />
         <result column="MOD_DT" property="modDt" />
+        <result column="MY_POKEMON_SEQ" property="myPokemonSeq"/>
     </resultMap>
 
     <select id="exists" resultType="long">
@@ -25,5 +26,10 @@
         INSERT INTO MEMBER (USER_NO, EMAIL, PASSWORD, USER_NAME)
         VALUES (SEQ_MEMBER.NEXTVAL, #{email}, #{password}, #{userName})
     </insert>
-
+    <update id="getPokemon" parameterType="org.choongang.member.entities.GetRandPokemon">
+        UPDATE MEMBER SET MY_POKEMON_SEQ = #{seq} WHERE USER_NO = #{userNo}
+    </update>
+    <select id="getMyPokemon" resultType="long">
+        SELECT MY_POKEMON_SEQ FROM MEMBER WHERE USER_NAME = #{userNm}
+    </select>
 </mapper>
