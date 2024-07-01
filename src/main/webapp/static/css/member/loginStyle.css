@@ -12,18 +12,18 @@ footer { margin-top: 0; }
     box-shadow: 2px 2px 10px #414141;
 }
 
-.content-box .small h1 {
-    color: #6b5e54;
-    font-size: 24px; /* 제목의 글꼴 크기 */
-    margin-bottom: 10px; /* 제목 아래 여백 */
+.content-box h1 {
+    color: var(--primary-color);
+    font-size: 28px; /* 제목의 글꼴 크기 */
+    margin-bottom: 20px; /* 제목 아래 여백 */
 }
 
 .content-box .small form {
 
 }
 
-.content-box.small input[type='text'],
-.content-box.small input[type='password']{
+.content-box input[type='text'],
+.content-box input[type='password']{
     cursor: pointer;
     width: 100%; /* 입력 요소와 버튼을 폭 전체로 설정 */
     margin-bottom: 10px; /* 요소 사이의 여백 */
@@ -33,14 +33,14 @@ footer { margin-top: 0; }
     box-sizing: border-box; /* 박스 크기를 테두리 박스에 맞춤 */
 }
 
-.content-box.small input[type='text']:focus,
-.content-box.small input[type='password']:focus {
-        color: var(--secondary-color);
+.content-box input[type='text']:focus,
+.content-box input[type='password']:focus {
+        color: var(--primary-color);
 }
 
 
-.content-box.small .save-email {
-    color: #6b5e54;
+.content-box .save-email {
+    color: var(--primary-color);
     margin-bottom: 10px; /* "이메일 기억하기" 위의 여백 */
     text-align: left;
 }
