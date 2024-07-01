@@ -9,7 +9,8 @@
         <form name="frmSearch" method="get" action="${searchUrl}" autocomplete="off">
             포켓몬 검색 :
             <input type="text" name="skey" value="${param.skey}" placeholder="검색어를 입력하세요.">
-            <button type="submit">검색</button>
+            <button type="submit" class="button button-secondary">검색</button>
+            
         </form>
         <ul class="pokemon-list">
             <c:if test="${items == null || items.isEmpty()}">
