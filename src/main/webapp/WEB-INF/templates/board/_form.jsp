@@ -10,7 +10,8 @@
         <dt>분류 선택</dt>
         <dd>
             <c:forEach var="category" items="${board.categories}" varStatus="status">
-                <input type="radio" name="category" value="${category}" id="category-${status.index}"${data.category == category ? ' checked':''}>
+
+                <input type="radio" name="category" value="${category}" id="category-${status.index}"${data.category != null && category.trim().equals(data.category) ? ' checked':''}>
                 <label for="category-${status.index}">${category}</label>
             </c:forEach>
         </dd>
@@ -20,7 +21,12 @@
 <dl>
     <dt>작성자</dt>
     <dd>
-        <input type="text" name="poster" value="${isLogin ? loggedMember.userName : ''}">
+        <c:if test="${data.mode == 'update'}">
+            <input type="text" name="poster" value="${data.poster}">
+        </c:if>
+        <c:if test="${data.mode != 'update'}">
+            <input type="text" name="poster" value="${isLogin ? loggedMember.userName : ''}">
+        </c:if>
         <c:if test="${isAdmin}">
             <input type="checkbox" name="notice" value="true" id="notice"${data.notice == 1 ? ' checked':''}>
             <label for="notice">
@@ -61,4 +67,3 @@
         <button type='button'>파일 선택</button>
     </dd>
 </dl>
-
