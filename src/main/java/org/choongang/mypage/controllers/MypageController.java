@@ -8,11 +8,14 @@ import org.choongang.global.config.annotations.PostMapping;
 import org.choongang.global.config.annotations.RequestMapping;
 import org.choongang.mypage.services.ProfileService;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/mypage")
 @RequiredArgsConstructor
 public class MypageController {
     private final ProfileService profileService;
+    private final HttpServletRequest request;
 
     /**
      * 마이페이지 메인
@@ -32,6 +35,7 @@ public class MypageController {
      */
     @GetMapping("/info")
     public String info() {
+        request.setAttribute("addScript", List.of("mypage/profile","mypage/info"));
         return "mypage/info";
     }
 
