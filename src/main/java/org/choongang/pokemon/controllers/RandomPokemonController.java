@@ -37,14 +37,16 @@ public class RandomPokemonController {
             if (seq > 0L) {
                 PokemonDetail data = infoService.get(seq).orElse(null);
                 if (data != null) {
+                    session.setAttribute("member", member);
                     request.setAttribute("data", data);
                 }
             }
         }
         return "random/index";
     }
-    @PostMapping()
+    @PostMapping
     public int getRandPokemon() {
+        commonProcess();
         Member member = (Member) session.getAttribute("member");
         PokemonDetail data = infoService.getRandom().orElse(null);
         GetRandPokemon getRandPokemon = new GetRandPokemon();
@@ -53,7 +55,7 @@ public class RandomPokemonController {
         return mapper.getPokemon(getRandPokemon);
     }
     private void commonProcess() {
-        request.setAttribute("addCss", new String[] {});
+        request.setAttribute("addCss", new String[] {"random/index"});
         request.setAttribute("addScript", List.of("random/getRandom"));
     }
 }

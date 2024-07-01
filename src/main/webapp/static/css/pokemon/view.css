@@ -13,3 +13,17 @@
 .p-desc div {
     display: flex;
 }
+
+.p-spec-km .p-spec-item {
+    display: block;
+    margin-bottom: 10px; /* 각 항목 사이의 간격을 조정 */
+}
+
+.p-spec-km {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 10px; /* 각 항목 사이의 간격을 조정 */
+}
+.p-spec-item {
+    grid-column: span 1;
+}

@@ -9,7 +9,8 @@
         <form name="frmSearch" method="get" action="${searchUrl}" autocomplete="off">
             포켓몬 검색 :
             <input type="text" name="skey" value="${param.skey}" placeholder="검색어를 입력하세요.">
-            <button type="submit">검색</button>
+            <button type="submit" class="button button-secondary">검색</button>
+            
         </form>
         <ul class="pokemon-list">
             <c:if test="${items == null || items.isEmpty()}">
@@ -18,7 +19,7 @@
             <c:if test="${items != null && !items.isEmpty()}">
                 <c:forEach var="item" items="${items}">
                     <li class="pokemon-data">
-                        <a href="<c:url value='/pokemon/view/${item.seq}' />">
+                        <a href="<c:url value='/pokemon/${item.seq}' />">
                             <img src="${item.frontImage}" alt="${item.nameKr}">
                             <div class="p-name">
                                     ${item.nameKr}(${item.name})
