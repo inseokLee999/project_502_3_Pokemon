@@ -5,6 +5,7 @@
 <%@ taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <c:url var="loginUrl" value="/member/login"/>
+<c:url var="pokemonUrl" value="/pokemon"/>
 <c:set var="item" value="${items}"/>
 <layout:main>
     <util:guestOnly>
@@ -17,8 +18,10 @@
         <h1>포켓몬 뽑기 페이지</h1>
         <h2>${loggedMember.userName} 님 포켓몬 뽑기!!</h2>
         현재 포켓몬 : ${loggedMember.myPokemonSeq}
-        <img src="${data.frontImage}">
+        <a href="<c:url value="..${pokemonUrl}/${loggedMember.myPokemonSeq}"/> ">
+            <img src="${data.frontImage}">
+        </a>
         ${data.nameKr}
-        <button id="updatePokemonButton">포켓몬 업데이트</button>
+        <button id="updatePokemonButton">포켓몬 다시 뽑기</button>
     </util:memberOnly>
 </layout:main>

@@ -34,9 +34,11 @@ public class RandomPokemonController {
         if (memberUtil.isLogin()) {
             Member member = mapper.get(((Member) session.getAttribute("member")).getEmail());
             long seq = member.getMyPokemonSeq();
+            System.out.println(member);
             if (seq > 0L) {
                 PokemonDetail data = infoService.get(seq).orElse(null);
                 if (data != null) {
+                    session.setAttribute("member", member);
                     request.setAttribute("data", data);
                 }
             }

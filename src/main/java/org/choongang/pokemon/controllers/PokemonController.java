@@ -35,7 +35,7 @@ public class PokemonController {
 
         return "pokemon/index";
     }
-    @GetMapping("/view/{seq}")
+    @GetMapping("/{seq}")
     public String view(@PathVariable("seq") long seq){
         commonProcess();
         request.setAttribute("addCss",List.of("pokemon/view"));
