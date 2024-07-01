@@ -4,7 +4,8 @@ footer { margin-top: 0; }
 .content-box {
     text-align: center; /* 가운데 정렬 */
     margin: auto; /* 가운데 정렬을 위한 마진 설정 */
-    width: 450px; /* 예시로 너비 설정 */
+    min-width: 350px;
+    max-width: 450px; /* 예시로 너비 설정 */
     padding: 20px 40px;/* 내용물 주변의 여백 */
     border: 1px solid #ccc; /* 테두리 추가 */
     border-radius: 10px; /* 테두리 모서리를 둥글게 만듦 */
