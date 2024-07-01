@@ -16,8 +16,8 @@ public class PokemonSaveService {
 
     public boolean save(Pokemon data) {
         List<Type> types = data.getTypes();
-        String type1 = types.size() > 0 && types.get(0) != null ? types.get(0).getType().getName() : "";
-        String type2 = types.size() > 1 && types.get(1) != null ? types.get(1).getType().getName() : "";
+        String type1 = !types.isEmpty() && types.get(0) != null ? types.get(0).getType().getName() : "";
+        String type2 = !types.isEmpty() && types.get(1) != null ? types.get(1).getType().getName() : "";
         PokemonDetail detail = PokemonDetail.builder()
                 .seq(data.getId())
                 .name(data.getName())
