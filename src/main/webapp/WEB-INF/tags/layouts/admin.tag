@@ -12,7 +12,7 @@
 <c:url var="logoUrl" value="/images/logo.png" />
 
 <layout:common title="${title}">
-    <jsp:attribute name="header">szs
+    <jsp:attribute name="header">
         <div class="left">
             <a href="${homeUrl}">
                 <img src="${logoUrl}" alt="로고">
