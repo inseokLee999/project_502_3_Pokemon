@@ -1,0 +1,23 @@
+h1 {
+    font-size: 28px;
+    margin-bottom: 50px;
+    color: var(--primary-color)
+}
+dl {
+    font-size: 15px;
+    margin-bottom: 50px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 8px 30px;
+}
+
+button:hover {
+    color: var(--secondary-color);
+    font-weight: bold;
+}

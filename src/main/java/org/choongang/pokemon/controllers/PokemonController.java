@@ -47,6 +47,7 @@ public class PokemonController {
         request.setAttribute("data", data);
         return "pokemon/view";
     }
+
     @GetMapping("/popup/{seq}")
     public String popup(@PathVariable("seq") long esq){
         PokemonDetail data = infoService.get(esq).orElseThrow(PokemonNotFoundException::new);
@@ -68,6 +69,7 @@ public class PokemonController {
         request.setAttribute("script", script);
         return "commons/execute_script";
     }
+
     private void commonProcess() {
         request.setAttribute("addCss", new String[] {"pokemon/style"});
         request.setAttribute("addScript", List.of("pokemon/wishlist"));
