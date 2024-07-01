@@ -11,9 +11,10 @@ import org.choongang.mypage.services.ProfileService;
 import java.util.List;
 
 @Controller
-@RequestMapping("/mypage")
 @RequiredArgsConstructor
+@RequestMapping("/mypage")
 public class MypageController {
+
     private final ProfileService profileService;
     private final HttpServletRequest request;
 
@@ -24,6 +25,7 @@ public class MypageController {
      */
     @GetMapping
     public String index() {
+        request.setAttribute("addCss", new String[] {"mypage/mypageStyle"});
 
         return "mypage/index";
     }
@@ -36,6 +38,8 @@ public class MypageController {
     @GetMapping("/info")
     public String info() {
         request.setAttribute("addScript", List.of("mypage/profile","mypage/info"));
+        request.setAttribute("addCss", new String[] {"mypage/profileUpdateStyle"});
+
         return "mypage/info";
     }
 
@@ -44,12 +48,16 @@ public class MypageController {
      * @return
      */
     @PostMapping("/info")
-    public String infoPs(RequestProfile form, HttpServletRequest request) {
-        profileService.update(form);
-        String url = request.getContextPath()+"/mypage";
-        String script = String.format("parent.location.replace('%s');",url);
+    public String infoPs() {
 
-        request.setAttribute("script",script);
         return "commons/execute_script";
+    }
+
+    @GetMapping("/alert")
+    public String alert() {
+
+        request.setAttribute("addCss", new String[] {"mypage/alertStyle"});
+
+        return "mypage/alert";
     }
 }
