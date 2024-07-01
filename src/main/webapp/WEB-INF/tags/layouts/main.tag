@@ -12,7 +12,7 @@
 <c:url var="searchUrl" value="/board/write" />
 <c:url var="logoUrl" value="/images/logo.png"/>
 <c:url var="pokemonUrl" value="/pokemon"/>
-<c:url var="gameUrl" value="/game/play"/>
+<c:url var="gameUrl" value="/game"/>
 <c:url var="mycardUrl" value="/mycard/privatecard"/>
 
 <c:url var="adminUrl" value="/admin"/>
@@ -43,6 +43,9 @@
                     </a>
                     </util:guestOnly>
                     <util:memberOnly>
+                        <c:if test="${myProfile!=null}">
+                            <img src="${myProfile.frontImage}">
+                        </c:if>
                         <fmt:message key="LOGIN_MSG">
                             <fmt:param>${loggedMember.userName}</fmt:param>
                             <fmt:param>${loggedMember.email}</fmt:param>

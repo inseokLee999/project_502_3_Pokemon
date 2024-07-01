@@ -14,6 +14,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="rootUrl" content="<c:url value="/"/>">
         <title>
          <c:if test="${!empty title}">
          ${title} -
@@ -31,7 +32,7 @@
                 <link rel="stylesheet" type="text/css" href="${cssUrl}${cssFile}.css">
             </c:forEach>
         </c:if>
-
+        <script src="${jsUrl}layer.js"></script>
         <script src="${jsUrl}common.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <jsp:invoke fragment="commonJs" />
