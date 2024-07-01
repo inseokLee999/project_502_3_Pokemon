@@ -19,7 +19,7 @@
         </div>
 
         <br><br><br>
-<%--            ${data.pokemon}--%>
+            <%--            ${data.pokemon}--%>
     </section>
     <script src="../../js/pokemon/view.js"></script>
 </layout:main>
