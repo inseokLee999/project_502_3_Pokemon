@@ -25,11 +25,13 @@
                 <h3>${fn:replace(data.description, '\\n', '<br>')}</h3>
             </div>
             참고 주소 : <a href='https://pokeapi.co/api/v2/pokemon/${data.seq}' target="_blank">https://pokeapi.co/api/v2/pokemon/${data.seq}</a>
+            <br><br><br>
+            <div class="centered">
+                <a href="<c:url value="/..${pokemonUrl}"/>" class="button button-secondary">포켓몬도감</a>
+            </div>
         </div>
         <br><br><br>
-        <div class="centered">
-            <a href="<c:url value="/..${pokemonUrl}"/>" class="button button-secondary">포켓몬도감</a>
-        </div>
+
 
             <%--            ${data.pokemon}--%>
     </section>
