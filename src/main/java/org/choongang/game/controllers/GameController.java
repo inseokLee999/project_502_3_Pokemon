@@ -24,13 +24,13 @@ public class GameController {
     private HttpServletRequest request;
     private final BeanContainer beanContainer;
 
-    @Inject
-    public GameController(PokemonInfoService infoService, HttpServletRequest request) {
-        this.infoService = infoService;
-        this.request = request;
-        this.beanContainer = BeanContainer.getInstance();
-        this.beanContainer.loadBeans(); // 모든 빈들을 로딩
-    }
+//    @Inject
+//    public GameController(PokemonInfoService infoService, HttpServletRequest request) {
+//        this.infoService = infoService;
+//        this.request = request;
+//        this.beanContainer = BeanContainer.getInstance();
+////        this.beanContainer.loadBeans(); // 모든 빈들을 //로딩 필요없음!
+//    }
 
     // 게임창
     @GetMapping
