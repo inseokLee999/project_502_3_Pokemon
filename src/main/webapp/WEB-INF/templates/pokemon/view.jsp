@@ -34,6 +34,7 @@
                 <div class="type1" >
                     ${data.type1} /
                 </div>
+                type2:
 
                 <c:if test="${data.type2!=null}">
                     <div class="type2">
