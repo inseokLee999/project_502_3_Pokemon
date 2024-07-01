@@ -12,7 +12,7 @@
 <c:url var="searchUrl" value="/board/search" />
 <c:url var="logoUrl" value="/images/logo.png"/>
 <c:url var="pokemonUrl" value="/pokemon"/>
-<c:url var="gameUrl" value="/game/play"/>
+<c:url var="gameUrl" value="/game"/>
 <c:url var="mycardUrl" value="/mycard/privatecard"/>
 
 <c:url var="adminUrl" value="/admin"/>
