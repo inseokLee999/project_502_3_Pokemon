@@ -66,9 +66,6 @@ public class MypageController {
 
         request.setAttribute("script", script);
 
-
-        profileService.update(form);
-
         return "commons/execute_script";
     }
 

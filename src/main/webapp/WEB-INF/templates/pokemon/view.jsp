@@ -17,7 +17,7 @@
                 </h2>
             </div>
             <div class="p-spec-km">
-            <div class="p-spec-item"> <h4><fmt:message key="포켓몬_번호"/> : ${data.seq}</h4></div>
+            <div class="p-spec-item"> <h4>번호: ${data.seq}번째</h4></div>
             <div class="p-spec-item"> <h4><fmt:message key="무게"/> : ${data.weight*0.1} kg </h4></div>
             <div class="p-spec-item"> <h4><fmt:message key="높이"/> : ${data.height*0.1} m </h4></div>
             <div class="p-spec-item"><h4><fmt:message key="초기경험치"/> : ${data.baseExperience}</h4></div>
