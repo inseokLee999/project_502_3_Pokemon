@@ -7,4 +7,89 @@
 }
 
 
+--button-padding: 10px 20px;
+    --button-font-size: 16px;
+    --button-font-weight: bold;
+    --button-color: #fff;
+    --button-border-radius: 4px;
+    --button-cursor: pointer;
+    --button-transition: background-color 0.3s ease;
+    --button-primary-bg: #1B3467;
+    --button-primary-hover-bg: #3463c2;
+    --button-secondary-bg: #e7c533;
+    --button-secondary-hover-bg: #fee372;
+    --button-success-bg: #28a745;
+    --button-success-hover-bg: #218838;
+    --button-danger-bg: #dc3545;
+    --button-danger-hover-bg: #c82333;
+    --button-warning-bg: #ffc107;
+    --button-warning-hover-bg: #e0a800;
+    --button-info-bg: #17a2b8;
+    --button-info-hover-bg: #138496;
+}
 
+
+/* 공통 버튼 스타일 1 */
+.button {
+    display: inline-block;
+    padding: var(--button-padding);
+    font-size: var(--button-font-size);
+    font-weight: var(--button-font-weight);
+    color: var(--button-color);
+    border: none;
+    border-radius: var(--button-border-radius);
+    cursor: var(--button-cursor);
+    text-align: center;
+    text-decoration: none;
+    transition: var(--button-transition);
+}
+
+/* 버튼 색상 정의 */
+.button-primary {
+    background-color: var(--button-primary-bg);
+}
+
+.button-secondary {
+    background-color: var(--button-secondary-bg);
+}
+
+.button-success {
+    background-color: var(--button-success-bg);
+}
+
+.button-danger {
+    background-color: var(--button-danger-bg);
+}
+
+.button-warning {
+    background-color: var(--button-warning-bg);
+}
+
+.button-info {
+    background-color: var(--button-info-bg);
+}
+
+/* 호버 효과 */
+.button-primary:hover {
+    background-color: var(--button-primary-hover-bg);
+}
+
+.button-secondary:hover {
+    background-color: var(--button-secondary-hover-bg);
+}
+
+.button-success:hover {
+    background-color: var(--button-success-hover-bg);
+}
+
+.button-danger:hover {
+    background-color: var(--button-danger-hover-bg);
+}
+
+.button-warning:hover {
+    background-color: var(--button-warning-hover-bg);
+}
+
+.button-info:hover {
+    background-color: var(--button-info-hover-bg);
+}
