@@ -46,7 +46,7 @@ dd {
 input[type="text"],
 input[type="password"] {
     padding: 8px;
-    width: 100%;
+    width: 500px;
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 3px;
