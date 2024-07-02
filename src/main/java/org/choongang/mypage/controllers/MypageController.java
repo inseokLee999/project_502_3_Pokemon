@@ -42,10 +42,13 @@ public class MypageController {
     @GetMapping("/info")
     public String info() {
         List<PokemonDetail> items = pokemonService.getList();
+
         request.setAttribute("addScript", List.of("mypage/profile","mypage/info"));
         request.setAttribute("addCss", new String[] {"mypage/profileUpdateStyle"});
         request.setAttribute("items", items);
 
+
+        request.setAttribute("items", items);
         return "mypage/info";
     }
 

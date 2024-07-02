@@ -51,15 +51,15 @@ public class PokemonController {
     }
 
     @GetMapping("/popup/{seq}")
-    public String popup(@PathVariable("seq") long seq){
+    public String popup(@PathVariable("seq") long seq) {
         PokemonDetail data = infoService.get(seq).orElseThrow(PokemonNotFoundException::new);
-
-        pokemonService.add(seq);//발급 받은 포켓몬 저장
+        pokemonService.add(seq); // 발급 받은 포켓몬 저장
 
         request.setAttribute("data", data);
 
         return "pokemon/popup";
     }
+
     @PostMapping("/popup")
     public String popupPs(@RequestParam("seq") long seq) {
         if(!memberUtil.isLogin()){
