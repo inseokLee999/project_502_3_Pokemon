@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.layout-width {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.tab-category {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.tab-category a {
+    margin-right: 10px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.tab-category a.on {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.btns {
+    margin-bottom: 20px; /* 글쓰기 버튼과 리스트 간의 간격을 둠 */
+}
+
+.btns a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    background-color: #007bff;
+    border-radius: 4px;
+    border: 1px solid #007bff;
+}
+
+.btns a:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.list-items {
+    list-style: none;
+    padding: 0;
+}
+
+.list-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.list-item:last-child {
+    border-bottom: none;
+}
+
+.list-item .subject {
+    display: block;
+    font-size: 1.2em;
+    color: #333;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.list-item .subject:hover {
+    text-decoration: underline;
+}
+
+.item-category {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.post-info {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.no-data {
+    text-align: center;
+    padding: 20px;
+    color: #999;
+}
+

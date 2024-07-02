@@ -12,7 +12,7 @@
         <jsp:include page="_list.jsp" />
 
         <div class="search-box">
-            <form name='frmSearch' method='get' autocomplate='off'>
+            <form name='frmSearch' method='get' autocomplete='off'>
                 <c:if test="${! empty param.category}">
                     <input type="hidden" name="category" value="${param.category}">
                 </c:if>
