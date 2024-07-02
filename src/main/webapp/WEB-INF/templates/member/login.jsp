@@ -5,7 +5,7 @@
 <fmt:setBundle basename="messages.commons" />
 <fmt:message var="pageTitle" key="로그인" />
 <c:url var="actionUrl" value="/member/login" />
-
+<c:url var="joinUrl" value="/member/join" />
 <layout:main title="${pageTitle}">
     <div class="content-box small">
         <h1>${pageTitle}</h1>
@@ -27,5 +27,10 @@
                 <fmt:message key="로그인" />
             </button>
         </form>
+        <a href="${joinUrl}" class="joinButton">
+            아직 회원이 아니신가요?
+        </a>
     </div>
+
+
 </layout:main>

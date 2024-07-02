@@ -4,9 +4,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.choongang.global.config.annotations.Component;
 import org.choongang.global.exceptions.AlertException;
-import org.choongang.member.validators.Validator;
 import org.choongang.member.controllers.JoinRequest;
-import org.choongang.member.mapper.MemberMapper;
+import org.choongang.member.mappers.MemberMapper;
 
 @Component
 @RequiredArgsConstructor

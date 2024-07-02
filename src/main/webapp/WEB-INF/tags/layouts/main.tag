@@ -9,14 +9,16 @@
 <c:url var="cssUrl" value="/css/" />
 <c:url var="jsUrl" value="/js/" />
 <c:url var="homeUrl" value="/"/>
-<c:url var="searchUrl" value="/board/search" />
+<c:url var="searchUrl" value="/board/write" />
 <c:url var="logoUrl" value="/images/logo.png"/>
 <c:url var="pokemonUrl" value="/pokemon"/>
-<c:url var="gameUrl" value="/game/play"/>
+<c:url var="gameUrl" value="/game"/>
 <c:url var="mycardUrl" value="/mycard/privatecard"/>
-
+<c:url var="tempLogoUrl" value="/images/pokemonLogo.png"/>
 <c:url var="adminUrl" value="/admin"/>
 <c:url var="randomUrl" value="/random"/>
+<c:url var="freeUrl" value="/board/list/freetalk"/>
+<c:url var="noticeUrl" value="/board/list/notice"/>
 
 <c:url var="pokemonOffUrl" value="https://www.pokemonkorea.co.kr/"/>
 <c:url var="instagramUrl" value="/images/sns/instagram.jpeg"/>
@@ -43,18 +45,24 @@
                     </a>
                     </util:guestOnly>
                     <util:memberOnly>
+                        <div class="logged-in-right">
+                        <c:if test="${myProfile!=null}">
+                            <img src="${myProfile.frontImage}">
+                        </c:if>
                         <fmt:message key="LOGIN_MSG">
                             <fmt:param>${loggedMember.userName}</fmt:param>
                             <fmt:param>${loggedMember.email}</fmt:param>
                         </fmt:message>
-                        <a href="<c:url value="/mypage" />">
-                            <i class="xi-user-o"></i>
-                            <fmt:message key="마이페이지" />
-                        </a>
-                        <a href="<c:url value="/member/logout" />">
-                            <i class="xi-log-out"></i>
-                            <fmt:message key="로그아웃" />
-                        </a>
+                            <a href="<c:url value="/mypage" />">
+                                <i class="xi-user-o"></i>
+                                <fmt:message key="마이페이지" />
+                            </a>
+                            <a href="<c:url value="/member/logout" />">
+                                <i class="xi-log-out"></i>
+                                <fmt:message key="로그아웃" />
+                            </a>
+                        </div>
+
                     </util:memberOnly>
                 </div>
             </div>
@@ -66,7 +74,14 @@
                         <img src="${logoUrl}" alt="<fmt:message key="로고"/>">
                     </a>
                 </div>
-                <div class="header-bottom-box"></div>
+                <div class="main-center">
+                    <a href="${homeUrl}" class="center-logo">
+                        <img src="${tempLogoUrl}" alt="<fmt:message key="gif로고"/>">
+                    </a>
+                </div>
+<%--                <div class="header-bottom-box">
+                    dd
+                </div>--%>
                 <div class="right">
                     <form class="search-box" method="GET" action="${searchUrl}" autocomplete="off">
                         <input type="text" name="keyword" placeholder="<fmt:message key="검색어를_입력하세요."/> ">
@@ -78,14 +93,22 @@
             </div>
         </section>
         <nav>
-            <div class="layout-width inner">
-                <a href="#">메뉴 1</a>
+            <div class="inner layout-width">
+                <div class="dropdown">
+                    <a href="#">게시판</a>
+                    <div class="dropdown-content">
+                        <a href="${freeUrl}">자유게시판</a>
+                        <a href="${noticeUrl}">공지사항</a>
+                        <a href="#">아이템 3</a>
+                    </div>
+                </div>
                 <a href="${pokemonUrl}">포켓몬 도감</a>
                 <a href="${randomUrl}">포켓몬 뽑기</a>
-                <a href="${mycardUrl}">내카드함</a>
-                <a href="${gameUrl}">게임하기</a>
-                <a href="#">메뉴 4</a>
-                <a href="${adminUrl}">게시판 관리</a>
+                <a href="${mycardUrl}">내 카드함</a>
+                <a href="${gameUrl}">게임 하기</a>
+                <util:adminOnly >
+                    <a href="${adminUrl}">게시판 관리</a>
+                </util:adminOnly>
             </div>
         </nav>
     </jsp:attribute>

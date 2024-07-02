@@ -6,6 +6,7 @@
 <%@ attribute name="footer" fragment="true" %>
 <%@ attribute name="commonCss" fragment="true" %>
 <%@ attribute name="commonJs" fragment="true" %>
+<c:url var="imageUrl" value="/images/"/>
 <%@ attribute name="title" %>
 <fmt:setBundle basename="messages.commons" />
 <c:url var="cssUrl" value="/css/" />
@@ -14,6 +15,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="rootUrl" content="<c:url value="/"/>">
         <title>
          <c:if test="${!empty title}">
          ${title} -
@@ -31,7 +33,7 @@
                 <link rel="stylesheet" type="text/css" href="${cssUrl}${cssFile}.css">
             </c:forEach>
         </c:if>
-
+        <script src="${jsUrl}layer.js"></script>
         <script src="${jsUrl}common.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <jsp:invoke fragment="commonJs" />
@@ -49,6 +51,7 @@
             <jsp:doBody />
         </main>
         <footer>
+            <img src="${imageUrl}/myu.png" alt="Follow" class="follow-image">
             <jsp:invoke fragment="footer" />
         </footer>
     </body>

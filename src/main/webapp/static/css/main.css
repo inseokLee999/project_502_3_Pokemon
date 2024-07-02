@@ -1,5 +1,39 @@
 /*메인 레이아웃 공통*/
 @import url('common.css');
+/* 드롭다운 컨테이너 스타일 */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* 드롭다운 콘텐츠 스타일 */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--primary-color); /* 네비게이션 배경색과 동일 */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: var(--background-color); /* 메뉴 텍스트 색상 */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 1.5rem; /* 메뉴 1과 동일한 글자 크기 */
+    line-height: 45px;
+    background-color: transparent; /* 배경색을 투명하게 설정 */
+}
+
+.dropdown-content a:hover {
+    background-color: transparent; /* 호버 시 배경색을 다시 투명하게 설정 */
+}
+
+/* 드롭다운 컨테이너에 마우스를 올리면 드롭다운 콘텐츠를 보이게 함 */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
 @keyframes infinite-rotate {
     from {
@@ -12,31 +46,30 @@
 }
 
 .layout-width {
-    min-width: 1100px;
-    max-width: 1300px;
+    min-width: 900px;
+    /*max-width: 1300px;*/
     margin-left: 50px;
     margin-right: auto;
     padding: 0;
 }
 
 
-button:hover, a:hover {
-    box-shadow: 0 4px 1px rgba(0, 0, 0, 0.3); /* 하단 그림자 설정 */
-}
+/*button:hover, a:hover {
+    box-shadow:  4px 1px rgba(0, 0, 0, 0.3); !* 하단 그림자 설정 *!
+}*/
 
 /*사이트 헤더 영역 S*/
-header .site-top {
-    background: var(--background-color);
 
+header .site-top {
     border-bottom: 1px solid #8f8f8f;
     top: 0;
     width: 100%;
+    background: var(--background-color);
 
 }
 
 
 header .site-top > .inner {
-    background: var(--background-color);
     display: flex;
     justify-content: space-between;
     height: 35px;
@@ -91,26 +124,43 @@ header .logo img:hover {
 
 /* 회전 애니메이션 정의 */
 
+header .main-center img{
+    height: 150px;
+}
+header .main-center img:hover{
 
+}
 header .site-top a:hover {
     font-weight: bold;
 }
 
 header .site-top .right a {
     margin-left: 10px;
-    background: var(--background-color);
+    /*background: var(--background-color);*/
 }
-
+header .right {
+    height: 100%;
+    align-items: center;
+}
+header .logged-in-right {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+header .logged-in-right img{
+    align-items: center;
+    height: 100%;
+}
 header .logo-search {
     padding: 10px 0;
-
+    background: url("../images/wallpaper2.jpg") no-repeat center center;
+    background-size: cover;
 }
 
 header .logo-search > .inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 header .search-box {
@@ -139,8 +189,6 @@ header .search-box button {
     border: 1px solid var(--background-color);
     border-radius: 3px;
     cursor: pointer;
-
-
 }
 
 header .search-box button i {
@@ -191,13 +239,15 @@ header {
 }
 
 main {
-    padding-top: 223px; /* 헤더 높이만큼 패딩 추가 */
+    padding-top: 254px; /* 헤더 높이만큼 패딩 추가 */
+    background:url('../images/whiteBg.png') no-repeat center center ;
+    background-size: 100% 100%;
 }
 
 
 /*사이트 푸터 영역 S*/
 footer {
-    margin-top: 300px;
+    margin-top: 50px;
     min-height: 100px;
     width: 100%;
     padding: 20px;
@@ -231,3 +281,19 @@ footer ul li {
 }
 
 /*사이트 푸터 영역 E*/
+/* 페이징 공통 S */
+.pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+.pagination a {
+    border: 1px solid #333;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+.pagination a.on {
+    background: #333;
+    color: #fff;
+}
+/* 페이징 공통 E */
