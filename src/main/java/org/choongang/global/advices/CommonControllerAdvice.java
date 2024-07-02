@@ -8,6 +8,7 @@ import org.choongang.global.config.annotations.ModelAttribute;
 import org.choongang.global.exceptions.*;
 import org.choongang.member.MemberUtil;
 import org.choongang.member.entities.Member;
+import org.choongang.pokemon.entities.PokemonDetail;
 
 @RequiredArgsConstructor
 @ControllerAdvice("org.choongang")
@@ -23,6 +24,10 @@ public class CommonControllerAdvice {
     @ModelAttribute
     public boolean isAdmin() {
         return memberUtil.isAdmin();
+    }
+    @ModelAttribute
+    public PokemonDetail myProfile() {
+        return memberUtil.getMyProfile();
     }
 
     @ModelAttribute
