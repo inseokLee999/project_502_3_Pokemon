@@ -5,7 +5,7 @@
 
 .pokemon-list > li {
     width: calc(100% / 5);
-    padding: 10px ;
+    padding: 20px ;
 }
 .pokemon-list > li a {
     display: block;
@@ -13,7 +13,7 @@
     border: #1B3467 1px solid;
     border-radius: 5px;
     padding: 15px;
-
+    background-color: rgba(255,255,255,0.8);
 }
 .pokemon-list > li img{
     width: 100%;
@@ -27,14 +27,13 @@
     font-weight: bold;
 }
 
-
-/*km */
-input[type="text"] {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    width: 300px; /* 필요에 따라 너비를 조정하세요 */
-    margin-bottom: 10px; /* 필요에 따라 여백을 조정하세요 */
-}
+ /*km */
+ input[type="text"] {
+     padding: 10px;
+     font-size: 16px;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     box-sizing: border-box;
+     width: 300px; /* 필요에 따라 너비를 조정하세요 */
+     margin-bottom: 10px; /* 필요에 따라 여백을 조정하세요 */
+ }

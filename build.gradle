@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-
+    implementation 'org.modelmapper:modelmapper:3.2.0'
     implementation 'jakarta.inject:jakarta.inject-api:2.0.1'
 
     compileOnly 'jakarta.servlet:jakarta.servlet-api:6.0.0'
@@ -30,14 +30,14 @@ dependencies {
     implementation 'org.slf4j:slf4j-api:2.0.13'
     implementation 'ch.qos.logback:logback-classic:1.5.6'
     implementation 'com.github.javafaker:javafaker:1.0.2'
+    implementation 'org.modelmapper:modelmapper:3.2.0'
 
     testImplementation 'org.projectlombok:lombok:1.18.32'
     testImplementation 'org.mockito:mockito-core:5.12.0'
     testImplementation 'org.mockito:mockito-junit-jupiter:5.12.0'
     testImplementation platform('org.junit:junit-bom:5.10.2')
     testImplementation 'org.junit.jupiter:junit-jupiter'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-}
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"}
 
 test {
     useJUnitPlatform()

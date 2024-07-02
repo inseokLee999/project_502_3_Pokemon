@@ -1,70 +1,79 @@
-//package org.choongang.game.services;
-//
-//import org.choongang.mycard.entities.MyCardDetail;
-//import org.choongang.mycard.mappers.MyCardMapper;
-//import org.apache.ibatis.session.SqlSession;
-//import org.apache.ibatis.session.SqlSessionFactory;
-//import jakarta.inject.Inject;
-//import jakarta.inject.Singleton;
-//
-//@Singleton
-//public class GameService {
-//
-//    private final SqlSessionFactory sqlSessionFactory;
-//
-//    @Inject
-//    public GameService(SqlSessionFactory sqlSessionFactory) {
-//        this.sqlSessionFactory = sqlSessionFactory;
-//    }
-//
-//    public int calculateUserPower(int userNo, int seq) {
-//        try (SqlSession session = sqlSessionFactory.openSession()) {
-//            MyCardMapper mapper = session.getMapper(MyCardMapper.class);
-//            MyCardDetail myCardDetail = mapper.get(userNo, seq);
-//
-//            if (myCardDetail != null) {
-//                return myCardDetail.getWeight() * myCardDetail.getHeight() * myCardDetail.getBaseExperience();
-//            } else {
-//                throw new RuntimeException("No Pokemon details found for the given user and sequence.");
-//            }
-//        }
-//    }
-//
-//    public MyCardDetail getRandomPokemon() {
-//        int randomSeq = (int) (Math.random() * 260) + 1;
-//        try (SqlSession session = sqlSessionFactory.openSession()) {
-//            MyCardMapper mapper = session.getMapper(MyCardMapper.class);
-//            return mapper.getRandomPokemon(randomSeq);
-//        }
-//    }
-//
-//    public void startGame(int userNo, int userSeq) {
-//        MyCardDetail userPokemon = getUserPokemon(userNo, userSeq);
-//        MyCardDetail computerPokemon = getRandomPokemon();
-//
-//        int userPower = calculatePower(userPokemon);
-//        int computerPower = calculatePower(computerPokemon);
-//
-//        System.out.println("User's Pokemon: " + userPokemon);
-//        System.out.println("Computer's Pokemon: " + computerPokemon);
-//
-//        if (userPower > computerPower) {
-//            System.out.println("User wins!");
-//        } else if (userPower < computerPower) {
-//            System.out.println("Computer wins!");
-//        } else {
-//            System.out.println("It's a tie!");
-//        }
-//    }
-//
-//    private MyCardDetail getUserPokemon(int userNo, int seq) {
-//        try (SqlSession session = sqlSessionFactory.openSession()) {
-//            MyCardMapper mapper = session.getMapper(MyCardMapper.class);
-//            return mapper.get(userNo, seq);
-//        }
-//    }
-//
-//    private int calculatePower(MyCardDetail pokemon) {
-//        return pokemon.getWeight() * pokemon.getHeight() * pokemon.getBaseExperience();
-//    }
-//}
+package org.choongang.game.services;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+import lombok.RequiredArgsConstructor;
+import org.choongang.game.mappers.GameMapper;
+import org.choongang.global.config.annotations.Controller;
+import org.choongang.global.config.annotations.RequestMapping;
+import org.choongang.global.config.containers.BeanContainer;
+import org.choongang.global.exceptions.UnAuthorizedException;
+import org.choongang.member.MemberUtil;
+import org.choongang.member.entities.GetRandPokemon;
+import org.choongang.member.entities.Member;
+import org.choongang.member.mapper.MemberMapper;
+import org.choongang.pokemon.entities.PokemonDetail;
+import org.choongang.pokemon.mappers.PokemonMapper;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import jakarta.inject.Inject;
+import jakarta.inject.Singleton;
+import org.choongang.pokemon.services.PokemonInfoService;
+
+import java.util.List;
+import java.util.Random;
+
+
+@Controller
+@Singleton
+@RequestMapping("/game")
+@RequiredArgsConstructor
+public class GameService {
+
+    private MemberMapper memberMapper;
+    private GameMapper gameMapper;
+    private PokemonMapper pokemonMapper;
+/*    @Inject
+    public GameService(MemberMapper memberMapper, PokemonMapper pokemonMapper) {
+        this.memberMapper = memberMapper;
+    }
+
+    public GameService(GameMapper gamemapper) {
+    }*/
+
+    public String startGame(long userNo) {
+        Member member = memberMapper.getMemberByUserNo(userNo);
+        if (member == null || member.getMyPokemonSeq() == 0) {
+            throw new UnAuthorizedException();
+        }
+
+        PokemonDetail userPokemon = gameMapper.getPokemonBySeq(member.getMyPokemonSeq());
+        PokemonDetail computerPokemon = pokemonMapper.getRandom();
+
+        int userPower = calculatePower(userPokemon);
+        int computerPower = calculatePower(computerPokemon);
+
+        System.out.println("User's Pokémon: " + userPokemon);
+        System.out.println("Computer's Pokémon: " + computerPokemon);
+
+        if (userPower > computerPower) {
+            return "User wins!";
+        } else if (userPower < computerPower) {
+            return "Computer wins!";
+        } else {
+            return "It's a tie!";
+        }
+    }
+
+    private int calculatePower(PokemonDetail pokemon) {
+        return pokemon.getWeight() * pokemon.getHeight() * pokemon.getBaseExperience();
+    }
+
+/*    private PokemonDetail getRandomPokemon() {
+        List<PokemonDetail> allPokemon = gameMapper.getAllPokemon();
+        Random rand = new Random();
+        return allPokemon.get(rand.nextInt(allPokemon.size()));
+    }*/
+}
+
+

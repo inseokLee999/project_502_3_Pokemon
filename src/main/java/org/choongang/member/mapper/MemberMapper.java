@@ -9,4 +9,6 @@ public interface MemberMapper {
     int register(Member member);
     int getPokemon(GetRandPokemon params);
     long getMyPokemon(String userName);
+    int modify(Member member);
+    Member getMemberByUserNo(long userNo);
 }

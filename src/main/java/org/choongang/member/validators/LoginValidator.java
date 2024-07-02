@@ -35,9 +35,9 @@ public class LoginValidator implements Validator<LoginRequest>, RequiredValidato
         String message = "이메일 또는 비밀번호가 일치하지 않습니다.";
         Member member = mapper.get(email);
         System.out.println(member);
-        checkTrue(member != null, new AlertException("이메일 이슈", status));
+        checkTrue(member != null, new AlertException(message, status));
 
-        checkTrue(BCrypt.checkpw(password, member.getPassword()), new AlertException("비밀번호 이슈", status));
+        checkTrue(BCrypt.checkpw(password, member.getPassword()), new AlertException(message, status));
 
     }
 
