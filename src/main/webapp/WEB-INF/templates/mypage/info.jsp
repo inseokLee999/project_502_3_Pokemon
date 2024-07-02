@@ -3,8 +3,9 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <c:url var="actionUrl" value="/mypage/info" />
 <layout:main title="회원정보 수정">
-    <section class="layout-width">
+    <section class="layout-width-profileUpdate">
         <form name="frmSave" method="post" action="${actionUrl}" target="ifrmProcess" autocomplete="off">
+            <h1>회원정보 수정</h1>
             <dl>
                 <dt>이메일</dt>
                 <dd>${loggedMember.email}</dd>
