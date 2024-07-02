@@ -1771,8 +1771,8 @@ org.apache.ibatis.session.defaults.DefaultSqlSession@6692b6c6
     <root level="INFO">
         <appender-ref ref="stdout"/>
     </root>
-  
-   <logger name="org.choongang.member.mapper" level="DEBUG" />
+
+    <logger name="org.choongang.member.mappers" level="DEBUG"/>
 </configuration>
 ```
 
@@ -1782,8 +1782,8 @@ org.apache.ibatis.session.defaults.DefaultSqlSession@6692b6c6
 ```xml
 
 ...
-<logger name="org.choongang.member.mapper" level="DEBUG" />
-...
+<logger name="org.choongang.member.mappers" level="DEBUG"/>
+        ...
 
 ```
 
@@ -1813,7 +1813,7 @@ CREATE SEQUENCE SEQ_MEMBER;
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.choongang.member.mapper.MemberMapper">
+<mapper namespace="org.choongang.member.mappers.MemberMapper">
 
 </mapper>
 ```
@@ -1821,7 +1821,7 @@ CREATE SEQUENCE SEQ_MEMBER;
 ### src/main/java/org/choongang/member/mapper/MemberMapper.java
 
 ```java
-package org.choongang.member.mapper;
+package org.choongang.member.mappers;
 
 public interface MemberMapper {
 
@@ -1867,14 +1867,14 @@ public class JoinService {
 
 ```java
 @MapperScan({
-        "org.choongang.member.mapper",
+        "org.choongang.member.mappers",
         "org.choongang.board.mapper"
 })
 public class MapperProvider {
   ...
 }
 ```
-> 위 설정은 org.choongang.member.mapper, org.choongang.board.mapper 두개의 패키지에 정의된 매퍼 인터페이스들이 검색 범위가 된다.
+> 위 설정은 org.choongang.member.mappers, org.choongang.board.mapper 두개의 패키지에 정의된 매퍼 인터페이스들이 검색 범위가 된다.
 
 - MapperProvider : 매퍼 인터페이스 정의를 찾아서 생성 및 반환
 
@@ -1909,7 +1909,7 @@ import org.choongang.global.config.annotations.mybatis.MapperScan;
 
 import java.util.Arrays;
 
-@MapperScan({"org.choongang.member.mapper"})
+@MapperScan({"org.choongang.member.mappers"})
 public class MapperProvider {
 
     public static MapperProvider instance;

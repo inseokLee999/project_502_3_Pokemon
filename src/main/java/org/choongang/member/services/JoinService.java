@@ -7,7 +7,7 @@ import org.choongang.global.exceptions.AlertException;
 import org.choongang.member.constants.UserType;
 import org.choongang.member.controllers.JoinRequest;
 import org.choongang.member.entities.Member;
-import org.choongang.member.mapper.MemberMapper;
+import org.choongang.member.mappers.MemberMapper;
 import org.choongang.member.validators.JoinValidator;
 import org.mindrot.jbcrypt.BCrypt;
 
