@@ -27,6 +27,7 @@ public class LogoutController {
 
         return "commons/execute_script";
         */
+        request.setAttribute("addCss", new String[] {"member/logoutStyle"});
         return "member/logout";
     }
 }
