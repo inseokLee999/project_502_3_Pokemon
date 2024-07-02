@@ -10,6 +10,7 @@ form {
 
 
 dl {
+    margin-top: 50px;
     font-size: 18px;
     color: var(--primary-color);
     margin-bottom: 10px;
@@ -19,7 +20,7 @@ dl {
 dt {
     font-size: 18px;
     color: var(--primary-color);
-    margin-top: 30px;
+    margin-top: 10px;
     font-weight: bold;
     margin-bottom: 5px;
 }
@@ -28,7 +29,7 @@ dt {
 dd {
     font-size: 18px;
     color: var(--primary-color);
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
@@ -36,7 +37,7 @@ dd {
 input[type="text"],
 input[type="password"] {
     padding: 8px;
-    width: 70%;
+    width: 50%;
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 3px;
