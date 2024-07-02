@@ -20,8 +20,8 @@ import java.util.List;
 @RequestMapping("/game")
 @RequiredArgsConstructor
 public class GameController {
-    private PokemonInfoService infoService;
-    private HttpServletRequest request;
+    private final PokemonInfoService infoService;
+    private final  HttpServletRequest request;
     private final BeanContainer beanContainer;
 
 //    @Inject
@@ -54,6 +54,6 @@ public class GameController {
 
     private void commonProcess() {
         request.setAttribute("addCss", new String[] {"game/index"});
-        request.setAttribute("addScript", List.of(" "));
+        request.setAttribute("addScript", List.of("game/getRandom"));
     }
 }
