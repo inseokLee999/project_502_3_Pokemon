@@ -91,11 +91,3 @@
 .button-info:hover {
     background-color: var(--button-info-hover-bg);
 }
-.follow-image {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    pointer-events: none; /* 마우스 이벤트를 이미지에 전달하지 않음 */
-    z-index: 1000;
-    transition: transform 0.1s ease; /* 부드러운 이동 효과 */
-}
