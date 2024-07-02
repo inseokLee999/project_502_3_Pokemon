@@ -64,12 +64,12 @@ header .site-top {
     border-bottom: 1px solid #8f8f8f;
     top: 0;
     width: 100%;
+    background: var(--background-color);
 
 }
 
 
 header .site-top > .inner {
-    background: var(--background-color);
     display: flex;
     justify-content: space-between;
     height: 35px;
@@ -185,8 +185,6 @@ header .search-box button {
     border: 1px solid var(--background-color);
     border-radius: 3px;
     cursor: pointer;
-
-
 }
 
 header .search-box button i {
@@ -237,8 +235,9 @@ header {
 }
 
 main {
-    padding-top: 260px; /* 헤더 높이만큼 패딩 추가 */
-    background:url('../webapp/static/images/background.png') no-repeat center center;
+    padding-top: 254px; /* 헤더 높이만큼 패딩 추가 */
+    background:url('../images/pokemongameimage.png') no-repeat center center ;
+    background-size: 100% 100%;
 }
 
 
