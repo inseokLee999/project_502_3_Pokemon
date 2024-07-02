@@ -236,7 +236,7 @@ header {
 
 main {
     padding-top: 254px; /* 헤더 높이만큼 패딩 추가 */
-    background:url('../images/pokemongameimage.png') no-repeat center center ;
+    background:url('../images/whiteBg.png') no-repeat center center ;
     background-size: 100% 100%;
 }
 

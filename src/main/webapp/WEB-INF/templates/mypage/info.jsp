@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
-<c:url var="actionUrl" value="/mypage/info" />
+<c:url var="actionUrl" value="/mypage/info"/>
 <layout:main title="회원정보 수정">
     <section class="layout-width">
         <form name="frmSave" method="post" action="${actionUrl}" target="ifrmProcess" autocomplete="off">
@@ -47,5 +47,6 @@
                 <button type="submit">수정하기</button>
             </div>
         </form>
+        <jsp:include page="_my_pokemon.jsp"/>
     </section>
 </layout:main>
