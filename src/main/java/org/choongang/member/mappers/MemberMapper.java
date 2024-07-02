@@ -1,4 +1,4 @@
-package org.choongang.member.mapper;
+package org.choongang.member.mappers;
 
 import org.choongang.member.entities.GetRandPokemon;
 import org.choongang.member.entities.Member;

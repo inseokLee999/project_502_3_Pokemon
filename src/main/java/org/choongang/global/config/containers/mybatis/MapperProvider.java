@@ -1,17 +1,16 @@
 package org.choongang.global.config.containers.mybatis;
 
-import org.choongang.global.config.DBConn;
 import org.choongang.global.config.MapperProxyHandler;
 import org.choongang.global.config.annotations.mybatis.MapperScan;
 
 import java.lang.reflect.Proxy;
 import java.util.Arrays;
 
-@MapperScan({"org.choongang.member.mapper",
+@MapperScan({"org.choongang.member.mappers",
         "org.choongang.board.mappers",
         "org.choongang.pokemon.mappers",
-        "org.choongang.mycard.mappers",
-"org.choongang.game.mappers"})
+        "org.choongang.mycard.mappers"/*,
+"org.choongang.game.mappers"*/})
 public class MapperProvider {
 
     public static MapperProvider instance;
