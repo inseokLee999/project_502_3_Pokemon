@@ -22,10 +22,12 @@ public class BeanContainer {
 
     private MapperProvider mapperProvider; // 마이바티스 매퍼 조회
 
+
     public BeanContainer() {
         beans = new HashMap<>();
         mapperProvider = MapperProvider.getInstance();
     }
+
 
     public void loadBeans() {
         // 패키지 경로 기준으로 스캔 파일 경로 조회
@@ -86,6 +88,7 @@ public class BeanContainer {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
     public static BeanContainer getInstance() {
@@ -139,6 +142,7 @@ public class BeanContainer {
             dependencies.add(obj);
         } else {
             for(Class clazz : parameters) {
+
                 /**
                  * 인터페이스라면 마이바티스 매퍼일수 있으므로 매퍼로 조회가 되는지 체크합니다.
                  * 매퍼로 생성이 된다면 의존성 주입이 될 수 있도록 dependencies에 추가
@@ -233,7 +237,7 @@ public class BeanContainer {
                 Object mapper = mapperProvider.getMapper(clz);
 
                 // 그외 서블릿 기본 객체(HttpServletRequest, HttpServletResponse, HttpSession)이라면 갱신
-                if (clz == HttpServletRequest.class || clz == HttpServletResponse.class || clz == HttpSession.class || mapper != null) {
+                if (clz == HttpServletRequest.class || clz == HttpServletResponse.class || clz == HttpSession.class ) {
                     field.setAccessible(true);
                 }
 
