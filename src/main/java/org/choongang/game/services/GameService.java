@@ -7,6 +7,7 @@ import org.choongang.game.mappers.GameMapper;
 import org.choongang.global.config.annotations.Controller;
 import org.choongang.global.config.annotations.RequestMapping;
 import org.choongang.global.config.containers.BeanContainer;
+import org.choongang.global.exceptions.UnAuthorizedException;
 import org.choongang.member.MemberUtil;
 import org.choongang.member.entities.GetRandPokemon;
 import org.choongang.member.entities.Member;
@@ -31,24 +32,23 @@ public class GameService {
 
     private MemberMapper memberMapper;
     private GameMapper gameMapper;
-
-    @Inject
+    private PokemonMapper pokemonMapper;
+/*    @Inject
     public GameService(MemberMapper memberMapper, PokemonMapper pokemonMapper) {
         this.memberMapper = memberMapper;
-        this.gameMapper = gameMapper;
     }
 
     public GameService(GameMapper gamemapper) {
-    }
+    }*/
 
     public String startGame(long userNo) {
         Member member = memberMapper.getMemberByUserNo(userNo);
         if (member == null || member.getMyPokemonSeq() == 0) {
-            throw new IllegalArgumentException("Invalid member or no Pokémon assigned.");
+            throw new UnAuthorizedException();
         }
 
         PokemonDetail userPokemon = gameMapper.getPokemonBySeq(member.getMyPokemonSeq());
-        PokemonDetail computerPokemon = getRandomPokemon();
+        PokemonDetail computerPokemon = pokemonMapper.getRandom();
 
         int userPower = calculatePower(userPokemon);
         int computerPower = calculatePower(computerPokemon);
@@ -69,11 +69,11 @@ public class GameService {
         return pokemon.getWeight() * pokemon.getHeight() * pokemon.getBaseExperience();
     }
 
-    private PokemonDetail getRandomPokemon() {
+/*    private PokemonDetail getRandomPokemon() {
         List<PokemonDetail> allPokemon = gameMapper.getAllPokemon();
         Random rand = new Random();
         return allPokemon.get(rand.nextInt(allPokemon.size()));
-    }
+    }*/
 }
 
 
