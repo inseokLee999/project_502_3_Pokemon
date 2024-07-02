@@ -5,11 +5,13 @@
 <c:url var="infoUrl" value="/mypage/info" />
 <c:url var="alertUrl" value="mypage/alert" />
 <layout:main title="마이페이지">
+    <div class="button-container">
     <a href="${infoUrl}" class="button1">
     회원정보 수정
     </a>
     <a href="${alertUrl}" class="button2">
         서비스 설정
     </a>
+    </div>
 </layout:main>
 
