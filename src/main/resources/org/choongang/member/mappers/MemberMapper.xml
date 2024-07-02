@@ -22,7 +22,7 @@
         SELECT * FROM MEMBER WHERE EMAIL=#{email}
     </select>
 
-<select id="getMemberByUserNo" resultMap="memberMap">>
+<select id="getMemberByUserNo" resultMap="memberMap">
     SELECT * FROM MEMBER WHERE USER_NO = #{userNo}
 </select>
 
@@ -51,4 +51,7 @@
         </set>
         WHERE email=#{email}
     </update>
+    <select id="getAllMember" resultMap="memberMap">
+        SELECT * FROM MEMBER
+    </select>
 </mapper>
