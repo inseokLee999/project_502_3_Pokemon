@@ -6,7 +6,7 @@
 <c:url var="actionUrl" value="/mypage/alert" />
 <layout:main title="서비스 설정">
 
-<section class="layout-width">
+<section class="layout-width-alert">
     <h1>서비스 설정</h1>
     <form name="frmManageSettings" method="POST" action="${actionUrl}" autocomplete="off" target="ifrmProcess">
         <dl>

@@ -2,7 +2,7 @@ package org.choongang.member.services;
 
 import org.apache.ibatis.session.SqlSession;
 import org.choongang.global.config.DBConn;
-import org.choongang.member.mapper.MemberMapper;
+import org.choongang.member.mappers.MemberMapper;
 import org.choongang.member.validators.JoinValidator;
 
 // 객체 조립기

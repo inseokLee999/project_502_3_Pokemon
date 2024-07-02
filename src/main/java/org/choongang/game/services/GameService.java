@@ -1,27 +1,16 @@
+/*
 package org.choongang.game.services;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.choongang.game.mappers.GameMapper;
 import org.choongang.global.config.annotations.Controller;
 import org.choongang.global.config.annotations.RequestMapping;
-import org.choongang.global.config.containers.BeanContainer;
 import org.choongang.global.exceptions.UnAuthorizedException;
-import org.choongang.member.MemberUtil;
-import org.choongang.member.entities.GetRandPokemon;
 import org.choongang.member.entities.Member;
-import org.choongang.member.mapper.MemberMapper;
+import org.choongang.member.mappers.MemberMapper;
 import org.choongang.pokemon.entities.PokemonDetail;
 import org.choongang.pokemon.mappers.PokemonMapper;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
-import org.choongang.pokemon.services.PokemonInfoService;
-
-import java.util.List;
-import java.util.Random;
 
 
 @Controller
@@ -33,13 +22,15 @@ public class GameService {
     private MemberMapper memberMapper;
     private GameMapper gameMapper;
     private PokemonMapper pokemonMapper;
+*/
 /*    @Inject
     public GameService(MemberMapper memberMapper, PokemonMapper pokemonMapper) {
         this.memberMapper = memberMapper;
     }
 
     public GameService(GameMapper gamemapper) {
-    }*/
+    }*//*
+
 
     public String startGame(long userNo) {
         Member member = memberMapper.getMemberByUserNo(userNo);
@@ -69,11 +60,14 @@ public class GameService {
         return pokemon.getWeight() * pokemon.getHeight() * pokemon.getBaseExperience();
     }
 
+*/
 /*    private PokemonDetail getRandomPokemon() {
         List<PokemonDetail> allPokemon = gameMapper.getAllPokemon();
         Random rand = new Random();
         return allPokemon.get(rand.nextInt(allPokemon.size()));
-    }*/
+    }*//*
+
 }
 
 
+*/

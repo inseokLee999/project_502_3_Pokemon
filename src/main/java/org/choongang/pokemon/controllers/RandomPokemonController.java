@@ -11,12 +11,11 @@ import org.choongang.global.config.containers.BeanContainer;
 import org.choongang.member.MemberUtil;
 import org.choongang.member.entities.GetRandPokemon;
 import org.choongang.member.entities.Member;
-import org.choongang.member.mapper.MemberMapper;
+import org.choongang.member.mappers.MemberMapper;
 import org.choongang.pokemon.entities.PokemonDetail;
 import org.choongang.pokemon.services.PokemonInfoService;
 
 import java.util.List;
-import java.util.Objects;
 
 @Controller
 @RequestMapping("/random")
