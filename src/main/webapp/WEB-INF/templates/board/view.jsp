@@ -3,7 +3,7 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <%@ taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
 <layout:main>
-    <section class="layout-width">
+    <section class="vlayout-width">
         <jsp:include page="_header.jsp" />
 
         <div class='subject'>
@@ -34,7 +34,7 @@
     </section>
 
     <c:if test="${items != null && !items.isEmpty()}">
-        <section class="layout-width">
+        <section class="view-layout-width">
             <jsp:include page="_list.jsp" />
         </section>
     </c:if>

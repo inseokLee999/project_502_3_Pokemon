@@ -17,6 +17,7 @@ public class BoardConfigValidator implements Validator<RequestBoard>, RequiredVa
 
     @Override
     public void check(RequestBoard form) {
+
         String bId = form.getBId();
         String bName = form.getBName();
         int status = HttpServletResponse.SC_BAD_REQUEST;
