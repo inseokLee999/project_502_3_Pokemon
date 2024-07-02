@@ -32,13 +32,13 @@ public class PokemonGameController {
     @GetMapping("/step1")
     public String step1() {
         commonProcess();
-        return "pokemon/game/step1";
+        return "/game/step1";
     }
 
     @GetMapping("/step2")
     public String step2() {
         commonProcess();
-        return "pokemon/game/step2";
+        return "/game/step2";
     }
 
     private void commonProcess() {
