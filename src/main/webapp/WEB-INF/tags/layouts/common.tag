@@ -6,6 +6,7 @@
 <%@ attribute name="footer" fragment="true" %>
 <%@ attribute name="commonCss" fragment="true" %>
 <%@ attribute name="commonJs" fragment="true" %>
+<c:url var="imageUrl" value="/images/"/>
 <%@ attribute name="title" %>
 <fmt:setBundle basename="messages.commons" />
 <c:url var="cssUrl" value="/css/" />
@@ -50,6 +51,7 @@
             <jsp:doBody />
         </main>
         <footer>
+            <img src="${imageUrl}/myu.png" alt="Follow" class="follow-image">
             <jsp:invoke fragment="footer" />
         </footer>
     </body>
