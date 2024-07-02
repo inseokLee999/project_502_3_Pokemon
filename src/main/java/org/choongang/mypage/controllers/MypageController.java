@@ -47,8 +47,6 @@ public class MypageController {
         request.setAttribute("addCss", new String[] {"mypage/profileUpdateStyle"});
         request.setAttribute("items", items);
 
-
-        request.setAttribute("items", items);
         return "mypage/info";
     }
 
