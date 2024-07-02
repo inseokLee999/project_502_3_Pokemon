@@ -1,0 +1,28 @@
+.container {
+    text-align: center;
+    margin: auto;
+}
+
+h1 {
+    font-size: 28px;
+    color: var(--primary-color);
+}
+
+p {
+    font-size: 15px;
+}
+
+a.button {
+    font-size: 20px;
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+    border: none;
+    cursor: pointer;
+    padding: 12px 20px;
+    border-radius: 3px;
+}
+
+a.button:hover {
+    color: var(--primary-color);
+    font-weight: bold;
+}
