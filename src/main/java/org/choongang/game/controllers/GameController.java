@@ -1,3 +1,4 @@
+/*
 package org.choongang.game.controllers;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -56,4 +57,4 @@ public class GameController {
         request.setAttribute("addCss", new String[] {"game/index"});
         request.setAttribute("addScript", List.of("game/getRandom"));
     }
-}
+}*/

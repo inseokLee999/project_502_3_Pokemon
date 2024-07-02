@@ -17,28 +17,21 @@
                 </h2>
             </div>
             <div class="p-spec-km">
-            <div class="p-spec-item"> <h4>번호: ${data.seq}번째</h4></div>
-            <div class="p-spec-item"> <h4>무게: ${data.weight} *0.1= kg </h4></div>
-            <div class="p-spec-item"> <h4>키: ${data.height}  *0.1= m </h4></div>
-            <div class="p-spec-item"><h4>기본 경험치: ${data.baseExperience}</h4></div>
+                <div class="p-spec-item"> <h4><fmt:message key="포켓몬_번호"/> : ${data.seq}</h4></div>
+            <div class="p-spec-item"> <h4><fmt:message key="무게"/> : ${data.weight*0.1} kg </h4></div>
+            <div class="p-spec-item"> <h4><fmt:message key="높이"/> : ${data.height*0.1} m </h4></div>
+            <div class="p-spec-item"><h4><fmt:message key="초기경험치"/> : ${data.baseExperience}</h4></div>
             </div>
             <div class="p-desc">
                 <h3>${fn:replace(data.description, '\\n', '<br>')}</h3>
-                <div class="p-info">
-                    <fmt:message key="무게"/> : ${data.weight}<br>
-                    <fmt:message key="높이"/> : ${data.height}<br>
-                    <fmt:message key="초기경험치"/> : ${data.baseExperience}<br>
-                </div>
             </div>
             <div class="p-type">
                 <div class="type1" >
-                    ${data.type1} /
+                        <fmt:message key="타입1"/> : ${data.type1}
                 </div>
-                type2:
-
                 <c:if test="${data.type2!=null}">
                     <div class="type2">
-                            ${data.type2}
+                        /<fmt:message key="타입2"/> : ${data.type2}
                     </div>
                 </c:if>
             </div>

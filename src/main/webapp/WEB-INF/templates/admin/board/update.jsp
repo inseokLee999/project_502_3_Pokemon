@@ -6,12 +6,12 @@
     <h1>게시판 수정</h1>
     <form name="frmSave" method="post" action="${actionUrl}" target="ifrmProcess" autocomplete="off">
         <input type="hidden" name="mode" value="update">
-        <jsp:include page="_form.jsp"/>
 
-        <div class="button-group">
-            <button type="reset">다시입력</button>
-            <button type="button">수정하기</button>
+        <jsp:include page="_form.jsp" />
 
+        <div class='button-group'>
+            <button type='reset'>다시입력</button>
+            <button type="submit">수정하기</button>
         </div>
     </form>
 </layout:admin>
