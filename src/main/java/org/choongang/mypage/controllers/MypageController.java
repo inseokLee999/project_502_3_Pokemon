@@ -29,6 +29,7 @@ public class MypageController {
     @GetMapping
     public String index() {
         request.setAttribute("addCss", new String[] {"mypage/mypageStyle"});
+        request.setAttribute("addScript", List.of("mypage/profile"));
 
         return "mypage/index";
     }
@@ -44,6 +45,7 @@ public class MypageController {
 
         request.setAttribute("addScript", List.of("mypage/profile","mypage/info"));
         request.setAttribute("addCss", new String[] {"mypage/profileUpdateStyle"});
+        request.setAttribute("items", items);
 
 
         request.setAttribute("items", items);
@@ -55,8 +57,21 @@ public class MypageController {
      * @return
      */
     @PostMapping("/info")
-    public String infoPs() {
+    public String infoPs(RequestProfile form) {
 
+        profileService.update(form);
+
+        String url = request.getContextPath() + "/mypage";
+        String script = String.format("parent.location.replace('%s');", url);
+
+        request.setAttribute("script", script);
+
+
+        profileService.update(form);
+
+        String url = request.getContextPath() + "/mypage";
+        String script = String.format("parent.location.replace('%s');", url);
+        request.setAttribute("script", script);
         return "commons/execute_script";
     }
 

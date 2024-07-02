@@ -1,7 +1,6 @@
 package org.choongang.pokemon.controllers;
 
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.choongang.global.ListData;
 import org.choongang.global.Pagination;
@@ -24,10 +23,10 @@ import java.util.List;
 public class PokemonController {
 
     private final PokemonInfoService infoService;
-    private final HttpServletRequest request;
+    private final ProfileService profileService;
     private final MyPokemonService pokemonService;
 
-    private final ProfileService profileService;
+    private final HttpServletRequest request;
     private final MemberUtil memberUtil;
     @GetMapping
     public String index(PokemonSearch search) {
@@ -52,11 +51,13 @@ public class PokemonController {
     }
 
     @GetMapping("/popup/{seq}")
+
     public String popup(@PathVariable("seq") long seq) {
 
         PokemonDetail data = infoService.get(seq).orElseThrow(PokemonNotFoundException::new);
 
         pokemonService.add(seq); // 발급 받은 포켓몬 저장
+
 
         request.setAttribute("data", data);
 

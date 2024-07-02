@@ -21,6 +21,7 @@ public class MyPokemonService {
      *
      * @param seq
      */
+
     public void add(long seq) {
         if (!memberUtil.isLogin()) {
             return;
@@ -29,6 +30,7 @@ public class MyPokemonService {
         try {
             mapper.registerMyPokemon(member.getUserNo(), seq);
         } catch (Exception e) {} // 이미 등록된 USER_NO + SEQ 라면 예외 발생
+
     }
 
     public void delete(long seq) {
@@ -43,7 +45,6 @@ public class MyPokemonService {
         if (!memberUtil.isLogin()) {
             return;
         }
-
         Member member = memberUtil.getMember();
         mapper.deleteAllMyPokemon(member.getUserNo());
     }
@@ -58,3 +59,4 @@ public class MyPokemonService {
         return Collections.EMPTY_LIST;
     }
 }
+

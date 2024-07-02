@@ -1,4 +1,10 @@
+main { display: flex; align-items: center; min-height: 800px; }
+footer { margin-top: 0; }
 
+.button-container {
+    text-align: center;
+    margin: 20px auto;
+}
 .button1 {
     display: inline-block;
     background-color: var(--primary-color);
@@ -7,6 +13,7 @@
     font-size: 20px;
     text-align: center;
     border-radius: 10px;
+    margin: 100px 20px;
 }
 
 .button1:hover {
@@ -22,6 +29,7 @@
     font-size: 20px;
     text-align: center;
     border-radius: 10px;
+    margin: 100px 20px;
 }
 
 .button2:hover {
