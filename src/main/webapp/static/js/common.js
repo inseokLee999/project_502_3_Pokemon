@@ -9,4 +9,4 @@ document.addEventListener('mousemove', (event) => {
     image.style.left = `${mouseX}px`;
     image.style.top = `${mouseY}px`;
 
- });
+});
