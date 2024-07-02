@@ -4,7 +4,7 @@
 
 <c:if test="${board.activeCategory == 1 && board.categories != null && !board.categories.isEmpty()}">
     <div class='tab-category'>
-        <a href="<c:url value="/board/list/${board.BId}"/>"class="tab${empty param.category ? 'on':''}"
+        <a href="<c:url value='/board/list/${board.BId}' />" class="tab${empty param.category ? ' on':''}">전체</a>
         <c:forEach var="category" items="${board.categories}">
             <a href="<c:url value='/board/list/${board.BId}?category=${category}' />" class="tab${param.category == category ? ' on':''}">
                     ${category}
@@ -20,15 +20,15 @@
 
     <c:if test="${items != null && !items.isEmpty()}">
         <c:forEach var="item" items="${items}">
-            <li>
+            <li class="list-item">
                 <a href="<c:url value='/board/view/${item.seq}' />" class='subject'>
                     <c:if test="${! empty item.category}">
-                        [${item.category}]
+                        <span class="item-category">[${item.category}]</span>
                     </c:if>
                         ${item.subject}
                 </a>
                 <div class='post-info'>
-                        ${item.poster}(${item.memberSeq > 0 ? item.email : '비회원'})
+                        ${item.poster} (${item.memberSeq > 0 ? item.email : '비회원'})
                     <util:formatDate value='${item.regDt}' pattern='yyyy.MM.dd HH:mm' />
                 </div>
             </li>
