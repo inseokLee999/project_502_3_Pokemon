@@ -47,6 +47,7 @@ input[type="password"] {
 
 button[type="submit"],
 #generate-profile-image {
+    font-size: 20px;
     margin-top: 15px;
     background-color: var(--primary-color);
     color: #fff;
@@ -58,6 +59,7 @@ button[type="submit"],
 }
 
 button[type="reset"] {
+    font-size: 20px;
     background-color: var(--secondary-color);
     color: #fff;
     border: none;
@@ -82,7 +84,6 @@ button[type="reset"]:hover {
 
 
 .button-group {
-
     margin-top: 20px;
 }
 
