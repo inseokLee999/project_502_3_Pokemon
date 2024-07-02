@@ -14,7 +14,7 @@
 <c:url var="pokemonUrl" value="/pokemon"/>
 <c:url var="gameUrl" value="/game"/>
 <c:url var="mycardUrl" value="/mycard/privatecard"/>
-<c:url var="tempLogoUrl" value="/images/logo2.gif"/>
+<c:url var="tempLogoUrl" value="/images/pokemonLogo.png"/>
 <c:url var="adminUrl" value="/admin"/>
 <c:url var="randomUrl" value="/random"/>
 <c:url var="freeUrl" value="/board/list/freetalk"/>
@@ -93,7 +93,7 @@
             </div>
         </section>
         <nav>
-            <div class="inner">
+            <div class="inner layout-width">
                 <div class="dropdown">
                     <a href="#">게시판</a>
                     <div class="dropdown-content">
@@ -104,10 +104,11 @@
                 </div>
                 <a href="${pokemonUrl}">포켓몬 도감</a>
                 <a href="${randomUrl}">포켓몬 뽑기</a>
-                <a href="${mycardUrl}">내카드함</a>
-                <a href="${gameUrl}">게임하기</a>
-                <a href="#">메뉴 4</a>
-                <a href="${adminUrl}">게시판 관리</a>
+                <a href="${mycardUrl}">내 카드함</a>
+                <a href="${gameUrl}">게임 하기</a>
+                <util:adminOnly >
+                    <a href="${adminUrl}">게시판 관리</a>
+                </util:adminOnly>
             </div>
         </nav>
     </jsp:attribute>
