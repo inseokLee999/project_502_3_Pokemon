@@ -9,7 +9,7 @@
 <c:url var="cssUrl" value="/css/" />
 <c:url var="jsUrl" value="/js/" />
 <c:url var="homeUrl" value="/"/>
-<c:url var="searchUrl" value="/board/write" />
+<c:url var="searchUrl" value="/pokemon" />
 <c:url var="logoUrl" value="/images/logo.png"/>
 <c:url var="pokemonUrl" value="/pokemon"/>
 <c:url var="gameUrl" value="/game"/>
@@ -82,7 +82,7 @@
                 </div>--%>
                 <div class="right">
                     <form class="search-box" method="GET" action="${searchUrl}" autocomplete="off">
-                        <input type="text" name="keyword" placeholder="<fmt:message key="검색어를_입력하세요."/> ">
+                        <input type="text" name="skey" placeholder="<fmt:message key="검색할_포켓몬을_입력하세요."/> ">
                         <button type="submit">
                             <i class="xi-search"></i>
                         </button>
@@ -91,7 +91,7 @@
             </div>
         </section>
         <nav>
-            <div class="inner">
+            <div class="inner layout-width">
                 <div class="dropdown">
                     <a href="#">게시판</a>
                     <div class="dropdown-content">
@@ -102,10 +102,11 @@
                 </div>
                 <a href="${pokemonUrl}">포켓몬 도감</a>
                 <a href="${randomUrl}">포켓몬 뽑기</a>
-                <a href="${mycardUrl}">내카드함</a>
-                <a href="${gameUrl}">게임하기</a>
-                <a href="#">메뉴 4</a>
-                <a href="${adminUrl}">게시판 관리</a>
+                <a href="${mycardUrl}">내 카드함</a>
+                <a href="${gameUrl}">게임 하기</a>
+                <util:adminOnly >
+                    <a href="${adminUrl}">게시판 관리</a>
+                </util:adminOnly>
             </div>
         </nav>
     </jsp:attribute>
