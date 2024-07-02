@@ -1,5 +1,6 @@
 package org.choongang.pokemon.mappers;
 
+import org.apache.ibatis.annotations.Param;
 import org.choongang.pokemon.controllers.PokemonSearch;
 import org.choongang.pokemon.entities.PokemonDetail;
 
@@ -11,4 +12,8 @@ public interface PokemonMapper {
     List<PokemonDetail> getList(PokemonSearch search);
     PokemonDetail getRandom();
     int getTotal(PokemonSearch search);
+    List<PokemonDetail> getMyPokemons(long userNo);
+    int registerMyPokemon(@Param("userNo") long userNo,@Param("seq")long seq);
+    int deleteMyPokemon(@Param("userNo") long userNo,@Param("seq") long seq);
+    int deleteAllMyPokemon(long userNo);
 }
