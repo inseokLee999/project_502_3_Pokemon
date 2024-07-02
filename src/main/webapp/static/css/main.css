@@ -46,17 +46,17 @@
 }
 
 .layout-width {
-    min-width: 1100px;
-    max-width: 1300px;
+    min-width: 900px;
+    /*max-width: 1300px;*/
     margin-left: 50px;
     margin-right: auto;
     padding: 0;
 }
 
 
-button:hover, a:hover {
-    box-shadow: 0 4px 1px rgba(0, 0, 0, 0.3); /* 하단 그림자 설정 */
-}
+/*button:hover, a:hover {
+    box-shadow:  4px 1px rgba(0, 0, 0, 0.3); !* 하단 그림자 설정 *!
+}*/
 
 /*사이트 헤더 영역 S*/
 
@@ -127,6 +127,9 @@ header .logo img:hover {
 header .main-center img{
     height: 150px;
 }
+header .main-center img:hover{
+
+}
 header .site-top a:hover {
     font-weight: bold;
 }
@@ -150,7 +153,8 @@ header .logged-in-right img{
 }
 header .logo-search {
     padding: 10px 0;
-    background: var(--background-color);
+    background: url("../images/wallpaper2.jpg") no-repeat center center;
+    background-size: cover;
 }
 
 header .logo-search > .inner {
@@ -243,7 +247,7 @@ main {
 
 /*사이트 푸터 영역 S*/
 footer {
-    margin-top: 300px;
+    margin-top: 50px;
     min-height: 100px;
     width: 100%;
     padding: 20px;
