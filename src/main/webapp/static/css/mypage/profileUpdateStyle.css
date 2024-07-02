@@ -1,3 +1,17 @@
+main { display: flex; min-height: 800px; }
+footer { margin-top: 0; }
+
+.layout-width-profileUpdate {
+    margin: auto;
+    text-align: center;
+}
+
+
+h1 {
+    font-size: 20px;
+    color: var(--primary-color);
+    margin-top: 50px;
+}
 
 form {
     margin: auto;
@@ -5,17 +19,26 @@ form {
 
 
 dl {
+    margin-top: 30px;
+    font-size: 18px;
+    color: var(--primary-color);
     margin-bottom: 10px;
 }
 
 
 dt {
+    font-size: 15px;
+    color: var(--primary-color);
+    margin-top: 10px;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
 
 dd {
+    font-size: 15px;
+    color: var(--primary-color);
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
@@ -23,7 +46,7 @@ dd {
 input[type="text"],
 input[type="password"] {
     padding: 8px;
-    width: 100%;
+    width: 500px;
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 3px;
@@ -34,6 +57,7 @@ input[type="password"] {
 
 button[type="submit"],
 #generate-profile-image {
+    font-size: 20px;
     margin-top: 15px;
     background-color: var(--primary-color);
     color: #fff;
@@ -45,6 +69,7 @@ button[type="submit"],
 }
 
 button[type="reset"] {
+    font-size: 18px;
     background-color: var(--secondary-color);
     color: #fff;
     border: none;
