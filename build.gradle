@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-
+    implementation 'org.modelmapper:modelmapper:3.2.0'
     implementation 'jakarta.inject:jakarta.inject-api:2.0.1'
 
     compileOnly 'jakarta.servlet:jakarta.servlet-api:6.0.0'
@@ -37,8 +37,7 @@ dependencies {
     testImplementation 'org.mockito:mockito-junit-jupiter:5.12.0'
     testImplementation platform('org.junit:junit-bom:5.10.2')
     testImplementation 'org.junit.jupiter:junit-jupiter'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-}
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"}
 
 test {
     useJUnitPlatform()

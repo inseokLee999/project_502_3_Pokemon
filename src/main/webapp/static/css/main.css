@@ -1,5 +1,39 @@
 /*메인 레이아웃 공통*/
 @import url('common.css');
+/* 드롭다운 컨테이너 스타일 */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* 드롭다운 콘텐츠 스타일 */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--primary-color); /* 네비게이션 배경색과 동일 */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: var(--background-color); /* 메뉴 텍스트 색상 */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 1.5rem; /* 메뉴 1과 동일한 글자 크기 */
+    line-height: 45px;
+    background-color: transparent; /* 배경색을 투명하게 설정 */
+}
+
+.dropdown-content a:hover {
+    background-color: transparent; /* 호버 시 배경색을 다시 투명하게 설정 */
+}
+
+/* 드롭다운 컨테이너에 마우스를 올리면 드롭다운 콘텐츠를 보이게 함 */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
 @keyframes infinite-rotate {
     from {
@@ -119,7 +153,7 @@ header .search-box {
     display: flex;
     width: 300px;
     height: 45px;
-    border-radius:5px;
+    border: 2px solid var(--primary-color);
 }
 
 header .search-box input[type='text'] {
