@@ -34,6 +34,7 @@ input[type="password"] {
 
 button[type="submit"],
 #generate-profile-image {
+    margin-top: 15px;
     background-color: var(--primary-color);
     color: #fff;
     border: none;
