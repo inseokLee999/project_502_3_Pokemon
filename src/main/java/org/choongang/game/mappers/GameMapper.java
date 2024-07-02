@@ -1,3 +1,4 @@
+/*
 package org.choongang.game.mappers;
 
 import org.choongang.pokemon.entities.PokemonDetail;
@@ -11,3 +12,4 @@ public interface GameMapper {
     PokemonDetail getPokemonBySeq(long seq);
     List<PokemonDetail> getAllPokemon();
 }
+*/

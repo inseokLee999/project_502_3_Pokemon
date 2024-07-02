@@ -1,8 +1,9 @@
+<!--
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.choongang.game.mapper.GameMapper">
+<mapper namespace="org.choongang.game.mappers.GameMapper">
     <resultMap id="gameMap" type="org.choongang.member.entities.Member">
         <result column="USER_NO" property="userNo"/>
         <result column="EMAIL" property="email"/>
@@ -48,4 +49,4 @@
     <select id="getMyPokemon" resultType="long">
         SELECT MY_POKEMON_SEQ FROM MEMBER WHERE USER_NAME = #{userNm}
     </select>
-</mapper>
+</mapper>-->

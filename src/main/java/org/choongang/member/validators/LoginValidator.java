@@ -9,7 +9,7 @@ import org.choongang.global.validators.RequiredValidator;
 import org.choongang.global.validators.Validator;
 import org.choongang.member.controllers.LoginRequest;
 import org.choongang.member.entities.Member;
-import org.choongang.member.mapper.MemberMapper;
+import org.choongang.member.mappers.MemberMapper;
 import org.mindrot.jbcrypt.BCrypt;
 
 @Component
