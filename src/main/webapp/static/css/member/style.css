@@ -2,6 +2,7 @@
 /* 회원가입 화면 */
 /* 회원가입 폼 스타일 */
 .content-box {
+    //background-color: #f8f8f8;
     min-width: 650px;
     max-width: 750px;
     margin: 50px auto;
