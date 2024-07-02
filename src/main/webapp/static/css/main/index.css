@@ -11,7 +11,7 @@ body {
     font-size: 14px;
     color: #000;
     margin: 0;
-    padding: 0;
+    padding-top: 200px;
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* 최소 화면 높이를 화면 전체로 설정 */
