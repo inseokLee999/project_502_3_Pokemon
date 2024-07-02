@@ -6,7 +6,7 @@ import org.choongang.global.config.annotations.Service;
 import org.choongang.global.config.containers.BeanContainer;
 import org.choongang.member.controllers.LoginRequest;
 import org.choongang.member.entities.Member;
-import org.choongang.member.mapper.MemberMapper;
+import org.choongang.member.mappers.MemberMapper;
 import org.choongang.member.validators.LoginValidator;
 
 @Service

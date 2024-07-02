@@ -42,6 +42,7 @@ public class MypageController {
     @GetMapping("/info")
     public String info() {
         List<PokemonDetail> items = pokemonService.getList();
+
         request.setAttribute("addScript", List.of("mypage/profile","mypage/info"));
         request.setAttribute("addCss", new String[] {"mypage/profileUpdateStyle"});
         request.setAttribute("items", items);
@@ -63,12 +64,6 @@ public class MypageController {
 
         request.setAttribute("script", script);
 
-
-        profileService.update(form);
-
-        String url = request.getContextPath() + "/mypage";
-        String script = String.format("parent.location.replace('%s');", url);
-        request.setAttribute("script", script);
         return "commons/execute_script";
     }
 

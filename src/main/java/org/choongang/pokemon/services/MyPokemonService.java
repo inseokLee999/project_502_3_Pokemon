@@ -20,7 +20,8 @@ public class MyPokemonService {
      * 포켓몬 저장
      *
      * @param seq
-     * */
+     **/
+
     public void add(long seq) {
         if (!memberUtil.isLogin()) {
             return;
@@ -28,9 +29,8 @@ public class MyPokemonService {
         Member member = memberUtil.getMember();
         try {
             mapper.registerMyPokemon(member.getUserNo(), seq);
-        } catch (Exception e) {
-            //이미 등록된 USER_NO + SEQ 라면 예외 발생
-        }
+        } catch (Exception e) {} // 이미 등록된 USER_NO + SEQ 라면 예외 발생
+
     }
 
     public void delete(long seq) {
@@ -51,9 +51,12 @@ public class MyPokemonService {
 
     public List<PokemonDetail> getList() {
         if (memberUtil.isLogin()) {
-            Member member = memberUtil.getMember();
-            return mapper.getMyPokemons(memberUtil.getMember().getUserNo());
+            List<PokemonDetail> items = mapper.getMyPokemons(memberUtil.getMember().getUserNo());
+
+            return items;
         }
+
         return Collections.EMPTY_LIST;
     }
 }
+

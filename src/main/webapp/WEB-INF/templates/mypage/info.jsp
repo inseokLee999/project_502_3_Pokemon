@@ -49,7 +49,6 @@
                 <button type="submit">수정하기</button>
             </div>
         </form>
-
+        <jsp:include page="_my_pokemon.jsp" />
     </section>
-    <jsp:include page="_my_pokemon.jsp" />
 </layout:main>
