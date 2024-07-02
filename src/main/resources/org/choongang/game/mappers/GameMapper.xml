@@ -3,14 +3,14 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.choongang.game.mapper.GameMapper">
-    <resultMap id="memberMap" type="org.choongang.member.entities.Member">
-        <result column="USER_NO" property="userNo" />
-        <result column="EMAIL" property="email" />
-        <result column="PASSWORD" property="password" />
-        <result column="USER_NAME" property="userName" />
+    <resultMap id="gameMap" type="org.choongang.member.entities.Member">
+        <result column="USER_NO" property="userNo"/>
+        <result column="EMAIL" property="email"/>
+        <result column="PASSWORD" property="password"/>
+        <result column="USER_NAME" property="userName"/>
         <result column="USER_TYPE" property="userType"/>
-        <result column="REG_DT" property="regDt" />
-        <result column="MOD_DT" property="modDt" />
+        <result column="REG_DT" property="regDt"/>
+        <result column="MOD_DT" property="modDt"/>
         <result column="MY_POKEMON_SEQ" property="myPokemonSeq"/>
     </resultMap>
 
@@ -21,6 +21,22 @@
     <select id="get" resultMap="memberMap">
         SELECT * FROM MEMBER WHERE EMAIL=#{email}
     </select>
+
+
+
+    <select id="getPokemonByUserNo" resultMap="gameMap">
+        SELECT * FROM POKEMON WHERE SEQ = (SELECT MY_POKEMON_SEQ FROM MEMBER WHERE USER_NO = #{userNo}
+    </select>
+
+    <select id=" getPokemonBySeq" resultMap="gameMap">
+        SELECT * FROM POKEMON WHERE SEQ = #{seq}
+    </select>
+    <select id="getAllPokemon" resultMap="gameMap">
+        SELECT * FROM POKEMON
+    </select>
+
+
+
 
     <insert id="register">
         INSERT INTO MEMBER (USER_NO, EMAIL, PASSWORD, USER_NAME)
