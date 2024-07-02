@@ -16,11 +16,11 @@ public class MyPokemonService {
     private final PokemonMapper mapper;
     private final MemberUtil memberUtil;
 
-    /**
+    /*
      * 포켓몬 저장
      *
      * @param seq
-     */
+     **/
 
     public void add(long seq) {
         if (!memberUtil.isLogin()) {
