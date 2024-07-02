@@ -14,7 +14,7 @@
 <c:url var="pokemonUrl" value="/pokemon"/>
 <c:url var="gameUrl" value="/game"/>
 <c:url var="mycardUrl" value="/mycard/privatecard"/>
-
+<c:url var="tempLogoUrl" value="/images/logo2.gif"/>
 <c:url var="adminUrl" value="/admin"/>
 <c:url var="randomUrl" value="/random"/>
 
@@ -43,6 +43,7 @@
                     </a>
                     </util:guestOnly>
                     <util:memberOnly>
+                        <div class="logged-in-right">
                         <c:if test="${myProfile!=null}">
                             <img src="${myProfile.frontImage}">
                         </c:if>
@@ -50,14 +51,16 @@
                             <fmt:param>${loggedMember.userName}</fmt:param>
                             <fmt:param>${loggedMember.email}</fmt:param>
                         </fmt:message>
-                        <a href="<c:url value="/mypage" />">
-                            <i class="xi-user-o"></i>
-                            <fmt:message key="마이페이지" />
-                        </a>
-                        <a href="<c:url value="/member/logout" />">
-                            <i class="xi-log-out"></i>
-                            <fmt:message key="로그아웃" />
-                        </a>
+                            <a href="<c:url value="/mypage" />">
+                                <i class="xi-user-o"></i>
+                                <fmt:message key="마이페이지" />
+                            </a>
+                            <a href="<c:url value="/member/logout" />">
+                                <i class="xi-log-out"></i>
+                                <fmt:message key="로그아웃" />
+                            </a>
+                        </div>
+
                     </util:memberOnly>
                 </div>
             </div>
@@ -69,7 +72,14 @@
                         <img src="${logoUrl}" alt="<fmt:message key="로고"/>">
                     </a>
                 </div>
-                <div class="header-bottom-box"></div>
+                <div class="main-center">
+                    <a href="${homeUrl}" class="center-logo">
+                        <img src="${tempLogoUrl}" alt="<fmt:message key="gif로고"/>">
+                    </a>
+                </div>
+<%--                <div class="header-bottom-box">
+                    dd
+                </div>--%>
                 <div class="right">
                     <form class="search-box" method="GET" action="${searchUrl}" autocomplete="off">
                         <input type="text" name="keyword" placeholder="<fmt:message key="검색어를_입력하세요."/> ">

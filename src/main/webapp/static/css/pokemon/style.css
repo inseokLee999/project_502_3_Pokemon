@@ -5,7 +5,7 @@
 
 .pokemon-list > li {
     width: calc(100% / 5);
-    padding: 10px ;
+    padding: 20px ;
 }
 .pokemon-list > li a {
     display: block;
@@ -13,7 +13,7 @@
     border: #1B3467 1px solid;
     border-radius: 5px;
     padding: 15px;
-
+    background-color: rgba(255,255,255,0.8);
 }
 .pokemon-list > li img{
     width: 100%;

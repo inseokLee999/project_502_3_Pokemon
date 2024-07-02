@@ -1,3 +1,8 @@
+.layout-width {
+    //background-color: #f8f8f8;
+    margin: auto;
+    text-align: center;
+}
 
 form {
     margin: auto;
@@ -5,17 +10,25 @@ form {
 
 
 dl {
+    font-size: 18px;
+    color: var(--primary-color);
     margin-bottom: 10px;
 }
 
 
 dt {
+    font-size: 18px;
+    color: var(--primary-color);
+    margin-top: 30px;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
 
 dd {
+    font-size: 18px;
+    color: var(--primary-color);
+    margin-top: 20px;
     margin-bottom: 10px;
 }
 
@@ -23,7 +36,7 @@ dd {
 input[type="text"],
 input[type="password"] {
     padding: 8px;
-    width: 100%;
+    width: 70%;
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 3px;
@@ -34,6 +47,7 @@ input[type="password"] {
 
 button[type="submit"],
 #generate-profile-image {
+    margin-top: 15px;
     background-color: var(--primary-color);
     color: #fff;
     border: none;
@@ -68,6 +82,7 @@ button[type="reset"]:hover {
 
 
 .button-group {
+
     margin-top: 20px;
 }
 

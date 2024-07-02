@@ -48,8 +48,13 @@ public class MypageController {
      * @return
      */
     @PostMapping("/info")
-    public String infoPs() {
+    public String infoPs(RequestProfile form, HttpServletRequest request) {
 
+        profileService.update(form);
+
+        String url = request.getContextPath() + "/mypage";
+        String script = String.format("parent.location.replace('%s');", url);
+        request.setAttribute("script", script);
         return "commons/execute_script";
     }
 
