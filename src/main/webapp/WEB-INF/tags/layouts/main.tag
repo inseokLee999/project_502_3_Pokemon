@@ -43,6 +43,7 @@
                     </a>
                     </util:guestOnly>
                     <util:memberOnly>
+                        <div class="logged-in-right">
                         <c:if test="${myProfile!=null}">
                             <img src="${myProfile.frontImage}">
                         </c:if>
@@ -50,14 +51,16 @@
                             <fmt:param>${loggedMember.userName}</fmt:param>
                             <fmt:param>${loggedMember.email}</fmt:param>
                         </fmt:message>
-                        <a href="<c:url value="/mypage" />">
-                            <i class="xi-user-o"></i>
-                            <fmt:message key="마이페이지" />
-                        </a>
-                        <a href="<c:url value="/member/logout" />">
-                            <i class="xi-log-out"></i>
-                            <fmt:message key="로그아웃" />
-                        </a>
+                            <a href="<c:url value="/mypage" />">
+                                <i class="xi-user-o"></i>
+                                <fmt:message key="마이페이지" />
+                            </a>
+                            <a href="<c:url value="/member/logout" />">
+                                <i class="xi-log-out"></i>
+                                <fmt:message key="로그아웃" />
+                            </a>
+                        </div>
+
                     </util:memberOnly>
                 </div>
             </div>
