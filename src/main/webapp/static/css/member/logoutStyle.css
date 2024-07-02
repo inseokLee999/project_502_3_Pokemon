@@ -1,3 +1,6 @@
+main { display: flex; align-items: center; min-height: 800px; }
+footer { margin-top: 0; }
+
 .container {
     text-align: center;
     margin: auto;

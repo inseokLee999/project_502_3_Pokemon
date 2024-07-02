@@ -1,6 +1,9 @@
+main { display: flex; align-items: center; min-height: 800px; }
+footer { margin-top: 0; }
+
 .button-container {
     text-align: center;
-    margin-top: 20px;
+    margin: 20px auto;
 }
 .button1 {
     display: inline-block;

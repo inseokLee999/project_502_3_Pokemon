@@ -1,5 +1,5 @@
 /* 로그인 화면 */
-main { display: flex; align-items: center; min-height: 900px; }
+main { display: flex; align-items: center; min-height: 800px; }
 footer { margin-top: 0; }
 
 .content-box {
