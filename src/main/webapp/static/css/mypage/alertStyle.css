@@ -1,7 +1,15 @@
+main { display: flex; min-height: 800px; }
+footer { margin-top: 0; }
+
+.layout-width-alert {
+    margin: auto;
+    text-align: center;
+}
+
 h1 {
-    font-size: 28px;
-    margin-bottom: 50px;
-    color: var(--primary-color)
+    font-size: 20px;
+    color: var(--primary-color);
+    margin-bottom: 30px;
 }
 dl {
     font-size: 15px;
@@ -14,7 +22,7 @@ button {
     font-size: 20px;
     border-radius: 3px;
     cursor: pointer;
-    padding: 8px 30px;
+    padding: 8px 50px;
 }
 
 button:hover {

@@ -17,6 +17,8 @@
 <c:url var="tempLogoUrl" value="/images/pokemonLogo.png"/>
 <c:url var="adminUrl" value="/admin"/>
 <c:url var="randomUrl" value="/random"/>
+<c:url var="freeUrl" value="/board/list/freetalk"/>
+<c:url var="noticeUrl" value="/board/list/notice"/>
 
 <c:url var="pokemonOffUrl" value="https://www.pokemonkorea.co.kr/"/>
 <c:url var="instagramUrl" value="/images/sns/instagram.jpeg"/>
@@ -95,8 +97,8 @@
                 <div class="dropdown">
                     <a href="#">게시판</a>
                     <div class="dropdown-content">
-                        <a href="#">아이템 1</a>
-                        <a href="#">아이템 2</a>
+                        <a href="${freeUrl}">자유게시판</a>
+                        <a href="${noticeUrl}">공지사항</a>
                         <a href="#">아이템 3</a>
                     </div>
                 </div>

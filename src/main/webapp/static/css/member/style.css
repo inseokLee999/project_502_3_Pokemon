@@ -1,6 +1,10 @@
 
 /* 회원가입 화면 */
 /* 회원가입 폼 스타일 */
+
+main { display: flex; align-items: center; min-height: 800px; }
+footer { margin-top: 0; }
+
 .content-box {
     min-width: 650px;
     max-width: 750px;
