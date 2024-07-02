@@ -59,9 +59,8 @@ button:hover, a:hover {
 }
 
 /*사이트 헤더 영역 S*/
-header .site-top {
-    background: var(--background-color);
 
+header .site-top {
     border-bottom: 1px solid #8f8f8f;
     top: 0;
     width: 100%;
@@ -125,26 +124,39 @@ header .logo img:hover {
 
 /* 회전 애니메이션 정의 */
 
-
+header .main-center img{
+    height: 150px;
+}
 header .site-top a:hover {
     font-weight: bold;
 }
 
 header .site-top .right a {
     margin-left: 10px;
-    background: var(--background-color);
+    /*background: var(--background-color);*/
 }
-
+header .right {
+    height: 100%;
+    align-items: center;
+}
+header .logged-in-right {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+header .logged-in-right img{
+    align-items: center;
+    height: 100%;
+}
 header .logo-search {
     padding: 10px 0;
-
+    background: var(--background-color);
 }
 
 header .logo-search > .inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 header .search-box {
@@ -225,7 +237,8 @@ header {
 }
 
 main {
-    padding-top: 223px; /* 헤더 높이만큼 패딩 추가 */
+    padding-top: 260px; /* 헤더 높이만큼 패딩 추가 */
+    background:url('../webapp/static/images/background.png') no-repeat center center;
 }
 
 
