@@ -5,9 +5,7 @@
     --background-color: #ffffff; /* 배경 색상 */
     --text-color: #1b2630; /* 텍스트 색상 */
 }
-
-
---button-padding: 10px 20px;
+    --button-padding: 10px 20px;
     --button-font-size: 16px;
     --button-font-weight: bold;
     --button-color: #fff;
