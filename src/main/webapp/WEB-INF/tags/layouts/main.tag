@@ -10,6 +10,7 @@
 <c:url var="jsUrl" value="/js/" />
 <c:url var="homeUrl" value="/"/>
 <c:url var="searchUrl" value="/pokemon" />
+<c:url var="imageUrl" value="/images"/>
 <c:url var="logoUrl" value="/images/logo.png"/>
 <c:url var="pokemonUrl" value="/pokemon"/>
 <c:url var="gameUrl" value="/game"/>
@@ -103,9 +104,15 @@
                 <a href="${pokemonUrl}">포켓몬 도감</a>
                 <a href="${randomUrl}">포켓몬 뽑기</a>
                 <a href="${mycardUrl}">내 카드함</a>
-                <a href="${gameUrl}">게임 하기</a>
+                <a href="${gameUrl}">
+                    <img class="nav-list" src="${imageUrl}/gameMenu.png" alt="<fmt:message key="게임_아이콘"/> " >
+                    게임하기
+                </a>
                 <util:adminOnly >
-                    <a href="${adminUrl}">게시판 관리</a>
+                    <a href="${adminUrl}">
+                        <img class="nav-list" src="${imageUrl}/masterBall.png" alt="<fmt:message key="게시판_관리_아이콘"/>">
+                        게시판 관리
+                    </a>
                 </util:adminOnly>
             </div>
         </nav>

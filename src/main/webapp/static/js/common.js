@@ -5,8 +5,8 @@ document.addEventListener('mousemove', (event) => {
     const imageWidth = image.offsetWidth;
     const imageHeight = image.offsetHeight;
 
-    // 이미지의 중심을 마우스 포인터에 맞추기 위해 위치 조정
-    image.style.left = `${mouseX}px`;
-    image.style.top = `${mouseY}px`;
-
+    // 이미지의 오른쪽 하단 모서리를 마우스 포인터에 맞추기 위해 위치 조정
+    // image.style.left = `${mouseX}px`;
+    // image.style.top = `${mouseY}px`;
+    image.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
 });

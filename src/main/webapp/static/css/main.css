@@ -12,7 +12,7 @@
     position: absolute;
     background-color: var(--primary-color); /* 네비게이션 배경색과 동일 */
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -85,13 +85,13 @@ header .site-top i {
 }
 
 
-
 header .site-top a {
     background: var(--background-color);
     line-height: 1;
     margin: 0;
     padding: 0;
 }
+
 header .logo img {
     position: relative; /* 추가: z-index가 적용되도록 position 설정 */
     z-index: 9000;
@@ -109,27 +109,27 @@ header .logo img {
     width: 100%; /* 박스 너비를 100%로 설정 */
     position: absolute; /* 절대 위치 설정 */
     top: 37px; /* 로고와 서치 박스의 높이 + 여백 */
-    z-index:1000; /* 다른 요소보다 위에 위치하게 하기 위해 높은 z-index 설정 */
+    z-index: 1000; /* 다른 요소보다 위에 위치하게 하기 위해 높은 z-index 설정 */
     display: block; /* 박스를 보이게 설정 */
     left: 0; /* 왼쪽에 고정 */
 
 }
+
 header .logo img:hover {
     transform: rotate(360deg); /* 마우스 호버 시 회전 효과 적용 */
 }
 
 
-
-
-
 /* 회전 애니메이션 정의 */
 
-header .main-center img{
+header .main-center img {
     height: 150px;
 }
-header .main-center img:hover{
+
+header .main-center img:hover {
 
 }
+
 header .site-top a:hover {
     font-weight: bold;
 }
@@ -138,19 +138,23 @@ header .site-top .right a {
     margin-left: 10px;
     /*background: var(--background-color);*/
 }
+
 header .right {
     height: 100%;
     align-items: center;
 }
+
 header .logged-in-right {
     height: 100%;
     display: flex;
     align-items: center;
 }
-header .logged-in-right img{
+
+header .logged-in-right img {
     align-items: center;
     height: 100%;
 }
+
 header .logo-search {
     padding: 10px 0;
     background: url("../images/wallpaper2.jpg") no-repeat center center;
@@ -169,7 +173,7 @@ header .search-box {
     display: flex;
     width: 300px;
     height: 45px;
-    border-radius:5px;
+    border-radius: 5px;
 }
 
 header .search-box input[type='text'] {
@@ -230,6 +234,12 @@ nav > .inner a:hover {
     /*background: #d7a513;*/
 }
 
+nav  a  img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
 header {
     position: fixed;
     top: 0;
@@ -240,7 +250,7 @@ header {
 
 main {
     padding-top: 254px; /* 헤더 높이만큼 패딩 추가 */
-    background:url('../images/whiteBg.png') no-repeat center center ;
+    background: url('../images/whiteBg.png') no-repeat center center;
     background-size: 100% 100%;
 }
 
@@ -286,14 +296,17 @@ footer ul li {
     text-align: center;
     margin: 20px 0;
 }
+
 .pagination a {
     border: 1px solid #333;
     display: inline-block;
     padding: 5px 10px;
     border-radius: 3px;
 }
+
 .pagination a.on {
     background: #333;
     color: #fff;
 }
+
 /* 페이징 공통 E */
