@@ -1,0 +1,38 @@
+main { display: flex; align-items: center; min-height: 800px; }
+footer { margin-top: 0; }
+
+.button-container {
+    text-align: center;
+    margin: 20px auto;
+}
+.button1 {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 40px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 100px 20px;
+}
+
+.button1:hover {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.button2 {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 40px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 100px 20px;
+}
+
+.button2:hover {
+    color: var(--primary-color);
+    font-weight: bold;
+}
