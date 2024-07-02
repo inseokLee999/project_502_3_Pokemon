@@ -6,7 +6,7 @@ import org.choongang.global.config.annotations.Service;
 import org.choongang.global.config.containers.BeanContainer;
 import org.choongang.member.MemberUtil;
 import org.choongang.member.entities.Member;
-import org.choongang.member.mapper.MemberMapper;
+import org.choongang.member.mappers.MemberMapper;
 import org.choongang.mypage.controllers.RequestProfile;
 import org.choongang.mypage.validators.ProfileUpdateValidator;
 import org.mindrot.jbcrypt.BCrypt;
