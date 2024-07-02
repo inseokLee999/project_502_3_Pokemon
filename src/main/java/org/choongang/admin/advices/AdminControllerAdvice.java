@@ -5,7 +5,10 @@ import lombok.RequiredArgsConstructor;
 import org.choongang.global.Interceptor;
 import org.choongang.global.config.annotations.ControllerAdvice;
 import org.choongang.global.config.annotations.ModelAttribute;
+import org.choongang.global.exceptions.UnAuthorizedException;
 import org.choongang.member.MemberUtil;
+import org.choongang.member.entities.Member;
+import org.choongang.member.mappers.MemberMapper;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,7 +23,7 @@ public class AdminControllerAdvice implements Interceptor {
 
     private final MemberUtil memberUtil;
     private final HttpServletRequest request;
-
+    private final MemberMapper memberMapper;
     @Override
     public boolean preHandle() {
 
@@ -71,5 +74,14 @@ public class AdminControllerAdvice implements Interceptor {
         String code = menuCode();
 
         return menus.get(code);
+    }
+    @ModelAttribute
+    public List<Member> getMemberList(){
+        if(!memberUtil.isLogin() || !memberUtil.isAdmin()){
+            throw new UnAuthorizedException();
+        }
+        List<Member> members = memberMapper.getAllMember();
+
+        return members;
     }
 }
