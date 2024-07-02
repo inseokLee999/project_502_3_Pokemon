@@ -22,6 +22,11 @@
         SELECT * FROM MEMBER WHERE EMAIL=#{email}
     </select>
 
+<select id="getMemberByUserNo" resultMap="memberMap">>
+    SELECT * FROM MEMBER WHERE USER_NO = #{userNo}
+</select>
+
+
     <insert id="register">
         INSERT INTO MEMBER (USER_NO, EMAIL, PASSWORD, USER_NAME)
         VALUES (SEQ_MEMBER.NEXTVAL, #{email}, #{password}, #{userName})
@@ -32,4 +37,18 @@
     <select id="getMyPokemon" resultType="long">
         SELECT MY_POKEMON_SEQ FROM MEMBER WHERE USER_NAME = #{userNm}
     </select>
+    <update id="modify">
+        UPDATE MEMBER
+        <set>
+            <if test="userName != null and !userName.equals('')">
+                USER_NAME=#{userName},
+            </if>
+            <if test="password != null and !password.equals('')">
+                PASSWORD=#{password},
+            </if>
+            MY_POKEMON_SEQ=#{myPokemonSeq},
+            MOD_DT = SYSDATE
+        </set>
+        WHERE email=#{email}
+    </update>
 </mapper>

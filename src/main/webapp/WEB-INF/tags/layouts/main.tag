@@ -9,7 +9,7 @@
 <c:url var="cssUrl" value="/css/" />
 <c:url var="jsUrl" value="/js/" />
 <c:url var="homeUrl" value="/"/>
-<c:url var="searchUrl" value="/board/search" />
+<c:url var="searchUrl" value="/board/write" />
 <c:url var="logoUrl" value="/images/logo.png"/>
 <c:url var="pokemonUrl" value="/pokemon"/>
 <c:url var="gameUrl" value="/game"/>
@@ -43,6 +43,9 @@
                     </a>
                     </util:guestOnly>
                     <util:memberOnly>
+                        <c:if test="${myProfile!=null}">
+                            <img src="${myProfile.frontImage}">
+                        </c:if>
                         <fmt:message key="LOGIN_MSG">
                             <fmt:param>${loggedMember.userName}</fmt:param>
                             <fmt:param>${loggedMember.email}</fmt:param>
@@ -78,8 +81,15 @@
             </div>
         </section>
         <nav>
-            <div class="layout-width inner">
-                <a href="#">메뉴 1</a>
+            <div class="inner">
+                <div class="dropdown">
+                    <a href="#">게시판</a>
+                    <div class="dropdown-content">
+                        <a href="#">아이템 1</a>
+                        <a href="#">아이템 2</a>
+                        <a href="#">아이템 3</a>
+                    </div>
+                </div>
                 <a href="${pokemonUrl}">포켓몬 도감</a>
                 <a href="${randomUrl}">포켓몬 뽑기</a>
                 <a href="${mycardUrl}">내카드함</a>

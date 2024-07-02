@@ -20,17 +20,17 @@ import java.util.List;
 @RequestMapping("/game")
 @RequiredArgsConstructor
 public class GameController {
-    private PokemonInfoService infoService;
-    private HttpServletRequest request;
+    private final PokemonInfoService infoService;
+    private final  HttpServletRequest request;
     private final BeanContainer beanContainer;
 
-    @Inject
-    public GameController(PokemonInfoService infoService, HttpServletRequest request) {
-        this.infoService = infoService;
-        this.request = request;
-        this.beanContainer = BeanContainer.getInstance();
-        this.beanContainer.loadBeans(); // 모든 빈들을 로딩
-    }
+//    @Inject
+//    public GameController(PokemonInfoService infoService, HttpServletRequest request) {
+//        this.infoService = infoService;
+//        this.request = request;
+//        this.beanContainer = BeanContainer.getInstance();
+////        this.beanContainer.loadBeans(); // 모든 빈들을 //로딩 필요없음!
+//    }
 
     // 게임창
     @GetMapping
@@ -54,6 +54,6 @@ public class GameController {
 
     private void commonProcess() {
         request.setAttribute("addCss", new String[] {"game/index"});
-        request.setAttribute("addScript", List.of(" "));
+        request.setAttribute("addScript", List.of("game/getRandom"));
     }
 }
