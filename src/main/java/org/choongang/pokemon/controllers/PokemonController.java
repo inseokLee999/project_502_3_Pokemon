@@ -23,10 +23,11 @@ import java.util.List;
 public class PokemonController {
 
     private final PokemonInfoService infoService;
-    private final HttpServletRequest request;
     private final ProfileService profileService;
-    private final MemberUtil memberUtil;
     private final MyPokemonService pokemonService;
+
+    private final HttpServletRequest request;
+    private final MemberUtil memberUtil;
     @GetMapping
     public String index(PokemonSearch search) {
         commonProcess();

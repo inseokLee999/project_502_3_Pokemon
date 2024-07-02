@@ -29,6 +29,7 @@ public class MypageController {
     @GetMapping
     public String index() {
         request.setAttribute("addCss", new String[] {"mypage/mypageStyle"});
+        request.setAttribute("addScript", List.of("mypage/profile"));
 
         return "mypage/index";
     }
@@ -40,8 +41,10 @@ public class MypageController {
      */
     @GetMapping("/info")
     public String info() {
+        List<PokemonDetail> items = pokemonService.getList();
         request.setAttribute("addScript", List.of("mypage/profile","mypage/info"));
         request.setAttribute("addCss", new String[] {"mypage/profileUpdateStyle"});
+        request.setAttribute("items", items);
 
         return "mypage/info";
     }
@@ -51,11 +54,15 @@ public class MypageController {
      * @return
      */
     @PostMapping("/info")
-    public String infoPs() {
-        List<PokemonDetail> items = pokemonService.getList();
+    public String infoPs(RequestProfile form) {
 
-        request.setAttribute("addScript",List.of("mypage/profile","mypage/info"));
-        request.setAttribute("items", items);
+        profileService.update(form);
+
+        String url = request.getContextPath() + "/mypage";
+        String script = String.format("parent.location.replace('%s');", url);
+
+        request.setAttribute("script", script);
+
         return "commons/execute_script";
     }
 

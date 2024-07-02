@@ -20,11 +20,11 @@ public class MemberTest{
 
     @Test
     void registerTest(){
-        LongStream.rangeClosed(1,10).forEach(i->mapper.registerMyPokemon(134,i));
+        LongStream.rangeClosed(1,10).forEach(i->mapper.registerMyPokemon(177,i));
     }
     @Test
     void getMyPokemonsTest(){
-        List<PokemonDetail> items = mapper.getMyPokemons(134L);
+        List<PokemonDetail> items = mapper.getMyPokemons(134);
         items.forEach(System.out::println);
     }
     @Test
