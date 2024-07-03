@@ -55,7 +55,15 @@ public class PokemonGameController {
         return "game/step2";
     }
 
+
+    @GetMapping("/guide")
+    public String guide() {
+
+        return "game/guide";
+    }
+
     private void commonProcess() {
         request.setAttribute("addCss", List.of("game/index"));
+        request.setAttribute("addScript", List.of("game/game"));
     }
 }
