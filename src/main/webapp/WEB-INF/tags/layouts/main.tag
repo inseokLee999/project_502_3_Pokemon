@@ -9,12 +9,13 @@
 <c:url var="cssUrl" value="/css/"/>
 <c:url var="jsUrl" value="/js/"/>
 <c:url var="imageUrl" value="/images/"/>
+<c:url var="imgUrl" value="/img"/>
 <c:url var="homeUrl" value="/"/>
 <c:url var="searchUrl" value="/board/write"/>
 <c:url var="logoUrl" value="/images/logo.png"/>
 <c:url var="pokemonUrl" value="/pokemon"/>
 <c:url var="gameUrl" value="/game"/>
-<c:url var="mycardUrl" value="/mycard/privatecard"/>
+<c:url var="mycardUrl" value="/mycard"/>
 <c:url var="mainLogoUrl" value="/images/pokemonLogo.png"/>
 <c:url var="adminUrl" value="/admin"/>
 <c:url var="randomUrl" value="/random"/>
@@ -133,6 +134,47 @@
             <h4> @All copyrights are in TEAM 4 </h4>
             <h5> choongang 502 class </h5>
         </section>
+        <footer id="ft" class="page-pokemon">
+            <div class="ft-total">
+                <div class="ft-top">
+                    <div class="container flex-justify-space">
+                        <a href="${homeUrl}"><img src="${imgUrl}/ft_logo.png" alt="pokemon korea, inc."></a>
+                        <ul class="list-split d-lg-block d-none">
+                            <li><a href="/company">회사소개</a></li>
+                            <li><a href="/business">사업내용</a></li>
+                            <li><a href="/partner">제휴안내</a></li>
+                            <li><a href="/terms">이용약관</a></li>
+                            <li><a href="/privacy">개인정보처리방침</a></li>
+                            <li><a href="/email">이메일무단수집거부</a></li>
+                            <li><a href="/faq">고객센터</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ft-mdl">
+                    <div class="container flex-justify-space">
+                        <div class="d-lg-block d-none">
+                            <p>(주)포켓몬코리아&nbsp;&nbsp; 경기도 용인시 수지구 신수로 801, 4층 </p>
+                            <ul class="list-split">
+                                <li>대표이사:임재범</li>
+                                <li>개인정보관리책임자:임재범</li>
+                                <li>사업자등록번호:113-86-07676</li>
+                            </ul>
+                        </div>
+                        <ul class="d-flex">
+                            <li><a href="https://www.facebook.com/PokemonCoKr" target="_blank" class="icon-face"><i
+                                    class="xi-facebook-official"></i>facebook</a></li>
+                            <li><a href="https://instagram.com/pokemon_korea_official?igshid=OGQ5ZDc2ODk2ZA=="
+                                   target="_blank" class="icon-insta"><i class="xi-instagram"></i>instagram</a></li>
+                            <li><a href="https://www.youtube.com/user/PokemonKoreaInc" target="_blank"
+                                   class="icon-youtube"><i
+                                    class="xi-youtube"></i>youtube</a></li>
+                            <li><a href="http://www.pokemonstore.co.kr" target="_blank" class="icon-pokemon"><i
+                                    class="xi-shop"></i>pokemon</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </jsp:attribute>
     <jsp:attribute name="commonCss">
         <link rel="stylesheet" type="text/css" href="${cssUrl}main.css">

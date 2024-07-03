@@ -266,7 +266,7 @@ main {
 
 
 /*사이트 푸터 영역 S*/
-footer {
+/*footer {
     margin-top: 50px;
     min-height: 100px;
     width: 100%;
@@ -298,6 +298,77 @@ footer ul {
 
 footer ul li {
     padding-right: 20px;
+}*/
+
+#ft {
+    color: #fff;
+    background:#ddd;
+}
+#ft div{
+    display: flex;
+    justify-content: space-between;
+}
+#ft .ft-top {
+    position: relative;
+    padding: 30px 0;
+    font-size: 15px
+}
+
+#ft .ft-top .list-split>li:before {
+    margin: 0 20px
+}
+
+#ft .ft-mdl {
+    padding: 20px 0;
+    /*background-color: #1a1a1a;*/
+    font-size: 13px
+}
+
+#ft .ft-mdl .list-split>li+li:before {
+    border-left: 0;
+    margin: 10px 5px 0 5px;
+    color: #ddd
+}
+
+#ft .ft-btm {
+    padding: 30px 0 55px;
+    font-size: 12px
+}
+
+#ft .ft-btm ul {
+    margin-bottom: 30px;
+    color: #ddd
+}
+
+#ft .ft-gray {
+    padding: 0 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+#ft .ft-gray li:nth-of-type(1)>a {
+    margin-left: 0
+}
+
+#ft .ft-btm .d-flex>p {
+    margin-right: 15px;
+    font-weight: 600
+}
+
+
+.page-micro#ft {
+    position: relative;
+    padding: 55px 0 60px
+}
+
+.page-micro#ft .copyright {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 16px;
+    line-height: 1.7;
+    text-align: center
 }
 
 /*사이트 푸터 영역 E*/
@@ -320,3 +391,12 @@ footer ul li {
 }
 
 /* 페이징 공통 E */
+ul {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+
+}

@@ -10,7 +10,7 @@
             포켓몬 검색 :
             <input type="text" name="skey" value="${param.skey}" placeholder="검색어를 입력하세요.">
             <button type="submit" class="button button-secondary">검색</button>
-            
+
         </form>
         <ul class="pokemon-list">
             <c:if test="${items == null || items.isEmpty()}">
@@ -21,15 +21,18 @@
                     <div>
 
                     </div>
-                    <li class="pokemon-data">
-                        <a href="<c:url value='/pokemon/${item.seq}' />">
-                            <img src="${item.frontImage}" alt="${item.nameKr}">
-                            <div class="p-name">
-                                    ${item.nameKr}(${item.name})
-                            </div>
-                        </a>
+                    <li>
+                        <div class="pokemon-data">
+                            <a href="<c:url value='/pokemon/${item.seq}' />">
+                                <img src="${item.frontImage}" alt="${item.nameKr}">
+                                <div class="p-name">
+                                        ${item.nameKr}(${item.name})
+                                </div>
+                            </a></div>
+                        <div>
+                            <pk:myPokemon seq="${item.seq}"/>
+                        </div>
                     </li>
-                    <pk:myPokemon seq="${item.seq}"/>
                 </c:forEach>
             </c:if>
         </ul>
