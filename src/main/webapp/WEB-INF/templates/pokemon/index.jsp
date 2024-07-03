@@ -4,6 +4,7 @@
 <%@taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
 <%@taglib prefix="pk" tagdir="/WEB-INF/tags/pokemon" %>
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
+<fmt:setBundle basename="messages.commons" />
 <c:url var="searchUrl" value="/pokemon"/>
 <layout:main>
     <section class="layout-width">
