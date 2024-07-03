@@ -2,9 +2,13 @@ package org.choongang.game.controllers;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
-import org.choongang.global.config.annotations.Controller;
-import org.choongang.global.config.annotations.GetMapping;
-import org.choongang.global.config.annotations.RequestMapping;
+import org.choongang.global.config.annotations.*;
+import org.choongang.member.MemberUtil;
+import org.choongang.pokemon.entities.PokemonDetail;
+import org.choongang.pokemon.exceptions.PokemonNotFoundException;
+import org.choongang.game.constants.GameResult;
+import org.choongang.game.services.PokemonGameService;
+import org.choongang.pokemon.mappers.PokemonMapper;
 import org.choongang.pokemon.services.PokemonInfoService;
 
 import java.util.List;
@@ -14,14 +18,16 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PokemonGameController {
 
+    private final PokemonGameService gameService;
+    private final PokemonInfoService infoService;
     private final HttpServletRequest request;
-
+    private final MemberUtil memberUtil;
+    private final PokemonMapper pokemonMapper;
     @GetMapping
     public String index() {
 
         return "redirect:/game/step1";
     }
-
 
     /**
      * 1단계 : 카드 선택
@@ -32,16 +38,27 @@ public class PokemonGameController {
     @GetMapping("/step1")
     public String step1() {
         commonProcess();
-        return "/game/step1";
+        List<PokemonDetail> myPokemons = pokemonMapper.getMyPokemons(memberUtil.getMember().getUserNo());
+        request.setAttribute("myPokemons", myPokemons);
+        return "game/step1";
     }
 
-    @GetMapping("/step2")
-    public String step2() {
+    @PostMapping("/step2")
+    public String step2(@RequestParam("seq") long seq) {
         commonProcess();
-        return "/game/step2";
+        PokemonDetail user = infoService.get(seq).orElseThrow(PokemonNotFoundException::new);
+        PokemonDetail computer = infoService.getRandom().orElseThrow(PokemonNotFoundException::new);
+
+        GameResult result = gameService.play(user, computer);
+
+        request.setAttribute("user", user);
+        request.setAttribute("computer", computer);
+        request.setAttribute("result", result);
+
+        return "game/step2";
     }
 
     private void commonProcess() {
-        request.setAttribute("addCss", List.of("game/index"));
+        request.setAttribute("addCss", List.of("game/game"));
     }
 }
