@@ -77,7 +77,7 @@
                 </div>
                 <div class="main-center">
                     <a href="${homeUrl}" class="center-logo">
-                        <img src="${mainLogoUrl}" alt="<fmt:message key="gif로고"/>">
+                        <img src="${mainLogoUrl}" alt="<fmt:message key="메인 로고"/>">
                     </a>
                 </div>
                     <%--                <div class="header-bottom-box">
@@ -98,7 +98,8 @@
                 <div class="dropdown">
                     <a href="#">
                         <img src="${imageUrl}/boardLogo.png" alt="게시판 아이콘">
-                        게시판</a>
+                        게시판
+                    </a>
                     <div class="dropdown-content">
                         <a href="${freeUrl}">자유게시판</a>
                         <a href="${noticeUrl}">공지사항</a>
