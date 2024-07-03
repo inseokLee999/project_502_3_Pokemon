@@ -27,3 +27,6 @@
 .p-spec-item {
     grid-column: span 1;
 }
+.forward div{
+    padding: 0 20px;
+}

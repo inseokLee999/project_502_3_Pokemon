@@ -1,0 +1,84 @@
+
+/*공통 뱃지*/
+.badge{
+    display: inline-block;
+    padding: .25em .4em;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    justify-content: space-between;
+}
+/*속성별 뱃지 S*/
+.badge-grass {
+    background: #9bcc50;
+    color: #000
+}
+
+.badge-poison {
+    background: #b97fc9;
+    color: #fff
+}
+
+.badge-fire {
+    background: #efa061;
+    color: #fff
+}
+
+.badge-flight {
+    background: #94c5d3;
+    color: #fff
+}
+
+.badge-water {
+    background: #608fcf;
+    color: #fff
+}
+
+.badge-thunder {
+    background: #edd259;
+    color: #000
+}
+
+.badge-asper {
+    background: #e879;
+    color: #fff
+}
+
+.badge-evil {
+    background: #585365;
+    color: #fff
+}
+
+.badge-ice {
+    background: #8dccc0;
+    color: #000
+}
+
+.badge-fairy {
+    background: #c39de1;
+    color: #000
+}
+.badge-bug{
+    background:#9fa424;
+    color:#ffffff;
+}
+.badge-flying{
+    background: #95c9ff;
+    color: #ffffff;
+}
+.badge-normal{
+    background: #999999;
+    color: #ffffff;
+}
+.badge-electric{
+    background: #ffdb00;
+    color: #ffffff;
+}
+.badge-ground{
+    background: #ab7939;
+    color: #ffffff;
+}
+/*속성별 뱃지 E*/
