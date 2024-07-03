@@ -63,7 +63,7 @@ public class PokemonGameController {
     }
 
     private void commonProcess() {
-        request.setAttribute("addCss", List.of("game/index"));
-        request.setAttribute("addScript", List.of("game/game"));
+        request.setAttribute("addCss", List.of("game/index","game/game"));
+        request.setAttribute("addScript", List.of());
     }
 }

@@ -13,7 +13,7 @@
 <c:url var="logoUrl" value="/images/logo.png"/>
 <c:url var="pokemonUrl" value="/pokemon"/>
 <c:url var="gameUrl" value="/game"/>
-<c:url var="mycardUrl" value="/mycard/privatecard"/>
+<c:url var="mycardUrl" value="/mycard"/>
 <c:url var="tempLogoUrl" value="/images/pokemonLogo.png"/>
 <c:url var="adminUrl" value="/admin"/>
 <c:url var="randomUrl" value="/random"/>

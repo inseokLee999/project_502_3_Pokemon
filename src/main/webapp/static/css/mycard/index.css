@@ -1,0 +1,28 @@
+@import url('../common.css');
+/* 멤버로그인 복사 S */
+
+.content-box {
+    min-width: 550px;
+    max-width: 700px;
+    min-height: 200px;
+    margin: 150px auto;
+    box-shadow: 2px 2px 10px #414141;
+    border-radius: 20px;
+    padding: 30px;
+
+}
+.content-box h1 {
+    font-size: 1.5rem;
+    line-height: 1;
+    padding: 0 10px 15px;
+    margin: 0 0 20px;
+    border-bottom: 2px solid #000;
+}
+
+
+
+/* km */
+.centered {
+    text-align: center;
+    margin-top: 40px; /* 원하는 만큼의 상단 여백 설정 */
+}
