@@ -9,7 +9,7 @@
 
         <form name="frmStep1" method="POST" action="<c:url value='/game/step2' />" autocomplete="off">
             <ul class='card-items'>
-                <c:forEach var="item" items="${myPokemons}">
+                <c:forEach var="item" items="${items}">
                     <li class='item'>
                         <input type="radio" name="seq" value="${item.seq}" onclick="frmStep1.submit();" id="seq_${item.seq}">
                         <label for="seq_${item.seq}">
