@@ -1,5 +1,6 @@
 package org.choongang.member.mappers;
 
+import org.choongang.admin.controllers.MemberSearch;
 import org.choongang.member.entities.GetRandPokemon;
 import org.choongang.member.entities.Member;
 
@@ -13,5 +14,7 @@ public interface MemberMapper {
     long getMyPokemon(String userName);
     int modify(Member member);
     Member getMemberByUserNo(long userNo);
-    List<Member> getAllMember();
+    List<Member> getList(MemberSearch search);
+    int delete(String email);
+    int getTotal(MemberSearch search);
 }

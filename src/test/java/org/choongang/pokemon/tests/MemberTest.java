@@ -1,5 +1,6 @@
 package org.choongang.pokemon.tests;
 
+import org.choongang.admin.controllers.MemberSearch;
 import org.choongang.global.config.DBConn;
 import org.choongang.member.entities.Member;
 import org.choongang.member.mappers.MemberMapper;
@@ -51,7 +52,10 @@ public class MemberTest{
     }
     @Test
     void getMemberList(){
-        List<Member> memberList = memberMapper.getAllMember();
+        MemberSearch memberSearch = new MemberSearch();
+        memberSearch.setPage(1);
+        memberSearch.setLimit(1);
+        List<Member> memberList = memberMapper.getList(memberSearch);
         System.out.println(memberList.stream().toList());
         System.out.println("memberlist.length() = "+ memberList.size());
     }

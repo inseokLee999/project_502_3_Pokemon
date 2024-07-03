@@ -5,9 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.choongang.global.Interceptor;
 import org.choongang.global.config.annotations.ControllerAdvice;
 import org.choongang.global.config.annotations.ModelAttribute;
-import org.choongang.global.exceptions.UnAuthorizedException;
 import org.choongang.member.MemberUtil;
-import org.choongang.member.entities.Member;
 import org.choongang.member.mappers.MemberMapper;
 
 import java.util.ArrayList;
@@ -24,6 +22,7 @@ public class AdminControllerAdvice implements Interceptor {
     private final MemberUtil memberUtil;
     private final HttpServletRequest request;
     private final MemberMapper memberMapper;
+
     @Override
     public boolean preHandle() {
 
@@ -45,9 +44,9 @@ public class AdminControllerAdvice implements Interceptor {
 
         /* 게시판 관리 서브 메뉴 S */
         List<String[]> boardMenus = new ArrayList<>();
-        boardMenus.add(new String[] {"게시판 목록", "/admin/board"});
-        boardMenus.add(new String[] {"게시판 등록", "/admin/board/register"});
-        boardMenus.add(new String[] {"게시글 관리", "/admin/board/posts"});
+        boardMenus.add(new String[]{"게시판 목록", "/admin/board"});
+        boardMenus.add(new String[]{"게시판 등록", "/admin/board/register"});
+        boardMenus.add(new String[]{"게시글 관리", "/admin/board/posts"});
         menus.put("board", boardMenus);
         /* 게시판 관리 서브 메뉴 E */
 
@@ -56,6 +55,7 @@ public class AdminControllerAdvice implements Interceptor {
 
     /**
      * 주 메뉴 코드 - /admin/주메뉴 코드
+     *
      * @return
      */
     @ModelAttribute
@@ -75,13 +75,16 @@ public class AdminControllerAdvice implements Interceptor {
 
         return menus.get(code);
     }
+    /*
     @ModelAttribute
-    public List<Member> getMemberList(){
+    public ListData<Member> getMemberList(){
         if(!memberUtil.isLogin() || !memberUtil.isAdmin()){
             throw new UnAuthorizedException();
         }
-        List<Member> members = memberMapper.getAllMember();
+        MemberSearch memberSearch = new MemberSearch();
+        ListData<Member> members = memberMapper.getList(memberSearch);
 
         return members;
-    }
+        }
+        */
 }
