@@ -6,6 +6,17 @@
     display: inline-block;
 }
 
+
+.content-box {
+    min-width: 550px;
+    max-width: 700px;
+    min-height: 650px;
+    margin: 50px auto;
+    box-shadow: 2px 2px 10px #414141;
+    border-radius: 20px;
+    padding: 30px;
+}
+
 /* 드롭다운 콘텐츠 스타일 */
 .dropdown-content {
     display: none;

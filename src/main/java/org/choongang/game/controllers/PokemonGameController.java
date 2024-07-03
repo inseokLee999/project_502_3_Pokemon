@@ -2,13 +2,12 @@ package org.choongang.game.controllers;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
+import org.choongang.game.constants.GameResult;
 import org.choongang.global.config.annotations.*;
-import org.choongang.member.MemberUtil;
 import org.choongang.pokemon.entities.PokemonDetail;
 import org.choongang.pokemon.exceptions.PokemonNotFoundException;
 import org.choongang.game.constants.GameResult;
 import org.choongang.game.services.PokemonGameService;
-import org.choongang.pokemon.mappers.PokemonMapper;
 import org.choongang.pokemon.services.PokemonInfoService;
 
 import java.util.List;
@@ -21,8 +20,7 @@ public class PokemonGameController {
     private final PokemonGameService gameService;
     private final PokemonInfoService infoService;
     private final HttpServletRequest request;
-    private final MemberUtil memberUtil;
-    private final PokemonMapper pokemonMapper;
+
     @GetMapping
     public String index() {
 
@@ -38,8 +36,7 @@ public class PokemonGameController {
     @GetMapping("/step1")
     public String step1() {
         commonProcess();
-        List<PokemonDetail> myPokemons = pokemonMapper.getMyPokemons(memberUtil.getMember().getUserNo());
-        request.setAttribute("myPokemons", myPokemons);
+
         return "game/step1";
     }
 
@@ -59,6 +56,6 @@ public class PokemonGameController {
     }
 
     private void commonProcess() {
-        request.setAttribute("addCss", List.of("game/game"));
+        request.setAttribute("addCss", List.of("game/index"));
     }
 }
