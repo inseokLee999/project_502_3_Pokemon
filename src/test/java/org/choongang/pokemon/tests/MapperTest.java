@@ -40,4 +40,10 @@ public class MapperTest {
         int result = mapper.deleteAllMyPokemon(1L);
         System.out.println(result);
     }
+
+    @Test
+    void getMyPokemonSeqsTest(){
+        List<Long> items = mapper.getMyPokemonSeqs(1L);
+        System.out.println(items);
+    }
 }

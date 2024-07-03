@@ -2,8 +2,8 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <%@taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
+<%@taglib prefix="pk" tagdir="/WEB-INF/tags/pokemon" %>
 <c:url var="searchUrl" value="/pokemon" />
-
 <layout:main>
     <section class="layout-width">
         <form name="frmSearch" method="get" action="${searchUrl}" autocomplete="off">
@@ -18,6 +18,9 @@
             </c:if>
             <c:if test="${items != null && !items.isEmpty()}">
                 <c:forEach var="item" items="${items}">
+                    <div>
+
+                    </div>
                     <li class="pokemon-data">
                         <a href="<c:url value='/pokemon/${item.seq}' />">
                             <img src="${item.frontImage}" alt="${item.nameKr}">
@@ -26,6 +29,7 @@
                             </div>
                         </a>
                     </li>
+                    <pk:myPokemon seq="${item.seq}"/>
                 </c:forEach>
             </c:if>
         </ul>

@@ -28,6 +28,7 @@ public class MypageController {
      */
     @GetMapping
     public String index() {
+        commonProcess();
         request.setAttribute("addCss", new String[] {"mypage/mypageStyle"});
         request.setAttribute("addScript", List.of("mypage/profile"));
 
@@ -41,10 +42,11 @@ public class MypageController {
      */
     @GetMapping("/info")
     public String info() {
+        commonProcess();
         List<PokemonDetail> items = pokemonService.getList();
 
         request.setAttribute("addScript", List.of("mypage/profile","mypage/info"));
-        request.setAttribute("addCss", new String[] {"mypage/profileUpdateStyle"});
+//        request.setAttribute("addCss", new String[] {"mypage/profileUpdateStyle"});
         request.setAttribute("items", items);
 
         return "mypage/info";
@@ -73,5 +75,12 @@ public class MypageController {
         request.setAttribute("addCss", new String[] {"mypage/alertStyle"});
 
         return "mypage/alert";
+    }
+
+    private void commonProcess(){
+        request.setAttribute("addCss", List.of("mypage/style"));
+    }
+    private void addAttribute(String css,String js){
+
     }
 }
