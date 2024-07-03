@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id 'org.jetbrains.kotlin.jvm'
 }
 
 group = 'org.choongang'
@@ -11,17 +10,12 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.modelmapper:modelmapper:3.2.0'
-    implementation 'jakarta.inject:jakarta.inject-api:2.0.1'
-
     compileOnly 'jakarta.servlet:jakarta.servlet-api:6.0.0'
     compileOnly 'jakarta.servlet.jsp:jakarta.servlet.jsp-api:3.1.1'
     implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.0'
     implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1'
     compileOnly 'org.projectlombok:lombok:1.18.32'
-    testCompileOnly 'org.projectlombok:lombok:1.18.32'
     annotationProcessor 'org.projectlombok:lombok:1.18.32'
-    testAnnotationProcessor 'org.projectlombok:lombok:1.18.32'
     runtimeOnly 'com.oracle.database.jdbc:ojdbc11:23.4.0.24.05'
     implementation 'org.mybatis:mybatis:3.5.16'
     implementation 'org.mindrot:jbcrypt:0.4'
@@ -31,17 +25,14 @@ dependencies {
     implementation 'ch.qos.logback:logback-classic:1.5.6'
     implementation 'com.github.javafaker:javafaker:1.0.2'
     implementation 'org.modelmapper:modelmapper:3.2.0'
+    implementation 'org.apache.commons:commons-fileupload2-jakarta-servlet6:2.0.0-M2'
 
-    testImplementation 'org.projectlombok:lombok:1.18.32'
     testImplementation 'org.mockito:mockito-core:5.12.0'
     testImplementation 'org.mockito:mockito-junit-jupiter:5.12.0'
     testImplementation platform('org.junit:junit-bom:5.10.2')
     testImplementation 'org.junit.jupiter:junit-jupiter'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"}
+}
 
 test {
     useJUnitPlatform()
-}
-kotlin {
-    jvmToolchain(17)
 }
