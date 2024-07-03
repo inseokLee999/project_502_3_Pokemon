@@ -30,6 +30,10 @@
             대전 결과 : ${result.title} <br>
             <a href="<c:url value='/game/step1' />" class="button button-secondary">다시 게임하기</a>
         </div>
+        <button type="submit" class="button button-secondary" onclick="location.href='<c:url value='/game/step1' />'">다시 게임하기</button>
+
+        <button type="submit" class="button button-primary" onclick="location.href='<c:url value='/game/log' />'">게임 기록보기</button>
+
 
     </div>
 </layout:main>
