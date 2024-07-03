@@ -15,16 +15,8 @@
                 <li class='no-data'>조회된 포켓몬이 없습니다.</li>
             </c:if>
             <c:if test="${items != null && !items.isEmpty()}">
-                <c:forEach var="item" items="${items}">
-                    <li>
-                        <a href="<c:url value='/pokemon/${item.seq}' />">
-                            <img src="${item.frontImage}" alt="${item.nameKr}">
-                            <div class="p-name">
-                                    ${item.nameKr}(${item.name})
-                            </div>
-                        </a>
-                    </li>
-                </c:forEach>
+                <jsp:include page="../mypage/_my_pokemon.jsp" />
+
             </c:if>
         </ul>
     </section>
