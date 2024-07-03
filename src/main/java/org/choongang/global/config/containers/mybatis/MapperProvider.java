@@ -9,6 +9,7 @@ import java.util.Arrays;
 @MapperScan({"org.choongang.member.mappers",
         "org.choongang.board.mappers",
         "org.choongang.pokemon.mappers",
+        "org.choongang.file.mappers",
         "org.choongang.mycard.mappers"/*,
 "org.choongang.game.mappers"*/})
 public class MapperProvider {
