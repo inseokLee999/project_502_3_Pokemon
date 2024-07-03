@@ -92,7 +92,7 @@
     background-color: var(--button-info-hover-bg);
 }
 .follow-image {
-    position: absolute;
+    position: fixed;
     width: 60px;
     height: 60px;
     pointer-events: none; /* 마우스 이벤트를 이미지에 전달하지 않음 */
