@@ -237,4 +237,8 @@ public class PokemonInfoService {
 
         return Optional.ofNullable(data);
     }
+
+    public List<Long> getSeqsByUseNo(long userNo){
+        return mapper.getMyPokemonSeqs(userNo);
+    }
 }

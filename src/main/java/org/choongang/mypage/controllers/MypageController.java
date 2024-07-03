@@ -10,6 +10,7 @@ import org.choongang.mypage.services.ProfileService;
 import org.choongang.pokemon.entities.PokemonDetail;
 import org.choongang.pokemon.services.MyPokemonService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -28,8 +29,9 @@ public class MypageController {
      */
     @GetMapping
     public String index() {
-        request.setAttribute("addCss", new String[] {"mypage/mypageStyle"});
-        request.setAttribute("addScript", List.of("mypage/profile"));
+        commonProcess();
+//        request.setAttribute("addCss", new String[] {"mypage/mypageStyle"});
+        addCssAttribute("mypage/mypageStyle");
 
         return "mypage/index";
     }
@@ -41,10 +43,12 @@ public class MypageController {
      */
     @GetMapping("/info")
     public String info() {
+        commonProcess();
         List<PokemonDetail> items = pokemonService.getList();
 
         request.setAttribute("addScript", List.of("mypage/profile","mypage/info"));
-        request.setAttribute("addCss", new String[] {"mypage/profileUpdateStyle"});
+        addCssAttribute("mypage/profileUpdateStyle");
+//        request.setAttribute("addCss", new String[] {"mypage/profileUpdateStyle"});
         request.setAttribute("items", items);
 
         return "mypage/info";
@@ -73,5 +77,16 @@ public class MypageController {
         request.setAttribute("addCss", new String[] {"mypage/alertStyle"});
 
         return "mypage/alert";
+    }
+
+    private void commonProcess(){
+        request.setAttribute("addCss", List.of("mypage/style"));
+    }
+
+    private void addCssAttribute(String css){
+        List<String> addCss = new ArrayList<>();
+        addCss.addAll((List<String>) request.getAttribute("addCss"));//기존에 있던 css들 불러오기
+        addCss.add(css);
+        request.setAttribute("addCss", addCss);
     }
 }
