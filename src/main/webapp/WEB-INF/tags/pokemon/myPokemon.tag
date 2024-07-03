@@ -1,0 +1,15 @@
+<%@ tag import="java.util.List" %>
+<%@tag body-content="empty" pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
+<%@ attribute name="seq" type="java.lang.Long" required="true" %>
+<%@taglib prefix="c" uri="jakarta.tags.core" %>
+
+<%
+    List<Long> items = (List<Long>) request.getAttribute("myPokemonSeqs");
+    if(items.contains(seq)){
+%>
+<div class="my-pokemon on${isLogin ? '':' guest'}" data-seq="${seq}">
+<% } else{%>
+<div class="my-pokemon${isLogin ? '':' guest'}" data-seq="${seq}">
+<% }%>
+    ❤
+</div>
