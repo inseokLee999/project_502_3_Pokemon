@@ -27,6 +27,7 @@ commonLib.popup = {
         iframeEl.width = width;
         iframeEl.height = height;
         iframeEl.src = url;
+        iframeEl.scrolling="no";
         popupEl.appendChild(iframeEl);
 
         /* 레이어 팝업 가운데 배치 좌표 구하기 S */
