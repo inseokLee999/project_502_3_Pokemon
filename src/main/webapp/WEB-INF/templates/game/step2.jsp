@@ -23,10 +23,13 @@
                     <fmt:formatNumber value="${computer.weight * computer.height * computer.baseExperience}" />점
                 </div>
             </div>
+
         </div>
-        <div>
-            대전 결과 : ${result.title}
+        <br>
+        <div class="game-result">
+            대전 결과 : ${result.title} <br>
+            <a href="<c:url value='/game/step1' />" class="button button-secondary">다시 게임하기</a>
         </div>
-        <a href="<c:url value='/game/step1' />">다시 게임하기</a>
+
     </div>
 </layout:main>
