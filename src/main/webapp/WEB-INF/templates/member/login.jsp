@@ -7,7 +7,7 @@
 <c:url var="actionUrl" value="/member/login" />
 <c:url var="joinUrl" value="/member/join" />
 <layout:main title="${pageTitle}">
-    <div class="content-box small">
+    <div class="content-box-login">
         <h1>${pageTitle}</h1>
 
         <form name="frmLogin" method="POST" action="${actionUrl}" target="ifrmProcess" autocomplete="off">

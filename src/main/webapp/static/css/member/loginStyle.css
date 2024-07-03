@@ -2,30 +2,26 @@
 main { display: flex; align-items: center; min-height: 800px; }
 footer { margin-top: 0; }
 
-.content-box {
+.content-box-login {
     text-align: center; /* 가운데 정렬 */
-    margin: auto; /* 가운데 정렬을 위한 마진 설정 */
+    margin: 10px auto; /* 가운데 정렬을 위한 마진 설정 */
     min-width: 350px;
     max-width: 450px; /* 예시로 너비 설정 */
     padding: 20px 40px;/* 내용물 주변의 여백 */
     border: 1px solid #ccc; /* 테두리 추가 */
     border-radius: 10px; /* 테두리 모서리를 둥글게 만듦 */
-    //background-color: #f8f8f8; /* 배경색 */
     box-shadow: 2px 2px 10px #414141;
 }
 
-.content-box h1 {
+.content-box-login h1 {
     color: var(--primary-color);
     font-size: 28px; /* 제목의 글꼴 크기 */
     margin-bottom: 20px; /* 제목 아래 여백 */
 }
 
-.content-box .small form {
 
-}
-
-.content-box input[type='text'],
-.content-box input[type='password']{
+.content-box-login input[type='text'],
+.content-box-login input[type='password']{
     cursor: pointer;
     width: 100%; /* 입력 요소와 버튼을 폭 전체로 설정 */
     margin-bottom: 10px; /* 요소 사이의 여백 */
@@ -35,23 +31,23 @@ footer { margin-top: 0; }
     box-sizing: border-box; /* 박스 크기를 테두리 박스에 맞춤 */
 }
 
-.content-box input[type='text']:focus,
-.content-box input[type='password']:focus {
+.content-box-login input[type='text']:focus,
+.content-box-login input[type='password']:focus {
         color: var(--primary-color);
 }
 
 
-.content-box .save-email {
+.content-box-login .save-email {
     color: var(--primary-color);
     margin-bottom: 10px; /* "이메일 기억하기" 위의 여백 */
     text-align: left;
 }
 
-.content-box.small .save-email label {
+.content-box-login.small .save-email label {
     font-weight: bold; /* 라벨의 글꼴을 굵게 설정 */
 }
 
-.content-box.small button[type='submit'] {
+.content-box-login button[type='submit'] {
     margin-top: 15px;
     background-color: var(--primary-color); /* 버튼의 배경색 */
     color: var(--background-color); /* 버튼의 글꼴 색상 */
@@ -63,7 +59,7 @@ footer { margin-top: 0; }
     width: 100%;
 }
 
-.content-box.small button[type='submit']:hover {
+.content-box-login button[type='submit']:hover {
     color: var(--secondary-color); /* 버튼이 호버될 때의 폰트 색 변경 */
     font-weight: bold;
 }
