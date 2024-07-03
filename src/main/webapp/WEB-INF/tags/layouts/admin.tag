@@ -31,8 +31,9 @@
     <jsp:body>
         <!-- 주 메뉴 -->
         <aside class="side-menu">
-            <a href="${homeUrl}/member" class="menu${menuCode == 'member' ? ' on':''}">회원관리</a>
-            <a href="${homeUrl}/board" class="menu${menuCode == 'board' ? ' on':''}">게시판 관리</a>
+            <a href="${adminHomeUrl}">관리자 메인</a>
+            <a href="${adminHomeUrl}/member" class="menu${menuCode == 'member' ? ' on':''}">회원관리</a>
+            <a href="${adminHomeUrl}/board" class="menu${menuCode == 'board' ? ' on':''}">게시판 관리</a>
         </aside>
         <!-- 내용 영역 -->
         <section class="main-content">

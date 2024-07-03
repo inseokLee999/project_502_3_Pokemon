@@ -44,6 +44,7 @@
         </c:if>
     </head>
     <body>
+    <img src="${imageUrl}/myu.png" alt="Follow" class="follow-image">
         <header>
             <jsp:invoke fragment="header" />
         </header>
@@ -51,7 +52,6 @@
             <jsp:doBody />
         </main>
         <footer>
-            <img src="${imageUrl}/myu.png" alt="Follow" class="follow-image">
             <jsp:invoke fragment="footer" />
         </footer>
     </body>

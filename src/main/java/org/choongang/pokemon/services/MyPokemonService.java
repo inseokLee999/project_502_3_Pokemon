@@ -29,7 +29,8 @@ public class MyPokemonService {
         Member member = memberUtil.getMember();
         try {
             mapper.registerMyPokemon(member.getUserNo(), seq);
-        } catch (Exception e) {} // 이미 등록된 USER_NO + SEQ 라면 예외 발생
+        } catch (Exception e) {
+        } // 이미 등록된 USER_NO + SEQ 라면 예외 발생
 
     }
 
@@ -57,6 +58,16 @@ public class MyPokemonService {
         }
 
         return Collections.EMPTY_LIST;
+    }
+
+    public boolean toggle(long userNo, long seq) {
+        int result = 0;
+        if (mapper.myPokemonExists(userNo, seq) > 0L) {//이미 등록되어 있으면 제거
+            result = mapper.deleteMyPokemon(userNo, seq);
+        } else {//없으면 추가
+            result = mapper.registerMyPokemon(userNo, seq);
+        }
+        return result > 0;
     }
 }
 

@@ -6,15 +6,16 @@
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <%@ attribute name="title" %>
 <fmt:setBundle basename="messages.commons"/>
-<c:url var="cssUrl" value="/css/" />
-<c:url var="jsUrl" value="/js/" />
+<c:url var="cssUrl" value="/css/"/>
+<c:url var="jsUrl" value="/js/"/>
+<c:url var="imageUrl" value="/images/"/>
 <c:url var="homeUrl" value="/"/>
-<c:url var="searchUrl" value="/board/write" />
+<c:url var="searchUrl" value="/board/write"/>
 <c:url var="logoUrl" value="/images/logo.png"/>
 <c:url var="pokemonUrl" value="/pokemon"/>
 <c:url var="gameUrl" value="/game"/>
 <c:url var="mycardUrl" value="/mycard/privatecard"/>
-<c:url var="tempLogoUrl" value="/images/pokemonLogo.png"/>
+<c:url var="mainLogoUrl" value="/images/pokemonLogo.png"/>
 <c:url var="adminUrl" value="/admin"/>
 <c:url var="randomUrl" value="/random"/>
 <c:url var="freeUrl" value="/board/list/freetalk"/>
@@ -49,17 +50,17 @@
                         <c:if test="${myProfile!=null}">
                             <img src="${myProfile.frontImage}">
                         </c:if>
-                        <fmt:message key="LOGIN_MSG">
+                            <fmt:message key="LOGIN_MSG">
                             <fmt:param>${loggedMember.userName}</fmt:param>
                             <fmt:param>${loggedMember.email}</fmt:param>
                         </fmt:message>
                             <a href="<c:url value="/mypage" />">
                                 <i class="xi-user-o"></i>
-                                <fmt:message key="마이페이지" />
+                                <fmt:message key="마이페이지"/>
                             </a>
                             <a href="<c:url value="/member/logout" />">
                                 <i class="xi-log-out"></i>
-                                <fmt:message key="로그아웃" />
+                                <fmt:message key="로그아웃"/>
                             </a>
                         </div>
 
@@ -76,12 +77,12 @@
                 </div>
                 <div class="main-center">
                     <a href="${homeUrl}" class="center-logo">
-                        <img src="${tempLogoUrl}" alt="<fmt:message key="gif로고"/>">
+                        <img src="${mainLogoUrl}" alt="<fmt:message key="메인 로고"/>">
                     </a>
                 </div>
-<%--                <div class="header-bottom-box">
-                    dd
-                </div>--%>
+                    <%--                <div class="header-bottom-box">
+                                        dd
+                                    </div>--%>
                 <div class="right">
                     <form class="search-box" method="GET" action="${searchUrl}" autocomplete="off">
                         <input type="text" name="keyword" placeholder="<fmt:message key="검색어를_입력하세요."/> ">
@@ -95,19 +96,34 @@
         <nav>
             <div class="inner layout-width">
                 <div class="dropdown">
-                    <a href="#">게시판</a>
+                    <a href="#">
+                        <img src="${imageUrl}/boardLogo.png" alt="게시판 아이콘">
+                        게시판
+                    </a>
                     <div class="dropdown-content">
                         <a href="${freeUrl}">자유게시판</a>
                         <a href="${noticeUrl}">공지사항</a>
-                        <a href="#">아이템 3</a>
                     </div>
                 </div>
-                <a href="${pokemonUrl}">포켓몬 도감</a>
-                <a href="${randomUrl}">포켓몬 뽑기</a>
-                <a href="${mycardUrl}">내 카드함</a>
-                <a href="${gameUrl}">게임 하기</a>
-                <util:adminOnly >
-                    <a href="${adminUrl}">게시판 관리</a>
+                <a href="${pokemonUrl}">
+                    <img src="${imageUrl}/wikiLogo.png" alt="도감 아이콘">
+                    포켓몬 도감
+                </a>
+                <a href="${randomUrl}">
+                    <img src="${imageUrl}/randomLogo.png" alt="뽑기 아이콘">
+                    포켓몬 뽑기
+                </a>
+                <a href="${mycardUrl}">
+                    <img src="${imageUrl}/RocketDan.webp" alt="내 카드 아이콘" id="myCard">
+                    내 카드함
+                </a>
+                <a href="${gameUrl}">
+                    <img src="${imageUrl}/gameLogo.png" alt="게임 아이콘">
+                    게임하기
+                </a>
+                <util:adminOnly>
+                    <a href="${adminUrl}">
+                        <img src="${imageUrl}/masterBall.png" alt="게시판 아이콘">게시판 관리</a>
                 </util:adminOnly>
             </div>
         </nav>
@@ -125,6 +141,6 @@
         <script src="${jsUrl}main.js"></script>
     </jsp:attribute>
     <jsp:body>
-        <jsp:doBody />
+        <jsp:doBody/>
     </jsp:body>
 </layout:common>
