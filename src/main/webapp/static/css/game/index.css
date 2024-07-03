@@ -1,0 +1,39 @@
+.card-items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-items li {
+    width: calc(100% / 3);
+}
+
+.card-items label {
+    margin: 5px;
+    padding: 15px;
+    box-shadow: 2px 2px 5px #333;
+    background: #fff;
+    display: block;
+    border-radius: 15px;
+    border: 5px solid transparent;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.card-items label img {
+    width: 100%;
+    display: block;
+}
+
+.card-items input[type='radio'] {
+    display: none;
+}
+
+.card-items input[type='radio']:checked + label,
+.card-items label:hover {
+    border-color: #333;
+}
+/* 팝업 공통 S */
+#layer_dim { position: fixed; z-index: 100; top: 0; left: 0; width: 100%; height: 100%; background:rgba(0, 0, 0, 0.7); cursor: pointer; }
+#layer_popup { position: fixed; z-index: 101; background: #fff; border-radius: 5px; overflow: hidden; }
+#layer_popup iframe { border: 0; }
+/* 팝업 공통 E */

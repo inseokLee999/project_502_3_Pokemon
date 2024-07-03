@@ -1,9 +1,24 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <c:url var="searchUrl" value="/pokemon" />
+<c:url var="loginUrl" value="/member/login"/>
+<c:set var="item" value="${items}"/>
 
 <layout:main>
+    <util:guestOnly>
+        <div class="content-box">
+            <h1>로그인이 필요한 페이지입니다.</h1>
+            <div class="centered">
+                <a href="<c:url value="../../..${loginUrl}?redirectUrl=/mycard"/>" class="button button-secondary">로그인 하러가기</a>
+            </div>
+
+        </div>
+    </util:guestOnly>
+
+    <util:memberOnly>
     <section class="layout-width">
         <form name="frmSearch" method="get" action="${searchUrl}" autocomplete="off">
             포켓몬 검색 :
@@ -15,18 +30,10 @@
                 <li class='no-data'>조회된 포켓몬이 없습니다.</li>
             </c:if>
             <c:if test="${items != null && !items.isEmpty()}">
-                <c:forEach var="item" items="${items}">
-                    <li>
-                        <a href="<c:url value='/pokemon/${item.seq}' />">
-                            <img src="${item.frontImage}" alt="${item.nameKr}">
-                            <div class="p-name">
-                                    ${item.nameKr}(${item.name})
-                            </div>
-                        </a>
-                    </li>
-                </c:forEach>
+                <jsp:include page="_my_Pokemon2.jsp" />
+
             </c:if>
         </ul>
     </section>
-
+    </util:memberOnly>
 </layout:main>
