@@ -99,7 +99,6 @@
                     <div class="dropdown-content">
                         <a href="${freeUrl}">자유게시판</a>
                         <a href="${noticeUrl}">공지사항</a>
-                        <a href="#">아이템 3</a>
                     </div>
                 </div>
                 <a href="${pokemonUrl}">포켓몬 도감</a>
