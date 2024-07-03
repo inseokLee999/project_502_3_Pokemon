@@ -42,7 +42,7 @@
     color: #000
 }
 
-.badge-asper {
+.badge-asper ,.badge-psychic{
     background: #e879;
     color: #fff
 }
@@ -79,6 +79,26 @@
 }
 .badge-ground{
     background: #ab7939;
+    color: #ffffff;
+}
+.badge-ghost{
+    background: #4f4747;
+    color: #ffffff;
+}
+.badge-dragon{
+    background: #5462d6;
+    color: #ffffff;
+}
+.badge-steel{
+    background: #6aaed3;
+    color: #ffffff;
+}
+.badge-rock{
+    background: #bcb889;
+    color: #ffffff;
+}
+.badge-fighting{
+    background: #ffa202;
     color: #ffffff;
 }
 /*속성별 뱃지 E*/
