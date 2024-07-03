@@ -29,7 +29,7 @@
                                 <img src="${item.frontImage}" alt="${item.nameKr}">
                                 <div class="p-text">
                                     <div class="p-name">
-                                            ${item.nameKr}(${item.name})<br>
+                                            ${item.nameKr}<br>(${item.name})<br>
                                         <span class="badge badge-${item.type1}"><fmt:message key="${item.type1}"/></span>
                                         <c:if test="${item.type2!=null &&item.type2.length()<10}">
                                             <span class="badge badge-${item.type2}"><fmt:message key="${item.type2}"/></span>
