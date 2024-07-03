@@ -18,15 +18,18 @@
         </div>
     </util:guestOnly>
     <util:memberOnly>
-        <h1>포켓몬 뽑기 페이지</h1>
-        <h2>${loggedMember.userName} 님 포켓몬 뽑기!!</h2>
-        <a href="<c:url value="..${pokemonUrl}/${loggedMember.myPokemonSeq}"/> ">
-            <img src="${data.frontImage}">
-        </a>
-        <div>
-            현재 포켓몬 : ${loggedMember.myPokemonSeq}<br>
-                ${data.nameKr}
+        <div class="content-box">
+
+            <h1>포켓몬 뽑기 페이지</h1>
+            <h2>${loggedMember.userName} 님 포켓몬 뽑기!!</h2>
+            <a href="<c:url value="..${pokemonUrl}/${loggedMember.myPokemonSeq}"/> ">
+                <img src="${data.frontImage}">
+            </a>
+            <div>
+                현재 포켓몬 : ${loggedMember.myPokemonSeq}<br>
+                    ${data.nameKr}
+            </div>
+            <button id="updatePokemonButton" >포켓몬 다시 뽑기</button>
         </div>
-        <button id="updatePokemonButton" >포켓몬 다시 뽑기</button>
     </util:memberOnly>
 </layout:main>

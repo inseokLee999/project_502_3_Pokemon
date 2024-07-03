@@ -23,6 +23,7 @@
          <fmt:message key="SITE_TITLE" />
         </title>
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 
@@ -44,7 +45,7 @@
         </c:if>
     </head>
     <body>
-    <img src="${imageUrl}/myu.png" alt="Follow" class="follow-image">
+    <img src="${imageUrl}myu.png" alt="Follow" class="follow-image">
         <header>
             <jsp:invoke fragment="header" />
         </header>
