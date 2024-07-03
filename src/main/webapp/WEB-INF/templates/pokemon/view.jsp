@@ -22,23 +22,32 @@
             <div class="p-spec-item"> <h4><fmt:message key="높이"/> : ${data.height*0.1} m </h4></div>
             <div class="p-spec-item"><h4><fmt:message key="초기경험치"/> : ${data.baseExperience}</h4></div>
             </div>
+            <div class="p-type">
+                <span class="badge badge-${data.type1}" >
+                        <fmt:message key="${data.type1}"/>
+                </span>
+                <c:if test="${data.type2!=null}">
+                    /
+                    <span class="badge badge-${data.type2}">
+                         <fmt:message key="${data.type2}"/>
+                    </span>
+                </c:if>
+            </div>
             <div class="p-desc">
                 <h3>${fn:replace(data.description, '\\n', '<br>')}</h3>
             </div>
-            <div class="p-type">
-                <div class="type1" >
-                        <fmt:message key="타입1"/> : ${data.type1}
-                </div>
-                <c:if test="${data.type2!=null}">
-                    <div class="type2">
-                        /<fmt:message key="타입2"/> : ${data.type2}
-                    </div>
-                </c:if>
-            </div>
-            참고 주소 : <a href='https://pokeapi.co/api/v2/pokemon/${data.seq}' target="_blank">https://pokeapi.co/api/v2/pokemon/${data.seq}</a>
+            참고 주소 : <a href='https://www.pokemonkorea.co.kr/pokedex/view/${data.seq}' target="_blank">https://www.pokemonkorea.co.kr/pokedex/view/${data.seq}</a>
             <br><br><br>
-            <div class="centered">
-                <a href="<c:url value="/..${pokemonUrl}"/>" class="button button-secondary">포켓몬도감</a>
+            <div class="forward">
+                <div class="centered-left">
+                    <a href="<c:url value="/..${pokemonUrl}/${data.seq-1}"/>" class="button button-primary">이전 포켓몬</a>
+                </div>
+                <div class="centered">
+                    <a href="<c:url value="/..${pokemonUrl}"/>" class="button button-secondary">포켓몬 도감</a>
+                </div>
+                <div class="centered-right">
+                    <a href="<c:url value="/..${pokemonUrl}/${data.seq+1}"/>" class="button button-primary">다음 포켓몬</a>
+                </div>
             </div>
         </div>
         <br><br><br>

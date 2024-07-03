@@ -47,7 +47,7 @@ public class PokemonController {
     @GetMapping("/{seq}")
     public String view(@PathVariable("seq") long seq) {
         commonProcess();
-        request.setAttribute("addCss", List.of("pokemon/view"));
+        request.setAttribute("addCss", List.of("pokemon/view","pokemon/badge"));
         PokemonDetail data = infoService.get(seq).orElseThrow(PokemonNotFoundException::new);
         request.setAttribute("data", data);
         return "pokemon/view";
@@ -87,7 +87,7 @@ public class PokemonController {
     }
 
     private void commonProcess() {
-        request.setAttribute("addCss", new String[]{"pokemon/style"});
+        request.setAttribute("addCss", new String[]{"pokemon/style","pokemon/badge"});
         request.setAttribute("addScript", List.of("pokemon/my"));
     }
 }

@@ -3,7 +3,8 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <%@taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
 <%@taglib prefix="pk" tagdir="/WEB-INF/tags/pokemon" %>
-<c:url var="searchUrl" value="/pokemon" />
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
+<c:url var="searchUrl" value="/pokemon"/>
 <layout:main>
     <section class="layout-width">
         <form name="frmSearch" method="get" action="${searchUrl}" autocomplete="off">
@@ -25,10 +26,17 @@
                         <div class="pokemon-data">
                             <a href="<c:url value='/pokemon/${item.seq}' />">
                                 <img src="${item.frontImage}" alt="${item.nameKr}">
-                                <div class="p-name">
-                                        ${item.nameKr}(${item.name})
+                                <div class="p-text">
+                                    <div class="p-name">
+                                            ${item.nameKr}(${item.name})<br>
+                                        <span class="badge badge-${item.type1}"><fmt:message key="${item.type1}"/></span>
+                                        <c:if test="${item.type2!=null &&item.type2.length()<10}">
+                                            <span class="badge badge-${item.type2}"><fmt:message key="${item.type2}"/></span>
+                                        </c:if>
+                                    </div>
                                 </div>
-                            </a></div>
+                            </a>
+                        </div>
                         <div>
                             <pk:myPokemon seq="${item.seq}"/>
                         </div>
@@ -37,6 +45,6 @@
             </c:if>
         </ul>
     </section>
-    <util:pagination />
+    <util:pagination/>
     <script src="js/pokemon/board.js"></script>
 </layout:main>
