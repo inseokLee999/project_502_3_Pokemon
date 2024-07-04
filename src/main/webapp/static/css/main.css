@@ -227,6 +227,9 @@ nav .inner img {
     position: relative;
     display: inline-block;
 }
+.dropdown a:hover{
+    color:#fff;
+}
 .content-box {
     min-width: 550px;
     max-width: 700px;
