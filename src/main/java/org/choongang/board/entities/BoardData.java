@@ -9,8 +9,9 @@ import java.time.LocalDateTime;
 
 @Data
 @Builder
-@NoArgsConstructor @AllArgsConstructor
-public class BoardData {
+@NoArgsConstructor
+@AllArgsConstructor
+public class BoardData extends AbstractBoardData {
     private long num;
     private long seq;
     private String bId;

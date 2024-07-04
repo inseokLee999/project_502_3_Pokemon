@@ -1,0 +1,10 @@
+/*km */
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 300px; /* 필요에 따라 너비를 조정하세요 */
+    margin-bottom: 10px; /* 필요에 따라 여백을 조정하세요 */
+}
