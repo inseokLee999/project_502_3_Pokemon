@@ -5,12 +5,12 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <%@ taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
 <%@ attribute name="title" %>
-<fmt:setBundle basename="messages.commons" />
-<c:url var="cssUrl" value="/css/" />
-<c:url var="jsUrl" value="/js/" />
+<fmt:setBundle basename="messages.commons"/>
+<c:url var="cssUrl" value="/css/"/>
+<c:url var="jsUrl" value="/js/"/>
 <c:url var="homeUrl" value="/"/>
-<c:url var="adminHomeUrl" value="/admin" />
-<c:url var="logoUrl" value="/images/logo.png" />
+<c:url var="adminHomeUrl" value="/admin"/>
+<c:url var="logoUrl" value="/images/logo.png"/>
 <layout:common title="${title}">
     <jsp:attribute name="header">
         <div class="left">
@@ -32,7 +32,7 @@
         <!-- 주 메뉴 -->
         <aside class="side-menu">
             <a href="${adminHomeUrl}">관리자 메인</a>
-            <a href="${adminHomeUrl}/member" class="menu${menuCode == 'member' ? ' on':''}">회원관리</a>
+            <a href="${adminHomeUrl}/member" class="menu${menuCode == 'member' ? ' on':''}">회원 관리</a>
             <a href="${adminHomeUrl}/board" class="menu${menuCode == 'board' ? ' on':''}">게시판 관리</a>
         </aside>
         <!-- 내용 영역 -->
@@ -46,9 +46,7 @@
                     </c:forEach>
                 </nav>
             </c:if>
-
-            <jsp:doBody />
+            <jsp:doBody/>
         </section>
     </jsp:body>
-
 </layout:common>

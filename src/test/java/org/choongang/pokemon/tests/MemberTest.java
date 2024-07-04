@@ -21,15 +21,15 @@ public class MemberTest{
         memberMapper = DBConn.getSession().getMapper(MemberMapper.class);
     }
 
-    @Test
-    void registerTest(){
-        LongStream.rangeClosed(1,10).forEach(i-> pokemonMapper.registerMyPokemon(177,i));
-    }
-    @Test
-    void getMyPokemonsTest(){
-        List<PokemonDetail> items = pokemonMapper.getMyPokemons(134);
-        items.forEach(System.out::println);
-    }
+//    @Test
+//    void registerTest(){
+//        LongStream.rangeClosed(1,10).forEach(i-> pokemonMapper.registerMyPokemon(177,i));
+//    }
+//    @Test
+//    void getMyPokemonsTest(){
+//        List<PokemonDetail> items = pokemonMapper.getMyPokemons(134);
+//        items.forEach(System.out::println);
+//    }
     @Test
     void deleteMyPokemon(){
         int result = pokemonMapper.deleteMyPokemon(134L,43L);

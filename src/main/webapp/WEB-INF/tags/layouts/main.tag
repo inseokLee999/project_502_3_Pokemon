@@ -97,7 +97,7 @@
         <nav>
             <div class="inner layout-width">
                 <div class="dropdown">
-                    <a href="#">
+                    <a href="#" class="ac">
                         <img src="${imageUrl}/boardLogo.png" alt="게시판 아이콘">
                         게시판
                     </a>
@@ -130,51 +130,39 @@
         </nav>
     </jsp:attribute>
     <jsp:attribute name="footer">
-        <section class="layout-width inner">
-            <h4> @All copyrights are in TEAM 4 </h4>
-            <h5> choongang 502 class </h5>
-        </section>
         <footer id="ft" class="page-pokemon">
-            <div class="ft-total">
-                <div class="ft-top">
-                    <div class="container flex-justify-space">
-                        <a href="${homeUrl}"><img src="${imgUrl}/ft_logo.png" alt="pokemon korea, inc."></a>
-                        <ul class="list-split d-lg-block d-none">
-                            <li><a href="/company">회사소개</a></li>
-                            <li><a href="/business">사업내용</a></li>
-                            <li><a href="/partner">제휴안내</a></li>
-                            <li><a href="/terms">이용약관</a></li>
-                            <li><a href="/privacy">개인정보처리방침</a></li>
-                            <li><a href="/email">이메일무단수집거부</a></li>
-                            <li><a href="/faq">고객센터</a></li>
-                        </ul>
+            <div class="ft-left">
+                <h4> @All copyrights are in TEAM 4 <br></h4>
+                <h5> choongang 502 class </h5>
+            </div>
+            <div class="ft-right">
+                <div class="ft-top align-right">
+                    <div class="flex-justify-space">
+                        <a href="${homeUrl}">
+                            <div class="pokeCorp">
+                                Pokemon Korea, Inc.
+                            </div>
+                        </a>
                     </div>
                 </div>
-                <div class="ft-mdl">
-                    <div class="container flex-justify-space">
-                        <div class="d-lg-block d-none">
-                            <p>(주)포켓몬코리아&nbsp;&nbsp; 경기도 용인시 수지구 신수로 801, 4층 </p>
-                            <ul class="list-split">
-                                <li>대표이사:임재범</li>
-                                <li>개인정보관리책임자:임재범</li>
-                                <li>사업자등록번호:113-86-07676</li>
-                            </ul>
-                        </div>
+                <div class="ft-mdl align-right">
+                    <div class="container flex-justify-space url-container">
                         <ul class="d-flex">
-                            <li><a href="https://www.facebook.com/PokemonCoKr" target="_blank" class="icon-face"><i
-                                    class="xi-facebook-official"></i>facebook</a></li>
-                            <li><a href="https://instagram.com/pokemon_korea_official?igshid=OGQ5ZDc2ODk2ZA=="
-                                   target="_blank" class="icon-insta"><i class="xi-instagram"></i>instagram</a></li>
-                            <li><a href="https://www.youtube.com/user/PokemonKoreaInc" target="_blank"
-                                   class="icon-youtube"><i
-                                    class="xi-youtube"></i>youtube</a></li>
-                            <li><a href="http://www.pokemonstore.co.kr" target="_blank" class="icon-pokemon"><i
-                                    class="xi-shop"></i>pokemon</a></li>
+                            <a href="https://www.facebook.com/PokemonCoKr" target="_blank" class="icon-face"><li class="facebook"><i
+                                    class="xi-facebook-official"></i>Facebook</li></a>
+                            <a href="https://instagram.com/pokemon_korea_official?igshid=OGQ5ZDc2ODk2ZA=="
+                                   target="_blank" class="icon-insta"><li class="instagram"><i class="xi-instagram"></i>Instagram</li></a>
+                            <a href="https://www.youtube.com/user/PokemonKoreaInc" target="_blank"
+                                   class="icon-youtube"><li class="youtube"><i
+                                    class="xi-youtube"></i>YouTube</li></a>
+                            <a href="http://www.pokemonstore.co.kr" target="_blank" class="icon-pokemon"><li class="pokemonStore"><i
+                                    class="xi-shop"></i>Pokemon Store</li></a>
                         </ul>
                     </div>
                 </div>
             </div>
         </footer>
+
     </jsp:attribute>
     <jsp:attribute name="commonCss">
         <link rel="stylesheet" type="text/css" href="${cssUrl}main.css">
