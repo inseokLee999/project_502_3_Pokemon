@@ -15,7 +15,7 @@ body {
     font-size: 14px;
     color: #000;
     margin: 0;
-    padding:0;
+    padding-top: 200px;
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* 최소 화면 높이를 화면 전체로 설정 */
@@ -30,9 +30,7 @@ body {
     padding: 10px;
     z-index: 1000; /* 헤더가 항상 슬라이더 위에 있도록 z-index 설정 */
 }
-.swiper{
-    margin-bottom: 100px;
-}
+
 .swiper-container {
     flex: 1; /* 슬라이더 영역이 남은 화면을 모두 차지하도록 설정 */
     display: flex;
@@ -62,48 +60,5 @@ body {
     max-width: 100%;
     height: auto;
     object-fit: contain; /*!* 이미지가 슬라이드 안에 적절히 맞도록 조정 *!*/
-}
-.mainSwiper{
-    height: 750px;
-    margin-bottom: 300px;
-}
-.mainSwiper div{
-    height: 100%;
-}
-.mainSwiper div div{
-    height: 100%;
-}
-.mainSwiper div div img{
-    max-height: 100%;
-}
-.mainSwiper .swiper-slide {
-    height: 750px;
-}
 
-.mainSwiper .swiper-slide a {
-    position: absolute;
-    display: block;
-    height: 100%;
-    width: 100%;
-}
-
-.mainSwiper .swiper-slide:nth-of-type(1) a {
-    background:url("../../images/newSwiperImage_1.png") no-repeat center center;
-    background-size: 100% 100%;
-}
-.mainSwiper .swiper-slide:nth-of-type(2) a {
-    background:url("../../images/newSwiperImage_2.png") no-repeat center center;
-    background-size: 100% 100%;
-}
-.mainSwiper .swiper-slide:nth-of-type(3) a {
-    background:url("../../images/newSwiperImage_3.png") no-repeat center center;
-    background-size: 100% 100% ;
-}
-.mainSwiper .swiper-slide:nth-of-type(4) a {
-    background:url("../../images/mainSwiper_1.png") no-repeat center center;
-    background-size: 100% 100%;
-}
-.mainSwiper .swiper-slide:nth-of-type(5) a {
-    background:url("../../images/mainSwiper_1-2.png") no-repeat center center;
-    background-size: 100% 100%;
 }
