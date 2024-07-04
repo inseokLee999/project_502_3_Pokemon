@@ -46,7 +46,6 @@ public class AdminControllerAdvice implements Interceptor {
         List<String[]> boardMenus = new ArrayList<>();
         boardMenus.add(new String[]{"게시판 목록", "/admin/board"});
         boardMenus.add(new String[]{"게시판 등록", "/admin/board/register"});
-        boardMenus.add(new String[]{"게시글 관리", "/admin/board/posts"});
         menus.put("board", boardMenus);
         /* 게시판 관리 서브 메뉴 E */
 
