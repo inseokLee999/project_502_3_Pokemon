@@ -1,20 +1,38 @@
 body {
-    background-color: #f4f4f4;
+    background-color: #f8f8f8f8;
     margin: 0;
     padding: 0;
 }
 
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+.mr5 {
+    margin-right: 5px;
 }
 
-.table-cols {
-    width: 100%;
+.ar {
+    text-align: left;
+}
+.container-adminMember {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+    max-width: 1000px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.table-action-mode {
+    padding: 30px;
+}
+
+.table-rows thead th {
+    text-align: center;
+    background: var(--primary-color);
+}
+
+.table-cols.mb25 {
+    width: 1000px;
     border-collapse: collapse;
     margin-bottom: 20px;
 }
@@ -25,28 +43,35 @@ body {
 }
 
 .table-cols th {
-    background-color: #f0f0f0;
+    background-color: var(--primary-color);
+    color: #fff;
     text-align: left;
 }
 
-input[type="text"], input[type="radio"], select {
+input[type="text"], select {
     padding: 8px;
     margin: 4px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 100%;
+    width: 200px;
     box-sizing: border-box;
 }
 
-button {
-    background-color: #007bff;
+button, a.btn {
+    font-size: 15px;
+    background-color: var(--secondary-color);
     color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 3px;
 }
 
-button:hover {
-    background-color: #0056b3;
+button:hover, a.btn:hover {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.pagination {
+    text-align: left;
 }
