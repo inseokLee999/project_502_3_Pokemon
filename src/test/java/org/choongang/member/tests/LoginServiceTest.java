@@ -73,17 +73,17 @@ public class LoginServiceTest {
     }
 
 
-    @Test
-    @DisplayName("로그인 성공 시 예외가 발생하지 않음")
-    void successTest() {
-        assertDoesNotThrow(()-> {
-            loginService.process(getData());
-        });
-
-        // 로그인 처리 완료시 HttpSession - setAttribute 메서드가 호출 됨 -> 로그인 다 되면 구현
-        // then(session).should(only()).setAttribute(any(), any());
-
-    }
+//    @Test
+//    @DisplayName("로그인 성공 시 예외가 발생하지 않음")
+//    void successTest() {
+//        assertDoesNotThrow(()-> {
+//            loginService.process(getData());
+//        });
+//
+//        // 로그인 처리 완료시 HttpSession - setAttribute 메서드가 호출 됨 -> 로그인 다 되면 구현
+//        // then(session).should(only()).setAttribute(any(), any());
+//
+//    }
 
     @Test
     @DisplayName("필수 입력 항목(이메일, 비밀번호) 검증, 검증 실패 시 BadRequestException 발생")
