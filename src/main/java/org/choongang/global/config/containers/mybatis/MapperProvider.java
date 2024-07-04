@@ -10,8 +10,8 @@ import java.util.Arrays;
         "org.choongang.board.mappers",
         "org.choongang.pokemon.mappers",
         "org.choongang.file.mappers",
-        "org.choongang.mycard.mappers"/*,
-"org.choongang.game.mappers"*/})
+        "org.choongang.mycard.mappers",
+        "org.choongang.game.mappers"})
 public class MapperProvider {
 
     public static MapperProvider instance;
