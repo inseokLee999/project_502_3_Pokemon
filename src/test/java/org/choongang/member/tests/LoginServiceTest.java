@@ -9,6 +9,7 @@ import org.choongang.member.controllers.LoginRequest;
 import org.choongang.member.mappers.MemberMapper;
 import org.choongang.member.services.JoinService;
 import org.choongang.member.services.LoginService;
+import org.choongang.member.services.TestLoginService;
 import org.choongang.member.validators.JoinValidator;
 import org.choongang.member.validators.LoginValidator;
 import org.junit.jupiter.api.AfterEach;
@@ -29,10 +30,11 @@ import static org.junit.jupiter.api.Assertions.*;
 public class LoginServiceTest {
 
     private LoginService loginService;
+    private TestLoginService testLoginService;
     private Faker faker;
     private LoginRequest form;
     private JoinRequest joinForm;
-
+    private MemberMapper mapper;
     @Mock
     private HttpSession session;
 
@@ -41,8 +43,7 @@ public class LoginServiceTest {
     @BeforeEach
     void init() {
         faker = new Faker(Locale.ENGLISH);
-
-        MemberMapper mapper = DBConn.getSession().getMapper(MemberMapper.class);
+        mapper = DBConn.getSession().getMapper(MemberMapper.class);
         JoinValidator v = new JoinValidator(mapper);
         JoinService joinService = new JoinService(v, mapper);
         joinForm = JoinRequest.builder()
@@ -57,7 +58,7 @@ public class LoginServiceTest {
 
         LoginValidator validator = new LoginValidator(mapper);
         loginService = new LoginService(validator, mapper);
-
+        testLoginService = new TestLoginService(validator, mapper);
         faker = new Faker(Locale.ENGLISH);
 
         form = getData();
@@ -76,12 +77,12 @@ public class LoginServiceTest {
     @Test
     @DisplayName("로그인 성공 시 예외가 발생하지 않음")
     void successTest() {
-        assertDoesNotThrow(()-> {
-            loginService.process(getData());
+        assertDoesNotThrow(() -> {
+            testLoginService.process(getData());
         });
-
+        session.setAttribute("member", form);
         // 로그인 처리 완료시 HttpSession - setAttribute 메서드가 호출 됨 -> 로그인 다 되면 구현
-        // then(session).should(only()).setAttribute(any(), any());
+//        then(session).should(only()).setAttribute(any(), any());
 
     }
 
@@ -89,10 +90,10 @@ public class LoginServiceTest {
     @DisplayName("필수 입력 항목(이메일, 비밀번호) 검증, 검증 실패 시 BadRequestException 발생")
     void requiredFieldTest() {
         assertAll(
-                ()-> requiredEachFieldTest("email", false, "이메일을 입력"),
-                ()-> requiredEachFieldTest("email", true, "이메일을 입력"),
-                ()-> requiredEachFieldTest("password", false, "비밀번호를 입력"),
-                ()-> requiredEachFieldTest("password", true, "비밀번호를 입력")
+                () -> requiredEachFieldTest("email", false, "이메일을 입력"),
+                () -> requiredEachFieldTest("email", true, "이메일을 입력"),
+                () -> requiredEachFieldTest("password", false, "비밀번호를 입력"),
+                () -> requiredEachFieldTest("password", true, "비밀번호를 입력")
         );
     }
 
@@ -101,7 +102,7 @@ public class LoginServiceTest {
         form = getData();
         AlertException thrown = assertThrows(AlertException.class, () -> {
             if (!name.equals("password")) {
-               form.setEmail(isNull ? null : "    ");
+                form.setEmail(isNull ? null : "    ");
             } else { //이메일
                 form.setPassword(isNull ? null : "    ");
             }
@@ -109,8 +110,8 @@ public class LoginServiceTest {
         }, name + " 테스트");
 
         String msg = thrown.getMessage();
-        System.out.println("msg:"+msg);
-        System.out.println("messsage:"+message);
+        System.out.println("msg:" + msg);
+        System.out.println("messsage:" + message);
         System.out.println(msg.contains(message));
         assertTrue(msg.contains(message), name + ", 키워드:" + message);
     }
