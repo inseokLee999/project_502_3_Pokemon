@@ -1,12 +1,21 @@
+<%@ page import="org.choongang.pokemon.entities.PokemonDetail" %>
+<%@ page import="java.text.DecimalFormat" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
-<fmt:setBundle basename="messages.commons" />
-<c:url var="pokemonUrl" value="/pokemon" />
+<fmt:setBundle basename="messages.commons"/>
+<c:url var="pokemonUrl" value="/pokemon"/>
+<%
+    PokemonDetail pokemonDetail = (PokemonDetail) request.getAttribute("data");
+    DecimalFormat df = new DecimalFormat("#.0");
+    float weight = Float.parseFloat(df.format(pokemonDetail.getWeight() * 0.1));
+    float height = Float.parseFloat(df.format(pokemonDetail.getHeight() * 0.1));
+    session.setAttribute("weight", weight);
+    session.setAttribute("height", height);
+%>
 <layout:main title="${data.nameKr}(${data.name})">
-
     <section class="pokemon-view">
         <img src="${data.frontImage}" alt="프론트" class="pokemon-view-img">
         <img src="${data.backImage}" alt="백" class="pokemon-view-img">
@@ -17,13 +26,13 @@
                 </h2>
             </div>
             <div class="p-spec-km">
-                <div class="p-spec-item"> <h4><fmt:message key="포켓몬_번호"/> : ${data.seq}</h4></div>
-            <div class="p-spec-item"> <h4><fmt:message key="무게"/> : ${data.weight*0.1} kg </h4></div>
-            <div class="p-spec-item"> <h4><fmt:message key="높이"/> : ${data.height*0.1} m </h4></div>
-            <div class="p-spec-item"><h4><fmt:message key="초기경험치"/> : ${data.baseExperience}</h4></div>
+                <div class="p-spec-item"><h4><fmt:message key="포켓몬_번호"/> : ${data.seq}</h4></div>
+                <div class="p-spec-item"><h4><fmt:message key="무게"/> : ${weight} kg </h4></div>
+                <div class="p-spec-item"><h4><fmt:message key="높이"/> : ${height} m </h4></div>
+                <div class="p-spec-item"><h4><fmt:message key="초기경험치"/> : ${data.baseExperience}</h4></div>
             </div>
             <div class="p-type">
-                <span class="badge badge-${data.type1}" >
+                <span class="badge badge-${data.type1}">
                         <fmt:message key="${data.type1}"/>
                 </span>
                 <c:if test="${data.type2!=null}">
