@@ -19,11 +19,12 @@
     </util:guestOnly>
 
     <util:memberOnly>
+        <h1 class="my_pokemon_title">내 포켓몬 페이지</h1>
     <section class="layout-width">
         <form name="frmSearch" method="get" action="${searchUrl}" autocomplete="off">
             포켓몬 검색 :
-            <input type="text" name="skey" value="${param.skey}" placeholder="검색어를 입력하세요.">
-            <button type="submit">검색</button>
+            <input type="text" name="skey" value="${param.skey}" placeholder="원하시는 포켓몬 이름을 입력하세요.">
+            <button type="submit" class="button button-secondary">검색</button>
         </form>
         <ul class="pokemon-list">
             <c:if test="${items == null || items.isEmpty()}">
