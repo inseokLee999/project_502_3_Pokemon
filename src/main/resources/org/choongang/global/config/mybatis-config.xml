@@ -15,6 +15,7 @@
     <typeHandlers>
         <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="org.choongang.member.constants.UserType" />
         <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="org.choongang.board.constants.Authority" />
+        <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="org.choongang.game.constants.GameResult" />
     </typeHandlers>
     <environments default="dev">
         <environment id="dev">
@@ -43,6 +44,6 @@
         <mapper resource="org/choongang/board/mappers/BoardDataMapper.xml" />
         <mapper resource="org/choongang/mycard/mappers/MyCardMapper.xml"/>
         <mapper resource="org/choongang/file/mappers/FileInfoMapper.xml" />
-        <!--<mapper resource="org/choongang/game/mappers/GameMapper.xml" />-->
+        <mapper resource="org/choongang/game/mappers/GameLogMapper.xml" />
     </mappers>
 </configuration>

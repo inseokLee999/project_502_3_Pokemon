@@ -86,8 +86,8 @@ public class PokemonInfoServiceTest {
         //System.out.println(data);
         Pokemon pokemon = data.getPokemon();
         System.out.println(pokemon);
-
     }
+
     @Test
     void getRegExTest(){
         ApiRequestService service = new ApiRequestService();
@@ -120,7 +120,6 @@ public class PokemonInfoServiceTest {
             System.out.println(description);
         }
     }
-
 
     @Test
     @DisplayName("랜덤 조회 테스트")
