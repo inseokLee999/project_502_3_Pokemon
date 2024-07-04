@@ -5,7 +5,6 @@ import org.choongang.global.config.DBConn;
 import org.choongang.global.exceptions.AlertException;
 import org.choongang.member.controllers.JoinRequest;
 import org.choongang.member.entities.Member;
-import org.choongang.member.exceptions.DuplicatedMemberException;
 import org.choongang.member.mappers.MemberMapper;
 import org.choongang.member.services.JoinService;
 import org.choongang.member.services.MemberServiceProvider;
@@ -142,10 +141,10 @@ public class JoinServiceTest {
 
 
     @Test
-    @DisplayName("이미 가입된 메일인 경우 DuplicatedMemberException 발생")
+    @DisplayName("이미 가입된 메일인 경우 AlertException 발생")
     void duplicateEmailTest() {
         MemberServiceProvider provider = MemberServiceProvider.getInstance();
-        assertThrows(DuplicatedMemberException.class, () -> {
+        assertThrows(AlertException.class, () -> {
             JoinRequest form = getData();
             provider.joinService().process(form);
             provider.joinService().process(form);
