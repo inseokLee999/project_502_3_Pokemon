@@ -14,7 +14,7 @@
     min-width: 900px;
     /*max-width: 1300px;*/
     margin-left: 50px;
-    margin-right: 50px;
+    margin-right: auto;
     padding: 0;
 }
 
@@ -173,48 +173,30 @@ header .search-box button:hover {
 
 }
 
-.ac {
-    text-align: center;
-    display: block;
-}
-
 nav {
-    background: var(--secondary-color);
-    border-top: 1px solid #000;
+    background: var(--primary-color);
 }
 
 nav > .inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 60px;
+    height: 45px;
 }
 nav > .inner:first-child {
 }
-nav > .inner > * {
-    border-radius: 5px;
-    font-size: 2rem;
-    font-weight: bold;
-    /*color: var(--background-color);*/
-    /*padding: 0 25px;*/
-    line-height: 60px; /*lineheight 를 맞추면 정렬 할수 있음!!*/
-    min-width:250px;
-    padding: 0 10px;
+nav > .inner a {
+    font-size: 1.5rem;
+    color: var(--background-color);
+    padding: 0 25px;
+    line-height: 45px; /*lineheight 를 맞추면 정렬 할수 있음!!*/
 }
 
-nav > .inner  a {
-    text-align: center;
-}
-
-nav > .inner > *:hover {
-    background-color: #073f64;
-    color: #fff;
-    /*font-size: 1.65rem;*/
-    /*color: var(--secondary-color);*/
-    /*transform: scale(1.1); !* 마우스 오버 시 이미지를 확대 *!*/
+nav > .inner a:hover {
+    font-size: 1.65rem;
+    color: var(--secondary-color);
+    transform: scale(1.1); /* 마우스 오버 시 이미지를 확대 */
     /*background: #d7a513;*/
-    box-shadow: 1px 1px 3px #9fa424;
-    /*border-radius: ;*/
 }
 
 nav .inner img {
@@ -226,9 +208,6 @@ nav .inner img {
 .dropdown {
     position: relative;
     display: inline-block;
-}
-.dropdown a:hover{
-    color:#fff;
 }
 .content-box {
     min-width: 550px;
@@ -244,27 +223,24 @@ nav .inner img {
 .dropdown-content {
     display: none;
     position: absolute;
-    /* background-color: var(--primary-color);  /* 네비게이션 배경색과 동일 */
-    background: #fff;
-    min-width: 250px;
+    background-color: var(--primary-color); /* 네비게이션 배경색과 동일 */
+    min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    left: 0;
 }
 
 .dropdown-content a {
-   /* color: var(--background-color); */ /* 메뉴 텍스트 색상 */
+    color: var(--background-color); /* 메뉴 텍스트 색상 */
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     font-size: 1.5rem; /* 메뉴 1과 동일한 글자 크기 */
     line-height: 45px;
     background-color: transparent; /* 배경색을 투명하게 설정 */
-    text-align: left !important;
 }
 
 .dropdown-content a:hover {
-    background-color: #f8f8f8; /* 호버 시 배경색을 다시 투명하게 설정 */
+    background-color: transparent; /* 호버 시 배경색을 다시 투명하게 설정 */
 }
 
 /* 드롭다운 컨테이너에 마우스를 올리면 드롭다운 콘텐츠를 보이게 함 */
@@ -278,7 +254,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 10; /* 다른 요소보다 위에 위치하게 하기 위해 사용 */
+    z-index: 1000; /* 다른 요소보다 위에 위치하게 하기 위해 사용 */
     background-color: transparent; /* 헤더의 배경색 설정 */
 }
 
@@ -324,27 +300,17 @@ footer ul li {
     padding-right: 20px;
 }*/
 
-#ft{
-    padding-top: 20px;
+#ft {
     color: #fff;
-    display: flex;
-    justify-content: space-between;
-    /*background:black;*/
-}
-#ft h4,h5{
-    color: black;
+    background:#ddd;
 }
 #ft div{
-    /*display: flex;*/
-    /*justify-content: center;*/
+    display: flex;
+    justify-content: space-between;
 }
-#ft .ft-right{
-    display: block;
-}
-
-
 #ft .ft-top {
     position: relative;
+    padding: 30px 0;
     font-size: 15px
 }
 
@@ -353,6 +319,7 @@ footer ul li {
 }
 
 #ft .ft-mdl {
+    padding: 20px 0;
     /*background-color: #1a1a1a;*/
     font-size: 13px
 }
@@ -360,6 +327,16 @@ footer ul li {
 #ft .ft-mdl .list-split>li+li:before {
     border-left: 0;
     margin: 10px 5px 0 5px;
+    color: #ddd
+}
+
+#ft .ft-btm {
+    padding: 30px 0 55px;
+    font-size: 12px
+}
+
+#ft .ft-btm ul {
+    margin-bottom: 30px;
     color: #ddd
 }
 
@@ -378,67 +355,21 @@ footer ul li {
     margin-right: 15px;
     font-weight: 600
 }
-#ft .container{
-    width: 50%;
-}
-#ft a{
-    width: 50%;
-}
-#ft img{
-    width: 100%;
-}
-#ft ul{
-    font-size: 15px;
-    height:50px;
-    width: 100%;
-    text-align: center;
-    line-height: 25px;
-    display: flex;
-    justify-content: space-between;
-}
-#ft ul a{
-    margin-right:8px;
-}
-#ft ul li{
-    padding: 10px;
-    border-radius: 5px;
-    min-width:150px;
+
+
+.page-micro#ft {
+    position: relative;
+    padding: 55px 0 60px
 }
 
-#ft .pokeCorp {
-    text-align: right;
-    padding-right: 15px;
+.page-micro#ft .copyright {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 16px;
+    line-height: 1.7;
+    text-align: center
 }
-
-.facebook{
-    background-color:#3463c2;
-}
-.facebook a,i{
-    color: black;
-}.instagram{
-     background-color: #db0e91;
- }
-.instagram a,i{
-    color: black;
-}.youtube{
-     background-color: #ff0000;
- }
-.youtube a,i{
-    color: black;
-}
-.pokemonStore{
-    background-color: #ffd96b;
-}
-.pokemonStore a,i{
-    color: black;
-}
-.align-right{
-    text-align: center;
-    align-content: center;
-    justify-content: right;
-    width: 100%;
-}
-
 
 /*사이트 푸터 영역 E*/
 /* 페이징 공통 S */
