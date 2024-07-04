@@ -39,6 +39,7 @@ main {
 
 /* 사이드 주 메뉴 S */
 main > .side-menu {
+    min-width: 200px;
     width: 210px;
     background: #222;
 }
@@ -95,6 +96,7 @@ nav.sub-menu a {
     line-height: 50px;
     padding: 0 30px;
     font-size: 1.35rem;
+    min-width: 200px;
 }
 
 nav.sub-menu a:hover {

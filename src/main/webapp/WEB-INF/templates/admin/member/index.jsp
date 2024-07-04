@@ -9,11 +9,11 @@
 <form name="frmSearch" method="get" action="${searchUrl}" autocomplete="off">
     <table class="table-cols mb25">
         <tr>
-            <th width="150">이메일</th>
-            <td width="350">
+            <th width="120">이메일</th>
+            <td width="300">
                 <input type="text" name="email" value="${param.email}">
             </td>
-            <th width="150">회원명</th>
+            <th width="120">회원명</th>
             <td>
                 <input type="text" name="userName" value="${param.userName}">
             </td>
@@ -34,8 +34,8 @@
             </td>
         <tr>
     </table>
-    <div class="ac">
-        <a href="<c:url value='/admin/member' />">
+    <div class="ar">
+        <a href="<c:url value='/admin/member' />" class="btn btn-primary btn-ghost mr5">
             전체보기
         </a>
         <button type="submit" class="btn btn-primary btn-ghost">
@@ -48,7 +48,7 @@
 
     <form name="frmSearch" method="post" action="${actionUrl}" autocomplete="off" target="ifrmProcess">
         <div class="container-adminMember">
-            <table class="admin-member-table">
+            <table class="table-rows">
                 <thead>
                 <tr>
                     <th><input type="checkbox" class="checkall" data-target-name="chk"> </th>
@@ -90,7 +90,7 @@
                 </c:if>
                 </tbody>
             </table>
-            <div class="table-action">
+            <div class="table-action-mode">
                 <div>
                     선택한 회원을
                     <select name="mode">

@@ -12,6 +12,8 @@
 <c:url var="imgUrl" value="/img"/>
 <c:url var="homeUrl" value="/"/>
 <c:url var="searchUrl" value="/board/write"/>
+<c:url var="searchUrl2" value="/board/list/freetalk"/>
+
 <c:url var="logoUrl" value="/images/logo.png"/>
 <c:url var="pokemonUrl" value="/pokemon"/>
 <c:url var="gameUrl" value="/game"/>
@@ -70,7 +72,7 @@
             </div>
         </section>
         <section class="logo-search">
-            <div class="layout-width inner">
+                <div class="layout-width inner">
                 <div class="center">
                     <a href="${homeUrl}" class="logo">
                         <img src="${logoUrl}" alt="<fmt:message key="로고"/>">
@@ -81,23 +83,39 @@
                         <img src="${mainLogoUrl}" alt="<fmt:message key="메인 로고"/>">
                     </a>
                 </div>
-                    <%--                <div class="header-bottom-box">
-                                        dd
-                                    </div>--%>
                 <div class="right">
                     <form class="search-box" method="GET" action="${searchUrl}" autocomplete="off">
-                        <input type="text" name="keyword" placeholder="<fmt:message key="검색어를_입력하세요."/> ">
-                        <button type="submit">
+                        <input type="text" id="searchInput" name="keyword" placeholder="<fmt:message key="검색어를_입력하세요."/>">
+                        <button type="button" onclick="submitSearchForm()">
                             <i class="xi-search"></i>
                         </button>
                     </form>
                 </div>
             </div>
         </section>
+            <script type="text/javascript">
+                function submitSearchForm() {
+                    var searchKeyword = document.getElementById('searchInput').value;
+                    var encodedKeyword = encodeURIComponent(searchKeyword);
+
+                    var baseUrl = "/project_502_3_poketmon/board/list";
+                    var targetUrl;
+
+                    if (searchKeyword === "자유게시판") {
+                        targetUrl = baseUrl + "/freetalk";
+                    } else if (searchKeyword === "공지사항") {
+                        targetUrl = baseUrl + "/notice";
+                    } else {
+                        targetUrl = baseUrl + "/freetalk";
+                    }
+                    window.location.href = targetUrl;
+                }
+            </script>
+        </section>
         <nav>
             <div class="inner layout-width">
                 <div class="dropdown">
-                    <a href="#">
+                    <a href="#" class="ac">
                         <img src="${imageUrl}/boardLogo.png" alt="게시판 아이콘">
                         게시판
                     </a>
@@ -130,10 +148,38 @@
         </nav>
     </jsp:attribute>
     <jsp:attribute name="footer">
-        <section class="layout-width inner">
-            <h4> @All copyrights are in TEAM 4 </h4>
-            <h5> choongang 502 class </h5>
-        </section>
+        <footer id="ft" class="page-pokemon">
+            <div class="ft-left">
+                <h4> @All copyrights are in TEAM 4 <br></h4>
+                <h5> choongang 502 class </h5>
+            </div>
+            <div class="ft-right">
+                <div class="ft-top align-right">
+                    <div class="flex-justify-space">
+                        <a href="${homeUrl}">
+                            <div class="pokeCorp">
+                                Pokemon Korea, Inc.
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="ft-mdl align-right">
+                    <div class="container flex-justify-space url-container">
+                        <ul class="d-flex">
+                            <a href="https://www.facebook.com/PokemonCoKr" target="_blank" class="icon-face"><li class="facebook"><i
+                                    class="xi-facebook-official"></i>Facebook</li></a>
+                            <a href="https://instagram.com/pokemon_korea_official?igshid=OGQ5ZDc2ODk2ZA=="
+                                   target="_blank" class="icon-insta"><li class="instagram"><i class="xi-instagram"></i>Instagram</li></a>
+                            <a href="https://www.youtube.com/user/PokemonKoreaInc" target="_blank"
+                                   class="icon-youtube"><li class="youtube"><i
+                                    class="xi-youtube"></i>YouTube</li></a>
+                            <a href="http://www.pokemonstore.co.kr" target="_blank" class="icon-pokemon"><li class="pokemonStore"><i
+                                    class="xi-shop"></i>Pokemon Store</li></a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
     </jsp:attribute>
     <jsp:attribute name="commonCss">
