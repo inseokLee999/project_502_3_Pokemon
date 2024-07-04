@@ -6,7 +6,7 @@
 <layout:main>
     <div class="swiper mainSwiper">
         <div class="swiper-wrapper">
-            <div class="swiper-slide swiper-main">
+            <div class="swiper-slide">
                 <a href="https://pokemonkorea.co.kr/pokemon-unite" target="_blank"></a>
             </div>
             <div class="swiper-slide">
@@ -21,7 +21,6 @@
             <div class="swiper-slide">
                 <a href="https://pokemonkorea.co.kr/pokemonLR" target="_blank"></a>
             </div>
-
         </div>
     </div>
     <div class="swiper mySwiper">
@@ -62,9 +61,7 @@
                     피죤투 경미
                 </a>
             </div>
-
         </div>
-        <div class="swiper-pagination"></div>
     </div>
 
 </layout:main>
