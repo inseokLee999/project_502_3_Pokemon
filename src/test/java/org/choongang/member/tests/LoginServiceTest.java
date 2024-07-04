@@ -22,6 +22,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.Locale;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.BDDMockito.then;
+import static org.mockito.Mockito.only;
 
 
 @ExtendWith(MockitoExtension.class)
@@ -81,7 +84,7 @@ public class LoginServiceTest {
         });
 
         // 로그인 처리 완료시 HttpSession - setAttribute 메서드가 호출 됨 -> 로그인 다 되면 구현
-        // then(session).should(only()).setAttribute(any(), any());
+        then(session).should(only()).setAttribute(any(), any());
 
     }
 
