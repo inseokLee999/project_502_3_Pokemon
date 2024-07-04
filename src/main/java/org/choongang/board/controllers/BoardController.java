@@ -69,7 +69,7 @@ public class BoardController {
 
         RequestBoardData data = new RequestBoardData();
         data.setBId(bId);
-
+        request.setAttribute("addCss","/admin/memberStyle");
         request.setAttribute("data", data);
 
         return "board/write";
