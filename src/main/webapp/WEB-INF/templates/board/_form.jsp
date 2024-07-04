@@ -79,6 +79,7 @@
     </dd>
 </dl>
 <dl>
+    <div class="file-add">
     <dt>파일 첨부</dt>
     <dd>
         <button type='button' class='file-upload'>파일 선택</button>
@@ -96,7 +97,9 @@
                 </c:forEach>
             </c:if>
         </div>
+
     </dd>
+    </div>
 </dl>
 
 <jsp:include page="../commons/_file_tpl.jsp" />
