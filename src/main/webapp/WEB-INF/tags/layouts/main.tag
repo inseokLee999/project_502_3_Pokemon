@@ -162,6 +162,7 @@
                 </div>
             </div>
         </footer>
+
     </jsp:attribute>
     <jsp:attribute name="commonCss">
         <link rel="stylesheet" type="text/css" href="${cssUrl}main.css">
