@@ -2,3 +2,7 @@
 .ck-editor__editable {
     min-height: 350px;
 }
+
+.file-add{
+    margin: 10px;
+}
