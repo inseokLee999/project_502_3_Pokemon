@@ -5,9 +5,10 @@
 <c:url var="guidePopupUrl" value="/game/guide" />
 
 <layout:main title="포켓몬 카드 선택">
+    <h1>포켓몬 카드 선택</h1>
+    <button id="showGameDescriptionButton" class="button button-secondary" onclick="commonLib.popup.open('${guidePopupUrl}', 700, 800)">게임 설명 보기</button>
     <div class='content-box'>
-        <h1>포켓몬 카드 선택</h1>
-        <button id="showGameDescriptionButton" class="button button-secondary" onclick="commonLib.popup.open('${guidePopupUrl}', 700, 800)">게임 설명 보기</button>
+
 
         <form name="frmStep1" method="POST" action="<c:url value='/game/step2' />" autocomplete="off">
             <ul class='card-items'>
