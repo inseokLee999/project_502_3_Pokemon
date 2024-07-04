@@ -97,7 +97,7 @@
         <nav>
             <div class="inner layout-width">
                 <div class="dropdown">
-                    <a href="#">
+                    <a href="#" class="ac">
                         <img src="${imageUrl}/boardLogo.png" alt="게시판 아이콘">
                         게시판
                     </a>
@@ -130,10 +130,38 @@
         </nav>
     </jsp:attribute>
     <jsp:attribute name="footer">
-        <section class="layout-width inner">
-            <h4> @All copyrights are in TEAM 4 </h4>
-            <h5> choongang 502 class </h5>
-        </section>
+        <footer id="ft" class="page-pokemon">
+            <div class="ft-left">
+                <h4> @All copyrights are in TEAM 4 <br></h4>
+                <h5> choongang 502 class </h5>
+            </div>
+            <div class="ft-right">
+                <div class="ft-top align-right">
+                    <div class="flex-justify-space">
+                        <a href="${homeUrl}">
+                            <div class="pokeCorp">
+                                Pokemon Korea, Inc.
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="ft-mdl align-right">
+                    <div class="container flex-justify-space url-container">
+                        <ul class="d-flex">
+                            <a href="https://www.facebook.com/PokemonCoKr" target="_blank" class="icon-face"><li class="facebook"><i
+                                    class="xi-facebook-official"></i>Facebook</li></a>
+                            <a href="https://instagram.com/pokemon_korea_official?igshid=OGQ5ZDc2ODk2ZA=="
+                                   target="_blank" class="icon-insta"><li class="instagram"><i class="xi-instagram"></i>Instagram</li></a>
+                            <a href="https://www.youtube.com/user/PokemonKoreaInc" target="_blank"
+                                   class="icon-youtube"><li class="youtube"><i
+                                    class="xi-youtube"></i>YouTube</li></a>
+                            <a href="http://www.pokemonstore.co.kr" target="_blank" class="icon-pokemon"><li class="pokemonStore"><i
+                                    class="xi-shop"></i>Pokemon Store</li></a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
     </jsp:attribute>
     <jsp:attribute name="commonCss">
