@@ -198,7 +198,7 @@ nav > .inner > * {
     /*color: var(--background-color);*/
     /*padding: 0 25px;*/
     line-height: 60px; /*lineheight 를 맞추면 정렬 할수 있음!!*/
-    min-width:250px;
+    min-width:200px;
     padding: 0 10px;
 }
 
@@ -264,6 +264,7 @@ nav .inner img {
 }
 
 .dropdown-content a:hover {
+    color: var(--primary-color);
     background-color: #f8f8f8; /* 호버 시 배경색을 다시 투명하게 설정 */
 }
 
@@ -283,7 +284,7 @@ header {
 }
 
 main {
-    padding-top: 254px; /* 헤더 높이만큼 패딩 추가 */
+    padding-top: 270px; /* 헤더 높이만큼 패딩 추가 */
     background: url('../images/whiteBg.png') no-repeat center center;
     background-size: 100% 100%;
 }
@@ -414,7 +415,7 @@ footer ul li {
     background-color:#3463c2;
 }
 .facebook a,i{
-    color: black;
+    color: white;
 }.instagram{
      background-color: #db0e91;
  }

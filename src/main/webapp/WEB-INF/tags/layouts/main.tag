@@ -66,7 +66,6 @@
                                 <fmt:message key="로그아웃"/>
                             </a>
                         </div>
-
                     </util:memberOnly>
                 </div>
             </div>
@@ -156,7 +155,7 @@
             <div class="ft-right">
                 <div class="ft-top align-right">
                     <div class="flex-justify-space">
-                        <a href="${homeUrl}">
+                        <a href="https://pokemonkorea.co.kr/" target="_blank">
                             <div class="pokeCorp">
                                 Pokemon Korea, Inc.
                             </div>
