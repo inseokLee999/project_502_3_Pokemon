@@ -1,7 +1,9 @@
 package org.choongang.member.validators;
 
+import org.choongang.global.exceptions.AlertException;
+
 public interface RequiredValidator {
-    default void checkRequired(String str, RuntimeException e) {
+    default void checkRequired(String str, AlertException e) {
         if (str == null || str.isBlank()) {
             throw e;
         }
