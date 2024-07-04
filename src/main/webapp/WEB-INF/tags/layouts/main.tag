@@ -122,7 +122,7 @@
         </section>
         <nav>
             <div class="inner layout-width">
-                <div class="dropdown">
+                <div class="dropdown">t
                     <a href="#" class="ac">
                         <img src="${imageUrl}/boardLogo.png" alt="게시판 아이콘">
                         게시판
