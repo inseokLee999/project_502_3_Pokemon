@@ -172,3 +172,21 @@ nav.sub-menu a:hover {
     box-shadow: 2px 2px 5px #333;
     border-radius: 3px;
 }
+/*페이징 S*/
+.pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.pagination a {
+    border: 1px solid #333;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.pagination a.on {
+    background: #333;
+    color: #fff;
+}
+/*페이징 E*/

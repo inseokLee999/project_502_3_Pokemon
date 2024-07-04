@@ -55,19 +55,19 @@ public class PokemonInfoServiceTest {
         });
     }
 
-/*    @Test
+    @Test
     @DisplayName("포켓몬 개별 조회 및 업데이트 테스트")
     void getTest() {
         assertDoesNotThrow(() -> {
             service.update(1);
         });
-    }*/
+    }
 
-/*    @Test
+    @Test
     @DisplayName("포켓몬 데이터 일괄 업데이트 테스트")
     void updateAllTest() {
         service.updateAll();
-    }*/
+    }
 
     @Test
     @DisplayName("getList 메서드 테스트")
