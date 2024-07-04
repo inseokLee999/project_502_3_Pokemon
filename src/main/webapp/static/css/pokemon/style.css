@@ -2,7 +2,10 @@
     display: flex;
     flex-wrap: wrap;
 }
-
+.p-seq {
+    font-weight: 1000;
+    font-size: 12pt;
+}
 .pokemon-list > li {
     width: calc(100% / 5);
     padding: 20px ;

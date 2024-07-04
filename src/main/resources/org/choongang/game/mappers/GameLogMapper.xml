@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.choongang.game.mappers.GameLogMapper">
+    <resultMap id="gameLogMap" type="org.choongang.game.entities.GameLog">
+        <result column="NUM" property="num" />
+        <result column="SEQ" property="seq" />
+        <result column="USER_NO" property="userNo" />
+        <result column="EMAIL" property="email" />
+        <result column="USER_NAME" property="userName" />
+        <result column="USER_SEQ" property="userSeq" />
+        <result column="USER_PNAME" property="userPname" />
+        <result column="USER_PIMG" property="userPimg" />
+        <result column="USER_SCORE" property="userScore" />
+        <result column="COM_SEQ" property="comSeq" />
+        <result column="COM_PNAME" property="comPname" />
+        <result column="COM_PIMG" property="comPimg" />
+        <result column="COM_SCORE" property="comScore" />
+        <result column="GAME_RESULT" property="gameResult" />
+        <result column="REG_DT" property="regDt" />
+    </resultMap>
+
+    <select id="getList" resultMap="gameLogMap">
+        SELECT * FROM (
+        SELECT
+        ROWNUM NUM, G.SEQ, G.USER_NO, M.EMAIL, M.USER_NAME, G.USER_SEQ,
+        P1.NAME_KR USER_PNAME, P1.FRONT_IMAGE USER_PIMG, G.USER_SCORE,
+        G.COM_SEQ, P2.NAME_KR COM_PNAME, P2.FRONT_IMAGE COM_PIMG, G.COM_SCORE,
+        G.GAME_RESULT, G.REG_DT
+        FROM GAME_LOG G
+        LEFT JOIN MEMBER M ON G.USER_NO = M.USER_NO
+        LEFT JOIN POKEMON P1 ON G.USER_SEQ = P1.SEQ
+        LEFT JOIN POKEMON P2 ON G.COM_SEQ = P2.SEQ
+        <where>
+            <if test="skey != null and !skey.equals('')">
+                <bind name="keyword" value="'%' + _parameter.getSkey() + '%'" />
+                M.EMAIL || M.USER_NAME || P1.NAME_KR || P2.NAME_KR LIKE #{keyword}
+            </if>
+            <if test="userNo > 0">
+                AND G.USER_NO = #{userNo}
+            </if>
+        </where>
+        ORDER BY G.SEQ DESC
+        )
+        <![CDATA[
+        WHERE NUM >= #{offset} AND NUM < #{endRows}
+        ]]>
+    </select>
+    <select id="getTotal" resultType="int">
+        SELECT COUNT(*) FROM GAME_LOG G
+        LEFT JOIN MEMBER M ON G.USER_NO = M.USER_NO
+        LEFT JOIN POKEMON P1 ON G.USER_SEQ = P1.SEQ
+        LEFT JOIN POKEMON P2 ON G.COM_SEQ = P2.SEQ
+        <where>
+            <if test="skey != null and !skey.equals('')">
+                <bind name="keyword" value="'%' + _parameter.getSkey() + '%'" />
+                M.EMAIL || M.USER_NAME || P1.NAME_KR || P2.NAME_KR LIKE #{keyword}
+            </if>
+            <if test="userNo > 0">
+                AND G.USER_NO = #{userNo}
+            </if>
+        </where>
+    </select>
+
+    <insert id="register">
+        INSERT INTO GAME_LOG
+        (SEQ, USER_NO, USER_SEQ, USER_SCORE, COM_SEQ, COM_SCORE, GAME_RESULT)
+        VALUES (SEQ_GAME_LOG.NEXTVAL, #{userNo}, #{userSeq}, #{userScore}, #{comSeq}, #{comScore}, #{gameResult})
+    </insert>
+</mapper>

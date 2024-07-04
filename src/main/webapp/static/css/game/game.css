@@ -1,5 +1,9 @@
 @import url('../common.css');
 
+.content-box{
+display: flex;
+}
+
 .card-items {
     display: flex;
     flex-wrap: wrap;
@@ -33,4 +37,12 @@
 .card-items input[type='radio']:checked + label,
 .card-items label:hover {
     border-color: #333;
+}
+
+.game-result {
+    margin: 30px;
+}
+
+.play-box{
+    display: flex;
 }
