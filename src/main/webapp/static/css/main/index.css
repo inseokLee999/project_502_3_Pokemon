@@ -76,9 +76,7 @@ body {
 .mainSwiper div div img{
     max-height: 100%;
 }
-.mainSwiper .swiper-slide {
-    height: 750px;
-}
+
 
 .mainSwiper .swiper-slide a {
     position: absolute;
@@ -97,7 +95,7 @@ body {
 }
 .mainSwiper .swiper-slide:nth-of-type(3) a {
     background:url("../../images/newSwiperImage_3.png") no-repeat center center;
-    background-size: 100% 100% ;
+    background-size: 100% 100%;
 }
 .mainSwiper .swiper-slide:nth-of-type(4) a {
     background:url("../../images/mainSwiper_1.png") no-repeat center center;

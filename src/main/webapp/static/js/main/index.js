@@ -1,22 +1,14 @@
 // main.js 파일 예제
 document.addEventListener('DOMContentLoaded', function() {
-    var swiper = new Swiper(".mainSwiper", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
+    new Swiper(".mainSwiper", {
+        speed: 700,
+        height: 750,
         autoplay: {
-            delay: 3000,  // 3초마다 슬라이드 변경
-            disableOnInteraction: false,  // 사용자가 슬라이드 클릭해도 자동 재생 계속
+            delay: 2500,  // 2.5초마다 슬라이드 변경
         },
-        loop: true,
     });
-});
 
-document.addEventListener('DOMContentLoaded', function() {
-    var swiper = new Swiper(".mySwiper", {
+    new Swiper(".mySwiper", {
         slidesPerView: 4,
         spaceBetween: 30,
         pagination: {
@@ -27,5 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
             delay: 2500,  // 2.5초마다 슬라이드 변경
             disableOnInteraction: false,  // 사용자가 슬라이드 클릭해도 자동 재생 계속
         },
+        loop: true,
     });
 });
