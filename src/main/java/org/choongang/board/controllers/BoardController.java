@@ -39,6 +39,7 @@ public class BoardController {
     private BoardData boardData;
     private Board board;
 
+
     @GetMapping("/list/{bId}")
     public String list(@PathVariable("bId") String bId, BoardSearch search) {
         commonProcess(bId, "list");
@@ -128,6 +129,8 @@ public class BoardController {
         request.setAttribute("script", script);
         return "commons/execute_script";
     }
+
+
 
     /**
      * 모든 요청 처리 메서드에 공통 처리 부분
