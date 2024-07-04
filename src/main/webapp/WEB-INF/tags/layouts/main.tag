@@ -99,13 +99,22 @@
                     var encodedKeyword = encodeURIComponent(searchKeyword);
 
                     var baseUrl = "/project_502_3_poketmon/board/list";
+                    var pokUrl = "/project_502_3_poketmon"
                     var targetUrl;
 
                     if (searchKeyword === "자유게시판") {
                         targetUrl = baseUrl + "/freetalk";
                     } else if (searchKeyword === "공지사항") {
                         targetUrl = baseUrl + "/notice";
-                    } else {
+                    } else if (searchKeyword === "게임하기") {
+                        targetUrl = pokUrl + "/game/step1";
+                    } else if (searchKeyword === "포켓몬 도감" || searchKeyword === "포켓몬도감") {
+                        targetUrl = pokUrl + "/pokemon";
+                    }else if (searchKeyword === "포켓몬 뽑기" || searchKeyword === "포켓몬뽑기") {
+                        targetUrl = pokUrl + "/random";
+                    }else if (searchKeyword === "내 카드함" || searchKeyword === "내카드함") {
+                        targetUrl = pokUrl + "/mycard";
+                    }else {
                         targetUrl = baseUrl + "/freetalk";
                     }
                     window.location.href = targetUrl;
