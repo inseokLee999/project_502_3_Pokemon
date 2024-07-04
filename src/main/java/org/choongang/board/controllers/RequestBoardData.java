@@ -6,7 +6,7 @@ import java.util.UUID;
 
 @Data
 public class RequestBoardData {
-    private String mode;
+    private String mode = "write";
     private long seq;
     private String bId;
     private String gId = UUID.randomUUID().toString();
