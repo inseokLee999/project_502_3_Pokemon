@@ -26,3 +26,7 @@
     text-align: center;
     margin-top: 40px; /* 원하는 만큼의 상단 여백 설정 */
 }
+
+.my_pokemon_title {
+    text-align: center;
+}
