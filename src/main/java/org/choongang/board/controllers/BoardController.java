@@ -69,7 +69,6 @@ public class BoardController {
 
         RequestBoardData data = new RequestBoardData();
         data.setBId(bId);
-        request.setAttribute("addCss","/admin/memberStyle");
         request.setAttribute("data", data);
 
         return "board/write";
@@ -156,6 +155,7 @@ public class BoardController {
 
         if (mode.equals("write") || mode.equals("update")) { // 쓰기, 수정
             addCss.add("board/form");
+            addCss.add("admin/memberStyle");
             addScript.add("ckeditor5/ckeditor");
             addScript.add("fileManager");
             addScript.add("board/form");
