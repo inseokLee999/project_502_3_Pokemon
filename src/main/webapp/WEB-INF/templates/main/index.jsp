@@ -1,11 +1,29 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<c:url var="imageUrl" value="/images"/>
 <c:url var="pokemonUrl" value="/pokemon" />
 <layout:main>
-    <style>
+    <div class="swiper mainSwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide swiper-main">
+                <a href="https://pokemonkorea.co.kr/pokemon-unite" target="_blank"></a>
+            </div>
+            <div class="swiper-slide">
+                <a href="https://pokemonkorea.co.kr/detective_pikachu" target="_blank"></a>
+            </div>
+            <div class="swiper-slide">
+                <a href="https://www.pokemonsleep.net/ko/" target="_blank"></a>
+            </div>
+            <div class="swiper-slide">
+                <a href="https://pokemoncard.co.kr/card/645" target="_blank"></a>
+            </div>
+            <div class="swiper-slide">
+                <a href="https://pokemonkorea.co.kr/pokemonLR" target="_blank"></a>
+            </div>
 
-    </style>
+        </div>
+    </div>
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
