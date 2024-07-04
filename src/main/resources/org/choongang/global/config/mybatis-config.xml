@@ -42,6 +42,7 @@
         <mapper resource="org/choongang/pokemon/mappers/PokemonMapper.xml"/>
         <mapper resource="org/choongang/board/mappers/BoardDataMapper.xml" />
         <mapper resource="org/choongang/mycard/mappers/MyCardMapper.xml"/>
+        <mapper resource="org/choongang/file/mappers/FileInfoMapper.xml" />
         <!--<mapper resource="org/choongang/game/mappers/GameMapper.xml" />-->
     </mappers>
 </configuration>

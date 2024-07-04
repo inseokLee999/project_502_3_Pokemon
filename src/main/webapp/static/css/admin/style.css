@@ -1,4 +1,14 @@
 /* 사이트 헤더 */
+@keyframes infinite-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -7,7 +17,20 @@ header {
     align-items: center;
     padding: 10px 30px;
 }
+header .left {
+    height: 100%;
+}
+header .left img {
+    height: 100%;
+    z-index: 9000;
+    display: block; /* 이미지를 블록 요소로 설정하여 가로 중앙 정렬을 용이하게 함 */
+    transition: transform 0.8s; /* 부드러운 전환을 위해 transition 속성 추가 */
+}
 
+header .left img:hover {
+    /*transform: scale(1.1); !* 마우스 오버 시 이미지를 확대 *!*/
+    transform: rotate(360deg); /* 마우스 호버 시 회전 효과 적용 */
+}
 /* 내용 배치 */
 main {
     display: flex;

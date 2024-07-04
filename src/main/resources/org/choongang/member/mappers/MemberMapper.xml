@@ -4,13 +4,13 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.choongang.member.mappers.MemberMapper">
     <resultMap id="memberMap" type="org.choongang.member.entities.Member">
-        <result column="USER_NO" property="userNo" />
-        <result column="EMAIL" property="email" />
-        <result column="PASSWORD" property="password" />
-        <result column="USER_NAME" property="userName" />
+        <result column="USER_NO" property="userNo"/>
+        <result column="EMAIL" property="email"/>
+        <result column="PASSWORD" property="password"/>
+        <result column="USER_NAME" property="userName"/>
         <result column="USER_TYPE" property="userType"/>
-        <result column="REG_DT" property="regDt" />
-        <result column="MOD_DT" property="modDt" />
+        <result column="REG_DT" property="regDt"/>
+        <result column="MOD_DT" property="modDt"/>
         <result column="MY_POKEMON_SEQ" property="myPokemonSeq"/>
     </resultMap>
 
@@ -22,9 +22,9 @@
         SELECT * FROM MEMBER WHERE EMAIL=#{email}
     </select>
 
-<select id="getMemberByUserNo" resultMap="memberMap">>
-    SELECT * FROM MEMBER WHERE USER_NO = #{userNo}
-</select>
+    <select id="getMemberByUserNo" resultMap="memberMap">
+        SELECT * FROM MEMBER WHERE USER_NO = #{userNo}
+    </select>
 
 
     <insert id="register">
@@ -46,9 +46,65 @@
             <if test="password != null and !password.equals('')">
                 PASSWORD=#{password},
             </if>
+            <if test="userType != null">
+                USER_TYPE=#{userType},
+            </if>
             MY_POKEMON_SEQ=#{myPokemonSeq},
             MOD_DT = SYSDATE
         </set>
         WHERE email=#{email}
     </update>
+    <select id="getList" resultMap="memberMap">
+        SELECT * FROM (SELECT ROWNUM NUM, M.* FROM MEMBER M
+        <where>
+            <if test="skey!=null and !skey.equals('')">
+                <bind name="keyword" value="'%' + _parameter.getSkey() + '%'"/>
+                AND USER_NO || EMAIL || USER_NAME || USER_TYPE LIKE #{keyword}
+            </if>
+            <if test="email != null and !email.equals('')">
+                <bind name="sEmail" value="'%' + _parameter.getEmail() + '%'"/>
+                AND EMAIL LIKE #{sEmail}
+            </if>
+            <if test="userName != null and !userName.equals('')">
+                <bind name="sUserName" value="'%' + _parameter.getUserName() + '%'"/>
+                AND USER_NAME LIKE #{sUserName}
+            </if>
+            <if test="userType != null and !userType.equals('')">
+                AND USER_TYPE = #{userType}
+            </if>
+        </where>
+        ORDER BY USER_NO
+        ) M2
+
+        WHERE
+        <![CDATA[
+            M2.NUM >= #{offset} AND M2.NUM < #{endRows}
+        ]]>
+
+    </select>
+
+    <delete id="delete">
+        DELETE FROM MEMBER WHERE EMAIL=#{email}
+    </delete>
+
+    <select id="getTotal" resultType="int">
+        SELECT COUNT(*) FROM MEMBER
+        <where>
+            <if test="skey!=null and !skey.equals('')">
+                <bind name="keyword" value="'%' + _parameter.getSkey() + '%'"/>
+                AND USER_NO || EMAIL || USER_NAME || USER_TYPE LIKE #{keyword}
+            </if>
+            <if test="email != null and !email.equals('')">
+                <bind name="sEmail" value="'%' + _parameter.getEmail() + '%'"/>
+                AND EMAIL LIKE #{sEmail}
+            </if>
+            <if test="userName != null and !userName.equals('')">
+                <bind name="sUserName" value="'%' + _parameter.getUserName() + '%'"/>
+                AND USER_NAME LIKE #{sUserName}
+            </if>
+            <if test="userType != null">
+                AND USER_TYPE = #{userType}
+            </if>
+        </where>
+    </select>
 </mapper>

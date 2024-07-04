@@ -3,6 +3,9 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <c:url var="pokemonUrl" value="/pokemon" />
 <layout:main>
+    <style>
+
+    </style>
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
