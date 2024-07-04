@@ -3,7 +3,7 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <%@ taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
 <layout:main>
-    <section class="vlayout-width">
+    <section class="layout-width">
         <jsp:include page="_header.jsp" />
 
         <div class='subject'>
@@ -25,6 +25,20 @@
         <div class='content'>
                 ${data.content}
         </div>
+
+        <c:if test="${data.attachFiles != null && !data.attachFiles.isEmpty()}">
+            <ul class="download-items">
+                <c:forEach var="item" items="${data.attachFiles}" varStatus="status">
+                    <li>
+                        File #${status.count}:
+                        <a href="<c:url value='/file/download' />/${item.seq}">
+                                ${item.fileName}
+                        </a>
+                    </li>
+                </c:forEach>
+            </ul>
+        </c:if>
+
         <div class='links'>
             <a href="<c:url value='/board/list/${data.BId}' />">글목록</a>
             <a href="<c:url value='/board/write/${data.BId}' />">글쓰기</a>
@@ -34,7 +48,7 @@
     </section>
 
     <c:if test="${items != null && !items.isEmpty()}">
-        <section class="view-layout-width">
+        <section class="layout-width">
             <jsp:include page="_list.jsp" />
         </section>
     </c:if>
