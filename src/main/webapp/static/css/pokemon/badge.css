@@ -46,7 +46,7 @@
     color: #fff
 }
 
-.badge-evil {
+.badge-evil,.badge-dark {
     background: #585365;
     color: #fff
 }
@@ -100,4 +100,5 @@
     background: #ffa202;
     color: #ffffff;
 }
+
 /*속성별 뱃지 E*/
