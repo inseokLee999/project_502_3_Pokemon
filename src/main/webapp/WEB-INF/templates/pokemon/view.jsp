@@ -1,5 +1,4 @@
 <%@ page import="org.choongang.pokemon.entities.PokemonDetail" %>
-<%@ page import="org.choongang.pokemon.entities.api.Pokemon" %>
 <%@ page import="java.text.DecimalFormat" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
