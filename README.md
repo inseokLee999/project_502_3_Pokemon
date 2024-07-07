@@ -1,5 +1,65 @@
 
-# 목차
+## API를 이용한 포케피디아(포켓몬 도감 게임)
+
+##### Team4 ( 영산, 인석, 성준, 민수, 경미, 유정)
+##### ppt파일 첨부
+---
+### 소개 (Introduction)
+##### 1) 회원가입, 로그인, 게시판
+##### 2) 포켓몬API이용하여 도감, 뽑기, 카드함, 게임 
+
+### 기술 스택 (Technology Stack)
+##### 사용된 기술 및 도구, 언어: JAVA, JSP, CSS, JS
+---
+### 개발 과정
+##### 프로젝트 관리 방법론: 
+애자일: 짧은 개발 주기를 통해 
+지속적인 피드백을 받고 개선합니다.
+TDD (Test Driven Development) :
+ 테스트 주도 개발 방식으로 실제로 적용하기 전에 Test를 거친 후 적용 
+
+##### 일정 및 역할분담:
+( 기술자팀 1인1팀– 뽑기, 관리자 게시판, 기술지원
+미니팀 2인2팀–
+회원가입, 로그인, 카드함, 게임)
+
+---
+### TDD (Test Driven Development) :
+포켓몬 API V2에서 지원하는 API 요청 목록 조회 테스트: 
+포켓몬 목록 API 조회 테스트:
+포켓몬 개별 조회 및 업데이트 테스트:
+포켓몬 데이터 일괄 업데이트 테스트:
+getList 메서드 테스트: 
+get 메서드 테스트:
+특정캐릭터명불러오기 테스트 getRegExTest():
+특정캐릭터정보 불러오기 테스트 getRegExTest1():
+랜덤 조회 테스트:
+JoinServiceTest
+LoginServiceTest
+MemberTest
+
+ApiTest
+MapperTest
+BeanContainerTest
+ApiRequestServiceTest
+
+---
+
+### 만난, 그리고 해결한 오류:
+##### KM: test쪽에서 service를 테스트통과하고 java쪽 합쳐서 오류없음을 보고 커밋, 풀리퀘 했지만 웹페이지 먹통… 
+예방: 톰캣까지 돌리고 커밋푸시!
+##### MS: 깃 이슈- 
+game 페이지 구현 완료 후 git merge 시도하는 중
+local 브랜치 소스가 날아갔습니다. 
+예방: 정석으로 커밋, 마스터풀, 푸시! 
+##### YJ: 마스터에서 풀이 안 땡겨짐-> 
+보통 커밋안한 내용이 있어서거나 톰캣을 끄면 해결되지만 지만 간혹 도저히 해결되지 않을 땐 로컬 마스터 삭제 후 리모트 마스터 복사함 
+##### YJ: 톰캣에 계속 오류 생겨서 인텔리제이에서 .gradle이랑 .ida 부분 지우고 다시 깔았다가 마스터에서 난리난거....ㅎ
+예방: .idea 건드리지 맙시다
+
+---
+
+## 목차
 1. [사이트 기본 구성](https://github.com/yonggyo1125/project501_13_jsp?tab=readme-ov-file#%EC%B4%88%EA%B8%B0-%EC%84%A4%EC%A0%95)
 2. [게시판 만들기](https://github.com/yonggyo1125/project501_13_jsp/tree/board)
 3. [포켓몬 도감 가이드](https://github.com/yonggyo1125/project501_13_jsp/tree/pokemon)
