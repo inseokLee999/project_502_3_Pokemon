@@ -11,7 +11,7 @@
 <c:url var="imageUrl" value="/images/"/>
 <c:url var="imgUrl" value="/img"/>
 <c:url var="homeUrl" value="/"/>
-<c:url var="searchUrl" value="/board/write"/>
+<c:url var="searchUrl" value="/pokemon"/>
 <c:url var="searchUrl2" value="/board/list/freetalk"/>
 
 <c:url var="logoUrl" value="/images/logo.png"/>
@@ -84,7 +84,7 @@
                 </div>
                 <div class="right">
                     <form class="search-box" method="GET" action="${searchUrl}" autocomplete="off">
-                        <input type="text" id="searchInput" name="keyword" placeholder="<fmt:message key="검색어를_입력하세요."/>">
+                        <input type="text" id="searchInput" name="skey" placeholder="<fmt:message key="검색어를_입력하세요."/>">
                         <button type="button" onclick="submitSearchForm()">
                             <i class="xi-search"></i>
                         </button>

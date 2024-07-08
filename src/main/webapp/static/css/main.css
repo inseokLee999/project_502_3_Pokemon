@@ -259,7 +259,7 @@ nav .inner img {
     display: block;
     font-size: 1.5rem; /* 메뉴 1과 동일한 글자 크기 */
     line-height: 45px;
-    background-color: transparent; /* 배경색을 투명하게 설정 */
+    background-color: transparent36; /* 배경색을 투명하게 설정 */
     text-align: left !important;
 }
 
